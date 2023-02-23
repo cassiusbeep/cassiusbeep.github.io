@@ -1,0 +1,13 @@
+/* universal style stuff */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+
+h1 {
+    font-family: 'Rubik Iso', 'Segoe UI', cursive;
+    text-align: center;
+    color: white;
+    font-size: 4vw;
+    filter: drop-shadow(5px 5px 4px #4444dd);
+}
+html {
+    cursor: url('./assets/roachspin.gif'), help;
+}
