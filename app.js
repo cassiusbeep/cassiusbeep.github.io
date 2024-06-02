@@ -52,7 +52,6 @@ const statusList = [
 function statusUpdate() {
   const titleStatus = document.getElementById("title-card");
   const randInt = Math.floor(Math.random() * statusList.length);
-  console.log(randInt);
   titleStatus.innerHTML = statusList[randInt];
 }
 
@@ -79,10 +78,9 @@ function playdohUpdate(playdohID) {
     newDoh.src = imgNamesRight[8];
     // set new elt's properties
     newDoh.id = "playdoh" + playdohNums.length;
-    console.log("new id: " + newDoh.id);
     newDoh.alt = "play-doh ball";
     // decrease size of new half-balls
-    const newHeight = parseInt(currentDoh.style.height) - 8 + "%";
+    const newHeight = parseInt(currentDoh.style.height) * 0.9 + "%";
     newDoh.style.height = newHeight;
     currentDoh.style.height = newHeight;
     // insert new element to right of current and add click event listener
@@ -94,8 +92,6 @@ function playdohUpdate(playdohID) {
     });
   } else {
     // if no new ball: just set to next image in array
-    console.log(playdohSides[arrayPlace]);
-    console.log(playdohNums[arrayPlace]);
     if (playdohSides[arrayPlace] == "L") {
       currentDoh.src = imgNamesLeft[playdohNums[arrayPlace]];
     } else {
@@ -113,7 +109,7 @@ window.onload = function () {
     });
     playdohStarter.style.height = "100%";
   } else {
-    console.log("no worky...");
+    console.log("d'oh!");
   }
   if (titleStatus) {
     titleStatus.addEventListener("click", function () {
