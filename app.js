@@ -58,8 +58,10 @@ function playdohUpdate(playdohID) {
     newDoh.id = "playdoh" + playdohNums.length;
     console.log("new id: " + newDoh.id);
     newDoh.alt = "play-doh ball";
-    newDoh.style.height = 100 - 5 * arrayPlace + "%";
-    currentDoh.style.height = 100 - 5 * arrayPlace + "%";
+    const newHeight = parseInt(currentDoh.style.height) - 8 + "%";
+    newDoh.style.height = newHeight;
+    currentDoh.style.height = newHeight;
+    100 - 5 * arrayPlace + "%";
     document
       .getElementById("playdoh-container")
       .insertBefore(newDoh, currentDoh.nextSibling);
