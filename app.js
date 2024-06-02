@@ -30,9 +30,33 @@ const imgNamesRight = [
   "./assets/12_right.png",
   "./assets/13_right.png",
 ];
+const statusList = [
+  "messing around",
+  "having a blast",
+  "getting freaky",
+  "getting sleepy",
+  "behind you",
+  "cassius hall",
+  "coding",
+  "cooking",
+  "reading",
+  "rewatching altered carbon",
+  "playing ace attorney",
+  "drawing",
+  "a term for money in coins or notes, as distinct from cheques, money orders, or credit",
+  "undefined",
+  "still playing with that play-doh",
+  "chewin on a mint leaf",
+];
+
+function statusUpdate() {
+  const titleStatus = document.getElementById("title-card");
+  const randInt = Math.floor(Math.random() * statusList.length);
+  console.log(randInt);
+  titleStatus.innerHTML = statusList[randInt];
+}
 
 function playdohUpdate(playdohID) {
-  console.log(playdohID + " clicked!");
   // grab element of clicked Doh
   var arrayPlace = parseInt(playdohID.slice(7)) - 1;
   const currentDoh = document.getElementById(playdohID);
@@ -44,23 +68,24 @@ function playdohUpdate(playdohID) {
     playdohNums[arrayPlace]++;
   }
 
-  console.log("array place: " + arrayPlace);
-  console.log("img index: " + playdohNums[arrayPlace]);
-
   if (playdohNums[arrayPlace] == 8) {
-    // playdoh splits: create new elt for right side
+    // playdoh splits, so create new elt for right side
     playdohNums.push(8);
     playdohSides.push("R");
-    playdohSides[arrayPlace] = "L";
+    playdohSides[arrayPlace] = "L"; // set current to left side
     var newDoh = document.createElement("img");
+    // set image sources
     currentDoh.src = imgNamesLeft[8];
     newDoh.src = imgNamesRight[8];
+    // set new elt's properties
     newDoh.id = "playdoh" + playdohNums.length;
     console.log("new id: " + newDoh.id);
     newDoh.alt = "play-doh ball";
+    // decrease size of new half-balls
     const newHeight = parseInt(currentDoh.style.height) - 8 + "%";
     newDoh.style.height = newHeight;
     currentDoh.style.height = newHeight;
+    // insert new element to right of current and add click event listener
     document
       .getElementById("playdoh-container")
       .insertBefore(newDoh, currentDoh.nextSibling);
@@ -68,6 +93,7 @@ function playdohUpdate(playdohID) {
       playdohUpdate(newDoh.id);
     });
   } else {
+    // if no new ball: just set to next image in array
     console.log(playdohSides[arrayPlace]);
     console.log(playdohNums[arrayPlace]);
     if (playdohSides[arrayPlace] == "L") {
@@ -80,6 +106,7 @@ function playdohUpdate(playdohID) {
 
 window.onload = function () {
   const playdohStarter = document.getElementById("playdoh1");
+  const titleStatus = document.getElementById("title-card");
   if (playdohStarter) {
     playdohStarter.addEventListener("click", function () {
       playdohUpdate("playdoh1");
@@ -87,6 +114,13 @@ window.onload = function () {
     playdohStarter.style.height = "100%";
   } else {
     console.log("no worky...");
+  }
+  if (titleStatus) {
+    titleStatus.addEventListener("click", function () {
+      statusUpdate();
+    });
+  } else {
+    console.log("title didnt work...");
   }
 };
 

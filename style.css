@@ -11,7 +11,12 @@ h1 {
   text-align: center;
   color: white;
   font-size: 4vw;
-  filter: drop-shadow(5px 5px 4px #4444dd);
+  margin-top: 50px;
+  backdrop-filter: blur(2px);
+  backdrop-filter: brightness(0.5);
+}
+#title-card {
+  cursor: help;
 }
 #playdoh-container {
   height: 150px;
@@ -26,9 +31,7 @@ h1 {
 html {
   background-image: url("./assets/wacky_screenshot.png");
   background-size: cover;
-  backdrop-filter: blur(20px);
 }
 body {
-  cursor: url("https://i.imgur.com/rG9zSEf.gif"), help;
   height: 100 vw;
 }
