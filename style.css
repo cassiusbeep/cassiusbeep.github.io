@@ -112,7 +112,7 @@ a:active {
   cursor: grab;
 }
 html {
-  background-image: url("./assets/wacky_screenshot.png");
+  background-image: url("./assets/wacky_screenshot.webp");
   background-size: cover;
 }
 body {
