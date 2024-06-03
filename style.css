@@ -6,15 +6,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-h1 {
-  font-family: "Rubik Iso", "Segoe UI", cursive;
+.title-bar {
   text-align: center;
-  color: white;
-  font-size: 4vw;
   margin-top: 50px;
   backdrop-filter: blur(2px);
   backdrop-filter: brightness(0.3);
   z-index: 0;
+  min-height: max-content;
+  padding: 20px 0px;
+}
+h1 {
+  font-family: "Rubik Iso", "Segoe UI", cursive;
+  color: white;
+  font-size: 4vw;
 }
 ul {
   background-color: white;
@@ -52,7 +56,6 @@ a:active {
 #menu-button-container {
   display: inline;
   cursor: pointer;
-  padding: 12px;
   margin-left: 20px;
   float: left;
 }
