@@ -30,30 +30,6 @@ const imgNamesRight = [
   "./assets/12_right.png",
   "./assets/13_right.png",
 ];
-const statusList = [
-  "messing around",
-  "having a blast",
-  "getting freaky",
-  "getting sleepy",
-  "behind you",
-  "cassius hall",
-  "coding",
-  "cooking",
-  "reading",
-  "rewatching altered carbon",
-  "playing ace attorney",
-  "drawing",
-  "a term for money in coins or notes, as distinct from cheques, money orders, or credit",
-  "undefined",
-  "still playing with that play-doh",
-  "chewin on a mint leaf",
-];
-
-function statusUpdate() {
-  const titleStatus = document.getElementById("title-card");
-  const randInt = Math.floor(Math.random() * statusList.length);
-  titleStatus.innerHTML = statusList[randInt];
-}
 
 function playdohUpdate(playdohID) {
   // grab element of clicked Doh
@@ -100,25 +76,15 @@ function playdohUpdate(playdohID) {
   }
 }
 
-window.onload = function () {
-  const playdohStarter = document.getElementById("playdoh1");
-  const titleStatus = document.getElementById("title-card");
-  if (playdohStarter) {
-    playdohStarter.addEventListener("click", function () {
-      playdohUpdate("playdoh1");
-    });
-    playdohStarter.style.height = "100%";
-  } else {
-    console.log("d'oh!");
-  }
-  if (titleStatus) {
-    titleStatus.addEventListener("click", function () {
-      statusUpdate();
-    });
-  } else {
-    console.log("title didnt work...");
-  }
-};
+const playdohStarter = document.getElementById("playdoh1");
+if (playdohStarter) {
+  playdohStarter.addEventListener("click", function () {
+    playdohUpdate("playdoh1");
+  });
+  playdohStarter.style.height = "100%";
+} else {
+  console.log("d'oh!");
+}
 
 /**
  * start with 01
