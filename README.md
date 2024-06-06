@@ -16,6 +16,6 @@ Thanks to codingnepalweb.com for the calendar template!
   (https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js)
 - blue and green play-doh
 - think of more recommendations
-- get custom cursor working! :[
+- get custom cursor working!
 - make the collage home page i planned
 - add easter eggs! (new colour at certain size?)
