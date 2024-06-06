@@ -33,6 +33,7 @@ ul {
   border-radius: 5px;
   /* filter: drop-shadow(10px 10px 0px #000000); */
   list-style-type: none;
+  line-height: 150%;
 }
 p {
   background-color: white;
@@ -108,7 +109,6 @@ a:active {
   z-index: 100;
   height: 0px;
   transition: 0.4s;
-  line-height: 150%;
 }
 #menu.open {
   color: black;
