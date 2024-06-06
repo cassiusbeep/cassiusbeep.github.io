@@ -96,6 +96,23 @@ const renderCalendar = () => {
     lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(), // getting last day of month
     lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
   let liTag = "";
+  let numOfWeeks =
+    (lastDateofMonth + firstDayofMonth - 1 + (7 - lastDayofMonth)) / 7;
+  console.log(numOfWeeks);
+  const buffer = document.getElementById("cal-buffer");
+  if (numOfWeeks == 4) {
+    buffer.classList.remove("zero");
+    buffer.classList.remove("one");
+    buffer.classList.add("two");
+  } else if (numOfWeeks == 5) {
+    buffer.classList.remove("zero");
+    buffer.classList.add("one");
+    buffer.classList.remove("two");
+  } else {
+    buffer.classList.add("zero");
+    buffer.classList.remove("one");
+    buffer.classList.remove("two");
+  }
 
   for (let i = firstDayofMonth; i > 0; i--) {
     // creating li of previous month last days
