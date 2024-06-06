@@ -8,12 +8,11 @@ Thanks to codingnepalweb.com for the calendar template!
 
 ## to do?
 
-- add reverse right click to playdoh
-- projects page/what i do for work (ouc/bai/ms)
-- resume page?
-- contacts page
-- i want a well functioning menu - i need pages to navigate first
-  (https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js)
+- ~add reverse right click to playdoh~
+- projects page/~what i do for work (ouc/bai/ms)~
+- ~resume page?~
+- ~contacts page~
+- ~i want a~ well ~functioning menu - i need pages to navigate first~
 - blue and green play-doh
 - think of more recommendations
 - get custom cursor working!
