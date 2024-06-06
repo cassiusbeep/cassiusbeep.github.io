@@ -2,6 +2,10 @@
 
 personal website
 
+## thanks
+
+Thanks to codingnepalweb.com for the calendar template!
+
 ## to do?
 
 - portraits page? or just some traditional art in general?

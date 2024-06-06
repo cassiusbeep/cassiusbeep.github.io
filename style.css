@@ -177,6 +177,7 @@ header .current-date {
 }
 .calendar {
   padding: 20px;
+  padding-top: 0px;
 }
 .calendar ul {
   display: flex;
@@ -186,6 +187,7 @@ header .current-date {
 }
 .calendar .days {
   margin-bottom: 20px;
+  margin-top: 0px;
 }
 .calendar li {
   color: #333;
@@ -229,11 +231,11 @@ header .current-date {
   background: #f2f2f2;
 }
 .face-box {
-  height: 200px;
-  width: 200px;
-  margin: auto;
+  height: 300px;
+  width: 100%;
+  text-align: center;
 }
 #face-pic {
   padding-top: 15px;
-  height: 200px;
+  height: 300px;
 }
