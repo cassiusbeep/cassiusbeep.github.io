@@ -8,7 +8,7 @@ Thanks to codingnepalweb.com for the calendar template!
 
 ## to do?
 
-- portraits page? or just some traditional art in general?
+- add reverse right click to playdoh
 - projects page/what i do for work (ouc/bai/ms)
 - resume page?
 - contacts page
@@ -18,4 +18,4 @@ Thanks to codingnepalweb.com for the calendar template!
 - think of more recommendations
 - get custom cursor working! :[
 - make the collage home page i planned
-- add easter eggs!
+- add easter eggs! (new colour at certain size?)
