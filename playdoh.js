@@ -31,6 +31,8 @@ const imgNamesRight = [
   "./assets/13_right.webp",
 ];
 
+let playClick = () => new Audio("assets/click4.mp3").play();
+
 function playdohUpdate(playdohID) {
   // grab element of clicked Doh
   var arrayPlace = parseInt(playdohID.slice(7)) - 1;
@@ -66,6 +68,12 @@ function playdohUpdate(playdohID) {
     document.getElementById(newDoh.id).addEventListener("click", function () {
       playdohUpdate(newDoh.id);
     });
+    document
+      .getElementById(newDoh.id)
+      .addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+        playdohReverse(newDoh.id);
+      });
   } else {
     // if no new ball: just set to next image in array
     if (playdohSides[arrayPlace] == "L") {
@@ -76,10 +84,37 @@ function playdohUpdate(playdohID) {
   }
 }
 
+function playdohReverse(playdohID) {
+  // grab element of clicked Doh
+  var arrayPlace = parseInt(playdohID.slice(7)) - 1;
+  const currentDoh = document.getElementById(playdohID);
+
+  // decrement clicked Doh's place in image array
+  // but dont let balls rejoin. that's too far
+  if (playdohNums[arrayPlace] == 8) {
+    playClick();
+    return;
+  } else if (playdohNums[arrayPlace] == 0) {
+    playdohNums[arrayPlace] = 12;
+  } else {
+    playdohNums[arrayPlace]--;
+  }
+  // set image to match!
+  if (playdohSides[arrayPlace] == "L") {
+    currentDoh.src = imgNamesLeft[playdohNums[arrayPlace]];
+  } else {
+    currentDoh.src = imgNamesRight[playdohNums[arrayPlace]];
+  }
+}
+
 const playdohStarter = document.getElementById("playdoh1");
 if (playdohStarter) {
   playdohStarter.addEventListener("click", function () {
     playdohUpdate("playdoh1");
+  });
+  playdohStarter.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+    playdohReverse("playdoh1");
   });
   playdohStarter.style.height = "100%";
 } else {
