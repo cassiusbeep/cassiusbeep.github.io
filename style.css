@@ -127,6 +127,7 @@ a:active {
 }
 #playdoh-container img {
   cursor: grab;
+  filter: drop-shadow(7px 7px 4px #000000);
 }
 html {
   background-image: url("./assets/wacky_screenshot.webp");
