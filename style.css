@@ -118,6 +118,37 @@ a:active {
 #title-card {
   cursor: help;
 }
+@keyframes blue-alert-fade-in {
+  0% {
+    opacity: 0;
+    font-size: 2rem;
+    text-shadow: none;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    font-size: 6rem;
+  }
+}
+#blue-alert {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-shadow: 0 0 3px #fff;
+  color: transparent;
+  display: none;
+  position: absolute;
+  animation: blue-alert-fade-in 6s 1;
+  font-size: 9rem;
+  width: 100%;
+  text-align: center;
+  z-index: 98;
+}
+#blue-alert.visible {
+  color: #fff;
+  display: block;
+  font-size: larger;
+}
 #playdoh-container {
   height: 150px;
   margin-top: 100px;

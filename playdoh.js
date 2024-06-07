@@ -43,13 +43,18 @@ function blueMode() {
       }
     }
     console.log("going blue mode");
+    document.getElementById("blue-alert").classList.add("visible");
     // time to turn blue!
     colour = "BLUE";
+    new Audio("assets/blue-alert.mp3").play();
     const dohballs = document.getElementById("playdoh-container").children;
     for (let i = 0; i < dohballs.length; i++) {
       dohballs[i].src = "./assets/bluedoh/01blue.webp";
       playdohNums[i] = 0;
     }
+    setTimeout(() => {
+      document.getElementById("blue-alert").classList.remove("visible");
+    }, 5950);
   }
 }
 
