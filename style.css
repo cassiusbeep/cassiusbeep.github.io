@@ -44,8 +44,8 @@ p {
   margin: auto;
   margin-top: 25px;
   text-align: center;
-  padding: 5px;
-  padding-bottom: 8px;
+  padding: 10px;
+  /* padding-bottom: 8px; */
   border-radius: 5px;
 }
 a {
