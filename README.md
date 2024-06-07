@@ -13,7 +13,7 @@ Thanks to codingnepalweb.com for the calendar template!
 - ~resume page?~
 - ~contacts page~
 - ~i want a~ well ~functioning menu - i need pages to navigate first~
-- blue and green play-doh
+- ~blue~ and green play-doh
 - think of more recommendations
 - get custom cursor working!
 - make the collage home page i planned
