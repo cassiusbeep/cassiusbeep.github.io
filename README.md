@@ -4,7 +4,7 @@ personal website
 
 ## thanks
 
-Thanks to codingnepalweb.com for the calendar template!
+to codingnepalweb.com for the calendar template!
 
 ## to do?
 
@@ -17,4 +17,5 @@ Thanks to codingnepalweb.com for the calendar template!
 - think of more recommendations
 - get custom cursor working!
 - make the collage home page i planned
+- magic eight ball - draggable, shake for answer
 - add easter eggs! (new colour at certain size?)
