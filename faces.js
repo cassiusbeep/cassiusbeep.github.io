@@ -143,9 +143,16 @@ prevNextIcon.forEach((icon) => {
   icon.addEventListener("click", () => {
     // adding click event on both icons
     // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
-    currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+    currMonth =
+      icon.id === "prev"
+        ? currMonth - 1
+        : icon.id === "next"
+        ? currMonth + 1
+        : 2; // march is month of first entry
 
-    if (currMonth < 0 || currMonth > 11) {
+    if (icon.id === "first") {
+      currYear = 2024;
+    } else if (currMonth < 0 || currMonth > 11) {
       // if current month is less than 0 or greater than 11
       // creating a new date of current year & month and pass it as date value
       date = new Date(currYear, currMonth, new Date().getDate());
@@ -156,5 +163,8 @@ prevNextIcon.forEach((icon) => {
     }
     renderCalendar(); // calling renderCalendar function
     setFaces();
+    if (icon.id === "first") {
+      chooseFace("31-3-2024");
+    }
   });
 });

@@ -186,6 +186,7 @@ header .icons {
   display: flex;
 }
 header .icons span {
+  font-family: "Courier New", Courier, monospace;
   height: 38px;
   width: 38px;
   margin: 0 1px;
@@ -196,6 +197,12 @@ header .icons span {
   font-size: 1.9rem;
   user-select: none;
   border-radius: 50%;
+}
+sup {
+  font-size: 1rem;
+}
+#first {
+  transform: translateY(-5px);
 }
 .icons span:last-child {
   margin-right: -10px;
