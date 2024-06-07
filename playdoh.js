@@ -57,7 +57,7 @@ function orangeMode() {
   const dohballs = document.getElementById("playdoh-container").children;
   for (let i = 0; i < playdohNums.length; i++) {
     const arrayPlace = parseInt(dohballs[i].id.slice(7)) - 1;
-    if ((i < 33) & (playdohNums[arrayPlace] != i)) {
+    if (i < 33 && playdohNums[arrayPlace] != i) {
       return;
     }
   }
