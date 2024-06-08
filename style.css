@@ -118,15 +118,15 @@ a:active {
 }
 @keyframes glow {
   from {
-    text-shadow: 0px 0px 3px #aef4af;
+    text-shadow: 0px 0px 6px #aef4af;
   }
   to {
-    text-shadow: 0px 0px 0px #aef4af;
+    text-shadow: 0px 0px 2px #aef4af;
   }
 }
 #title-card {
   cursor: help;
-  animation: glow 2s infinite alternate;
+  animation: glow 1.5s infinite alternate;
 }
 @keyframes blue-alert-fade-in {
   0% {
