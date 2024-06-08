@@ -91,10 +91,15 @@ function setFaces() {
 }
 
 const renderCalendar = () => {
-  let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
-    lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // getting last date of month
-    lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(), // getting last day of month
-    lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
+  // getting first day of month
+  let firstDayofMonth = (new Date(currYear, currMonth, 1).getDay() || 7) - 1,
+    // getting last date of month
+    lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
+    // getting last day of month
+    lastDayofMonth =
+      (new Date(currYear, currMonth, lastDateofMonth).getDay() || 7) - 1,
+    // getting last date of previous month
+    lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
   let liTag = "";
   let numOfWeeks =
     (lastDateofMonth + firstDayofMonth - 1 + (7 - lastDayofMonth)) / 7;
