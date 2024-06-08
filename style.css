@@ -303,6 +303,9 @@ header .current-date {
   max-height: 300px;
 }
 @media only screen and (max-width: 600px) {
+  #whole-title {
+    font-size: 8vw;
+  }
   #face-pic {
     max-width: 90%;
   }
