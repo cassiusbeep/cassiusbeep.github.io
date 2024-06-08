@@ -116,8 +116,17 @@ a:active {
   display: block;
   height: 150px;
 }
+@keyframes glow {
+  from {
+    text-shadow: 0px 0px 3px #aef4af;
+  }
+  to {
+    text-shadow: 0px 0px 0px #aef4af;
+  }
+}
 #title-card {
   cursor: help;
+  animation: glow 2s infinite alternate;
 }
 @keyframes blue-alert-fade-in {
   0% {
