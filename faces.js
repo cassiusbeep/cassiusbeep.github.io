@@ -61,6 +61,7 @@ const faceNames = [
   "30-4-2024",
   "31-3-2024",
   "7-6-2024",
+  "8-6-2024",
 ];
 
 function chooseFace(faceName) {
