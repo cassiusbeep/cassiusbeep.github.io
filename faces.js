@@ -79,7 +79,6 @@ function setFaces() {
   for (const facedate of faceDates) {
     const currFaceName =
       facedate.innerText + "-" + (currMonth + 1) + "-" + currYear;
-    // console.log(currFaceName);
     facedate.addEventListener("click", function () {
       const activeDate = document.getElementsByClassName("active")[0];
       if (activeDate) {
@@ -99,7 +98,6 @@ const renderCalendar = () => {
   let liTag = "";
   let numOfWeeks =
     (lastDateofMonth + firstDayofMonth - 1 + (7 - lastDayofMonth)) / 7;
-  console.log(numOfWeeks);
   const buffer = document.getElementById("cal-buffer");
   if (numOfWeeks == 4) {
     buffer.classList.remove("zero");
@@ -124,7 +122,6 @@ const renderCalendar = () => {
     // creating li of all days of current month
     // adding active class to li if the current day, month, and year matched
     const currFaceName = i + "-" + (currMonth + 1) + "-" + currYear;
-    // console.log(currFaceName);
     let hasFace = faceNames.includes(currFaceName) ? "has-face" : "";
     liTag += `<li class="${hasFace}">${i}</li>`;
   }
@@ -136,11 +133,59 @@ const renderCalendar = () => {
   currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
   daysTag.innerHTML = liTag;
 };
+
 renderCalendar();
 setFaces();
 
+function startRandomiser() {
+  let num;
+  num = Math.floor(Math.random() * faceNames.length);
+  let i = 0;
+  const int = setInterval(() => {
+    if (i < 5) {
+      num = Math.floor(Math.random() * faceNames.length);
+      console.log(num);
+      chooseFace(faceNames[num]);
+      i++;
+    } else {
+      clearInterval(int);
+      chooseFace(faceNames[num]);
+      // break down face name to set the calendar to the right page
+      const numbers = faceNames[num].split("-");
+      const activeDay = numbers[0];
+      const activeMonth = numbers[1];
+      const activeYear = numbers[2];
+      currMonth = activeMonth - 1;
+      currYear = activeYear;
+      date = new Date(currYear, currMonth, activeDay);
+      console.log(date);
+      console.log(faceNames[num]);
+      renderCalendar();
+      setFaces();
+      // chooseFace(faceNames[num]);
+      const allDays = document.getElementsByClassName("days")[0].children;
+
+      for (const day of allDays) {
+        if (day.classList.contains("inactive")) {
+          continue;
+        }
+        if (day.innerText == activeDay) {
+          day.classList.add("active");
+          return;
+        }
+      }
+    }
+  }, 75);
+}
+
 prevNextIcon.forEach((icon) => {
   // getting prev and next icons
+  if (icon.id === "random-face") {
+    icon.addEventListener("click", () => {
+      startRandomiser();
+    });
+    return;
+  }
   icon.addEventListener("click", () => {
     // adding click event on both icons
     // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
