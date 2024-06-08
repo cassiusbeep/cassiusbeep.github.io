@@ -165,6 +165,7 @@ prevNextIcon.forEach((icon) => {
     renderCalendar(); // calling renderCalendar function
     setFaces();
     if (icon.id === "first") {
+      document.getElementsByClassName("has-face")[0].classList.add("active");
       chooseFace("31-3-2024");
     }
   });
