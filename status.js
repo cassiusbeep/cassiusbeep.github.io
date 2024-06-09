@@ -17,6 +17,10 @@ const statusList = [
   "chewin on a mint leaf",
   "right-clicking on the playdoh",
   "looking for clues",
+  "sewing",
+  "listening to techno",
+  "on the notes app",
+  "playing worms",
 ];
 
 function statusUpdate() {
