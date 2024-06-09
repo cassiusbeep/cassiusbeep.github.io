@@ -1,6 +1,7 @@
 var playdohNums = [0];
 var playdohSides = ["L"];
 var colour = "ORANGE";
+const bluemodethreshold = 23;
 const imgNamesLeft = [
   "./assets/01.webp",
   "./assets/02.webp",
@@ -36,7 +37,7 @@ const blueNames = [];
 let playClick = () => new Audio("assets/click4.mp3").play();
 
 function blueMode() {
-  if (playdohNums.length >= 23) {
+  if (playdohNums.length >= bluemodethreshold) {
     for (const dohball of playdohNums) {
       if (dohball != 0) {
         return;
@@ -47,6 +48,7 @@ function blueMode() {
     // time to turn blue!
     colour = "BLUE";
     new Audio("assets/blue-alert.mp3").play();
+    document.getElementById("playdoh-container").classList.add("hueshift");
     const dohballs = document.getElementById("playdoh-container").children;
     for (let i = 0; i < dohballs.length; i++) {
       dohballs[i].src = "./assets/bluedoh/01blue.webp";
@@ -54,6 +56,7 @@ function blueMode() {
     }
     setTimeout(() => {
       document.getElementById("blue-alert").classList.remove("visible");
+      document.getElementById("playdoh-container").classList.remove("hueshift");
     }, 5950);
   }
 }

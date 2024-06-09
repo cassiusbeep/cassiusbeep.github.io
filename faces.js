@@ -62,12 +62,14 @@ const faceNames = [
   "31-3-2024",
   "7-6-2024",
   "8-6-2024",
+  "9-6-2024",
 ];
 
 function chooseFace(faceName) {
   const filename = "assets/faces/" + faceName + ".jpg";
   const facePic = document.getElementById("face-pic");
   if (facePic) {
+    facePic.classList.remove("hueshift");
     facePic.src = filename;
   } else {
     console.log("face choosing not going great");

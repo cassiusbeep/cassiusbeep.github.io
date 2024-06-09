@@ -155,7 +155,7 @@ a:active {
   z-index: 98;
 }
 #blue-alert.visible {
-  color: #fff;
+  color: #00ffff;
   display: block;
   font-size: larger;
 }
@@ -297,6 +297,17 @@ header .current-date {
   height: 300px;
   width: 100%;
   text-align: center;
+}
+@keyframes hueshift {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+.hueshift {
+  animation: hueshift 3s infinite alternate;
 }
 #face-pic {
   padding-top: 15px;
