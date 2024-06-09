@@ -15,7 +15,8 @@ const statusList = [
   "undefined",
   "still playing with that play-doh",
   "chewin on a mint leaf",
-  "thinking you should try a right click to undo",
+  "right-clicking on the playdoh",
+  "looking for clues",
 ];
 
 function statusUpdate() {
