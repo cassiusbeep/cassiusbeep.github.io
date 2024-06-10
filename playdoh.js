@@ -33,8 +33,9 @@ const imgNamesRight = [
   "./assets/13_right.webp",
 ];
 const blueNames = [];
+const clickAudio = new Audio("assets/click4.mp3");
 
-let playClick = () => new Audio("assets/click4.mp3").play();
+let playClick = () => clickAudio.play();
 
 function blueMode() {
   if (playdohNums.length >= bluemodethreshold) {
