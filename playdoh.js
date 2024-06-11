@@ -1,7 +1,7 @@
 var playdohNums = [0];
 var playdohSides = ["L"];
 var colour = "ORANGE";
-const bluemodethreshold = 7;
+const bluemodethreshold = 13;
 const imgNamesLeft = [
   "./assets/01.webp",
   "./assets/02.webp",
