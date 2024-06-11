@@ -2,40 +2,78 @@ var playdohNums = [0];
 var playdohSides = ["L"];
 var colour = "ORANGE";
 const bluemodethreshold = 13;
+const greenmodethreshold = 5;
 const imgNamesLeft = [
-  "./assets/01.webp",
-  "./assets/02.webp",
-  "./assets/03.webp",
-  "./assets/04.webp",
-  "./assets/05.webp",
-  "./assets/06.webp",
-  "./assets/07.webp",
-  "./assets/08.webp",
-  "./assets/09_left.webp",
-  "./assets/10_left.webp",
-  "./assets/11_left.webp",
-  "./assets/12_left.webp",
-  "./assets/13_left.webp",
+  "./assets/orangedoh/01.webp",
+  "./assets/orangedoh/02.webp",
+  "./assets/orangedoh/03.webp",
+  "./assets/orangedoh/04.webp",
+  "./assets/orangedoh/05.webp",
+  "./assets/orangedoh/06.webp",
+  "./assets/orangedoh/07.webp",
+  "./assets/orangedoh/08.webp",
+  "./assets/orangedoh/09_left.webp",
+  "./assets/orangedoh/10_left.webp",
+  "./assets/orangedoh/11_left.webp",
+  "./assets/orangedoh/12_left.webp",
+  "./assets/orangedoh/13_left.webp",
 ];
 const imgNamesRight = [
-  "./assets/01.webp",
-  "./assets/02.webp",
-  "./assets/03.webp",
-  "./assets/04.webp",
-  "./assets/05.webp",
-  "./assets/06.webp",
-  "./assets/07.webp",
-  "./assets/08.webp",
-  "./assets/09_right.webp",
-  "./assets/10_right.webp",
-  "./assets/11_right.webp",
-  "./assets/12_right.webp",
-  "./assets/13_right.webp",
+  "./assets/orangedoh/01.webp",
+  "./assets/orangedoh/02.webp",
+  "./assets/orangedoh/03.webp",
+  "./assets/orangedoh/04.webp",
+  "./assets/orangedoh/05.webp",
+  "./assets/orangedoh/06.webp",
+  "./assets/orangedoh/07.webp",
+  "./assets/orangedoh/08.webp",
+  "./assets/orangedoh/09_right.webp",
+  "./assets/orangedoh/10_right.webp",
+  "./assets/orangedoh/11_right.webp",
+  "./assets/orangedoh/12_right.webp",
+  "./assets/orangedoh/13_right.webp",
 ];
 const blueNames = [];
 const clickAudio = new Audio("assets/click4.mp3");
 
 let playClick = () => clickAudio.play();
+
+function allOrangeBall() {
+  // get all playdoh pics
+  const dohballs = document.getElementById("playdoh-container").children;
+  // set up array of interval IDs
+  const intervalArray = [];
+  // for each pic, check if it's before after the split in the image array
+  for (let i = 0; i < dohballs.length; i++) {
+    const playdohID = dohballs[i].id;
+    const arrayPlace = parseInt(playdohID.slice(7)) - 1;
+    if (playdohNums[arrayPlace] == 0) {
+      continue;
+    } else if (playdohNums[arrayPlace] >= 8) {
+      // we're past a split so go forward til ball
+      let j = playdohNums[arrayPlace];
+      intervalArray[i] = setInterval(() => {
+        if (j == 13) {
+          clearInterval(intervalArray[i]);
+        } else {
+          playdohUpdate(playdohID);
+        }
+        j++;
+      }, 250);
+    } else {
+      // we're before a split so go backwards til ball
+      let j = playdohNums[arrayPlace];
+      intervalArray[i] = setInterval(() => {
+        if (j == 0) {
+          clearInterval(intervalArray[i]);
+        } else {
+          playdohReverse(playdohID);
+        }
+        j--;
+      }, 250);
+    }
+  }
+}
 
 function blueMode() {
   if (playdohNums.length >= bluemodethreshold) {
@@ -75,7 +113,7 @@ function orangeMode() {
   let j = 0;
   const int = setInterval(() => {
     if (j < dohballs.length) {
-      dohballs[j].src = "./assets/01.webp";
+      dohballs[j].src = "./assets/orangedoh/01.webp";
       playClick();
       playdohNums[j] = 0;
       j++;
@@ -85,9 +123,28 @@ function orangeMode() {
   }, 200);
 }
 
+function greenMode() {
+  console.log("im going ten dollar mode");
+  const dohballs = document.getElementById("playdoh-container").children;
+  // hueshift all balls to green
+  for (let i = 0; i < dohballs.length; i++) {
+    dohballs[i].classList.add("orangetogreen");
+  }
+  // get each ball to a ball shape!
+  allOrangeBall();
+  // set new source to green ball and remove orange-green hue shift
+  setTimeout(() => {
+    for (let i = 0; i < dohballs.length; i++) {
+      dohballs[i].src = "./assets/greendoh/01green.webp";
+      dohballs[i].classList.remove("orangetogreen");
+    }
+  }, 4000);
+  colour = "GREEN";
+}
+
 function playdohUpdate(playdohID) {
   // grab element of clicked Doh
-  var arrayPlace = parseInt(playdohID.slice(7)) - 1;
+  const arrayPlace = parseInt(playdohID.slice(7)) - 1;
   const currentDoh = document.getElementById(playdohID);
 
   if (colour == "ORANGE") {
@@ -127,6 +184,10 @@ function playdohUpdate(playdohID) {
           e.preventDefault();
           playdohReverse(newDoh.id);
         });
+      // if (parseFloat(newHeight) < greenmodethreshold) {
+      //   console.log(parseFloat(newHeight));
+      //   greenMode();
+      // }
     } else {
       // if no new ball: just set to next image in array
       if (playdohSides[arrayPlace] == "L") {
@@ -134,8 +195,8 @@ function playdohUpdate(playdohID) {
       } else {
         currentDoh.src = imgNamesRight[playdohNums[arrayPlace]];
       }
+      blueMode();
     }
-    blueMode();
   } else if (colour == "BLUE") {
     // increment clicked Doh's place in image array
     if (playdohNums[arrayPlace] == 32) {
@@ -151,6 +212,8 @@ function playdohUpdate(playdohID) {
     blueFileName += playdohNums[arrayPlace] + 1 + "blue.webp";
     currentDoh.src = blueFileName;
     orangeMode();
+  } else if (colour == "GREEN") {
+    console.log("to implement green mode!");
   }
 }
 

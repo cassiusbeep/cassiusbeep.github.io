@@ -170,6 +170,9 @@ a:active {
   margin-top: 100px;
   text-align: center;
   overflow-x: visible;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
   /* overflow-y: hidden; */
 }
 #playdoh-container img {
@@ -313,8 +316,19 @@ header .current-date {
     filter: hue-rotate(360deg);
   }
 }
+@keyframes orangetogreen {
+  from {
+    filter: hue-rotate(0) saturate(100%);
+  }
+  to {
+    filter: hue-rotate(135deg) saturate(125%);
+  }
+}
 .hueshift {
   animation: hueshift 3s infinite alternate;
+}
+.orangetogreen {
+  animation: orangetogreen 0.75s forwards;
 }
 #face-pic {
   padding-top: 15px;
