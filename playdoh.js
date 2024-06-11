@@ -1,7 +1,7 @@
 var playdohNums = [0];
 var playdohSides = ["L"];
 var colour = "ORANGE";
-const bluemodethreshold = 23;
+const bluemodethreshold = 7;
 const imgNamesLeft = [
   "./assets/01.webp",
   "./assets/02.webp",
@@ -72,10 +72,17 @@ function orangeMode() {
   }
   console.log("back to orange!");
   colour = "ORANGE";
-  for (let i = 0; i < dohballs.length; i++) {
-    dohballs[i].src = "./assets/01.webp";
-    playdohNums[i] = 0;
-  }
+  let j = 0;
+  const int = setInterval(() => {
+    if (j < dohballs.length) {
+      dohballs[j].src = "./assets/01.webp";
+      playClick();
+      playdohNums[j] = 0;
+      j++;
+    } else {
+      clearInterval(int);
+    }
+  }, 200);
 }
 
 function playdohUpdate(playdohID) {
@@ -184,6 +191,7 @@ function playdohReverse(playdohID) {
     }
     blueFileName += playdohNums[arrayPlace] + 1 + "blue.webp";
     currentDoh.src = blueFileName;
+    orangeMode();
   }
 }
 
