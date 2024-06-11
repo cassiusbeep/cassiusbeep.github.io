@@ -334,6 +334,40 @@ header .current-date {
   padding-top: 15px;
   max-height: 300px;
 }
+.invisible {
+  opacity: 0;
+}
+#idle-anim {
+  position: absolute;
+  animation: toRight linear 6.8s infinite alternate,
+    bounce linear 17s infinite alternate;
+}
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+  48% {
+  }
+  50% {
+    top: calc(100% - var(--height));
+  }
+  52% {
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes toRight {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: calc(100% - var(--width));
+  }
+}
+
 @media only screen and (max-width: 600px) {
   #whole-title {
     font-size: 8vw;

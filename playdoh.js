@@ -35,6 +35,7 @@ const imgNamesRight = [
 ];
 const blueNames = [];
 const clickAudio = new Audio("assets/click4.mp3");
+let timeSinceInteract = 0;
 
 let playClick = () => clickAudio.play();
 
@@ -258,6 +259,42 @@ function playdohReverse(playdohID) {
   }
 }
 
+function inactivityTime() {
+  var time;
+  var idleBall = 0;
+  window.onload = resetTimer;
+  // DOM Events
+  document.onmousemove = resetTimer;
+  document.onkeydown = resetTimer;
+  document.onclick = resetTimer;
+
+  function idleAnim() {
+    const dohballs = document.getElementById("playdoh-container");
+    const randInt = Math.floor(Math.random() * dohballs.children.length);
+    dohballs.children[randInt].classList.add("invisible");
+    const animBall = document.createElement("img");
+    animBall.src = dohballs.children[randInt].src;
+    animBall.width = dohballs.children[randInt].width;
+    animBall.style.position = "absolute";
+    animBall.id = "idle-anim";
+    document.getElementsByTagName("main")[0].appendChild(animBall);
+    console.log("tried to add animBall");
+    idleBall = randInt;
+  }
+
+  function resetTimer() {
+    clearTimeout(time);
+    document
+      .getElementById("playdoh-container")
+      .children[idleBall].classList.remove("invisible");
+    const animBall = document.getElementById("idle-anim");
+    if (animBall) {
+      animBall.remove();
+    }
+    time = setTimeout(idleAnim, 1000);
+  }
+}
+
 const playdohStarter = document.getElementById("playdoh1");
 if (playdohStarter) {
   playdohStarter.addEventListener("click", function () {
@@ -271,3 +308,7 @@ if (playdohStarter) {
 } else {
   console.log("d'oh!");
 }
+
+// window.onload = function () {
+//   inactivityTime();
+// };
