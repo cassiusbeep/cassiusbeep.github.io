@@ -271,22 +271,3 @@ if (playdohStarter) {
 } else {
   console.log("d'oh!");
 }
-
-/**
- * start with 01
- * click: 02
- * click: 03
- * click: 04
- * click: 05
- * click: 06
- * click: 07
- * click: 08
- * click: 09_left and 09_right, maybe 10% smaller.
- * (now should have separate listeners for these)
- * for both left and right:
- * click: 10_...
- * click: 11_...
- * click: 12_...
- * click: 13_...
- * click: back to 01.
- */
