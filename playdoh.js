@@ -35,6 +35,7 @@ const imgNamesRight = [
 ];
 const blueNames = [];
 const clickAudio = new Audio("assets/click4.mp3");
+const blueAlert = new Audio("assets/blue-alert.mp3");
 let timeSinceInteract = 0;
 
 let playClick = () => clickAudio.play();
@@ -87,7 +88,7 @@ function blueMode() {
     document.getElementById("blue-alert").classList.add("visible");
     // time to turn blue!
     colour = "BLUE";
-    new Audio("assets/blue-alert.mp3").play();
+    blueAlert.play();
     document.getElementById("playdoh-container").classList.add("hueshift");
     const dohballs = document.getElementById("playdoh-container").children;
     for (let i = 0; i < dohballs.length; i++) {

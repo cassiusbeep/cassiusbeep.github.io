@@ -19,3 +19,4 @@ to codingnepalweb.com for the calendar template!
 - make the collage home page i planned
 - magic eight ball - draggable, shake for answer
 - add easter eggs! (new colour at certain size?)
+- speed up playdoh: https://codeengineered.com/blog/09/12/preloading-images-jquery-and-javascript/
