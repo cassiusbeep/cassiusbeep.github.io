@@ -20,3 +20,4 @@ to codingnepalweb.com for the calendar template!
 - magic eight ball - draggable, shake for answer
 - add easter eggs! (new colour at certain size?)
 - speed up playdoh: https://codeengineered.com/blog/09/12/preloading-images-jquery-and-javascript/
+- maybe get a firebase setup to expand faces functionality/upload process?
