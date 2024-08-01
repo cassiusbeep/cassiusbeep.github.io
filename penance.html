@@ -16,7 +16,7 @@ Penance
 <div id="phistory"></div>
 <div id="passage"></div>
 
-<!-- UUID://685E4C61-83A8-41C9-98D9-3CDCDD18E7AF// --><tw-storydata name="Penance" startnode="168" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="685E4C61-83A8-41C9-98D9-3CDCDD18E7AF" zoom="1" format="Paloma" format-version="1.1.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">div.phistory {
+<!-- UUID://685E4C61-83A8-41C9-98D9-3CDCDD18E7AF// --><tw-storydata name="Penance" startnode="169" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="685E4C61-83A8-41C9-98D9-3CDCDD18E7AF" zoom="1" format="Paloma" format-version="1.1.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">div.phistory {
     border-bottom: none; 
     color:#ebebeb;
 }
@@ -522,7 +522,7 @@ Kane&#39;s expression turns a shade darker.
 &lt;% if (s.kaneasked.includes(&quot;third floor&quot;)) { window.changeStress(&quot;kane&quot;, 1) } %&gt;
 &lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="51" name="kanecode" tags="" position="100,725" size="100,100">&quot;And what is the **code** to your safe?&quot;
 
-&quot;What?&quot; Kane retorts. &quot;I don&#39;t -- do I have to tell you that?&quot;
+&quot;What?&quot; Kane retorts nervously. &quot;I don&#39;t -- do I have to tell you that?&quot;
 
 [[&quot;You do.&quot;|kanecode1]]&lt;br/&gt;
 [[&quot;You&#39;re right.&quot;|kanemoveon]]</tw-passagedata><tw-passagedata pid="52" name="kanecode1" tags="" position="225,725" size="100,100">&quot;You do.&quot;
@@ -635,94 +635,98 @@ A breath like the whine of a cornered animal escapes his lips. You both know he 
 
 Kane nods. &quot;In case I leave my own inside, or if someone--like Mia-- needs to get in.&quot;
 
-&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="74" name="kanemegacorp" tags="" position="475,975" size="100,100">&quot;What is **MegaCorp**?&quot; You ask.
+&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="74" name="kanesafe" tags="" position="475,975" size="100,100">&quot;You keep a **safe** in your **apartment**.&quot;
+
+&quot;Yes, Father.&quot; he nods. &quot;I&#39;m careful with my possessions. I keep everything important locked behind a **code**.&quot;
+
+&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="75" name="kanemegacorp" tags="" position="600,975" size="100,100">&quot;What is **MegaCorp**?&quot; You ask.
 
 &quot;That&#39;s where **Abel** works,&quot; Kane explains. &quot;They do pretty similar work to **BigCorp**, as far as I know.&quot;
 
-&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="75" name="kaneplayful" tags="" position="600,975" size="100,100">&quot;Was Mia a playful person?&quot;
+&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="76" name="kaneplayful" tags="" position="725,975" size="100,100">&quot;Was Mia a playful person?&quot;
 
 &lt;% if (s.kaneasked.includes(&quot;christmas party&quot;)) {%&gt; &quot;Yes.&quot; He mumbles, sorrowful. &quot;She was so joyful. Every minute we spent together.&quot; &lt;%} else {%&gt; Kane purses his lips. &quot;I suppose so.&quot; &lt;%}%&gt;
 
-&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="76" name="kaneregret" tags="" position="725,975" size="100,100">&quot;Do you have many regrets, Kane?&quot;
+&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="77" name="kaneregret" tags="" position="850,975" size="100,100">&quot;Do you have many regrets, Kane?&quot;
 
 Tears shine in his eyes, glinting in the pitiless light. &quot;More than I can count.&quot;
 
-&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="77" name="kaneresentment" tags="" position="850,975" size="100,100">&quot;Kane, do you think that Abel might hold some **resentment** for you?&quot;
+&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="78" name="kaneresentment" tags="" position="975,975" size="100,100">&quot;Kane, do you think that Abel might hold some **resentment** for you?&quot;
 
-&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="78" name="kanesorry" tags="" position="975,975" size="100,100">&quot;&quot;
+&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="79" name="kanesorry" tags="" position="1100,975" size="100,100">&quot;&quot;
 
-&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="79" name="kaneaffair" tags="" position="1100,975" size="100,100">&lt;% if (s.kaneasked.includes(&quot;christmas party&quot;)) {%&gt; &lt;p&gt;&quot;Yours wasn&#39;t the only **affair** your brother suffered.&quot;&lt;/p&gt;&lt;p&gt;Kane&#39;s face falls even further. &quot;It&#39;s true. You can&#39;t tell him, Father, please. Another betrayal would be too much to bear.&quot;&lt;/p&gt; &lt;%} else {%&gt;&lt;p&gt;&quot;Do you know anything about an **affair**, Kane?&quot;&lt;/p&gt;&lt;p&gt;Kane&#39;s brow furrows, and he breathes: &quot;What--&quot; before something gets caught in this throat. His eyes trace the table with deep scrutiny. &lt;/p&gt;&lt;p&gt;&quot;Yes,&quot; he says eventually. &quot;Abel&#39;s last girlfriend -- **Eliza** -- she cheated on him with his best friend.&quot;&lt;/p&gt;&lt;%}%&gt;
+&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="80" name="kaneaffair" tags="" position="1225,975" size="100,100">&lt;% if (s.kaneasked.includes(&quot;christmas party&quot;)) {%&gt; &lt;p&gt;&quot;Yours wasn&#39;t the only **affair** your brother suffered.&quot;&lt;/p&gt;&lt;p&gt;Kane&#39;s face falls even further. &quot;It&#39;s true. You can&#39;t tell him, Father, please. Another betrayal would be too much to bear.&quot;&lt;/p&gt; &lt;%} else {%&gt;&lt;p&gt;&quot;Do you know anything about an **affair**, Kane?&quot;&lt;/p&gt;&lt;p&gt;Kane&#39;s brow furrows, and he breathes: &quot;What--&quot; before something gets caught in this throat. His eyes trace the table with deep scrutiny. &lt;/p&gt;&lt;p&gt;&quot;Yes,&quot; he says eventually. &quot;Abel&#39;s last girlfriend -- **Eliza** -- she cheated on him with his best friend.&quot;&lt;/p&gt;&lt;%}%&gt;
 
-&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="80" name="kaneeliza" tags="" position="1225,975" size="100,100">&quot;Who is Eliza?&quot;
+&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="81" name="kaneeliza" tags="" position="100,1100" size="100,100">&quot;Who is Eliza?&quot;
 
 &lt;% if (s.kaneasked.includes(&quot;christmas party&quot;)) {%&gt; &lt;p&gt;&quot;**Abel**&#39;s girlfriend, before **Mia**. She cheated on him with his own best friend. He was heartbroken.&quot;&lt;/p&gt; &lt;%} else {%&gt;&lt;p&gt;Kane looks puzzled. &quot;Eliza? That was Abel&#39;s last girlfriend. Do you think she had something to do with this? I didn&#39;t know she was even in town.&quot;&lt;/p&gt;&lt;%}%&gt;
 
-&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="81" name="kaneActions" tags="" position="100,1100" size="100,100">&lt;p id=&quot;choices&quot;&gt;
+&lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="82" name="kaneActions" tags="" position="225,1100" size="100,100">&lt;p id=&quot;choices&quot;&gt;
 &lt;input type=&quot;text&quot; name=&quot;question&quot; onchange=&quot;inputtext=this.value&quot;&gt;&lt;button id=&quot;submitq&quot; type=&quot;button&quot; onclick=&quot;window.story.show(window.askQuestion(&#39;kane&#39;, inputtext.toLowerCase())); inputtext = &#39;nothing&#39;&quot;&gt;&lt;em&gt;Ask him.&lt;/em&gt;&lt;/button&gt;
 &lt;br/&gt;
 Talk to [[Abel|abelext]]
 &lt;br/&gt;
 Check your [[case file|Case File]]
-&lt;/p&gt;</tw-passagedata><tw-passagedata pid="82" name="abelext" tags="" position="225,1100" size="100,100">&lt;script&gt;
+&lt;/p&gt;</tw-passagedata><tw-passagedata pid="83" name="abelext" tags="" position="350,1100" size="100,100">&lt;script&gt;
 $(&quot;#phistory&quot;).html(&quot;&quot;);
 inputtext = &quot;nothing&quot;;
 &lt;/script&gt;
 
-[[You walk into Abel&#39;s room|abel]]</tw-passagedata><tw-passagedata pid="83" name="abel" tags="" position="350,1100" size="100,100">&lt;%
+[[You walk into Abel&#39;s room|abel]]</tw-passagedata><tw-passagedata pid="84" name="abel" tags="" position="475,1100" size="100,100">&lt;%
     s.kanestress = 1
 %&gt;
 In front of you sits **Abel** Atkins, his feet propped up on the metal table, the toes of his boots gleaming in the white light overhead. He scoffs as you enter, and brings them down.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="84" name="abelidle" tags="" position="475,1100" size="100,100">Abel &lt;%= window.idleAbel() %&gt;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="85" name="abelidle" tags="" position="600,1100" size="100,100">Abel &lt;%= window.idleAbel() %&gt;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="85" name="abelabel" tags="" position="600,1100" size="100,100">&quot;Tell me a bit about yourself, child.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="86" name="abelabel" tags="" position="725,1100" size="100,100">&quot;Tell me a bit about yourself, child.&quot;
 
 Abel &lt;%= window.idleAbel() %&gt; &quot;My name is **Abel** Atkins. I&#39;m 28. I work as a software engineer. What else do you want to know, *Father*?&quot; 
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="86" name="abelwork" tags="" position="725,1100" size="100,100">&quot;What do you do for work, child?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="87" name="abelwork" tags="" position="850,1100" size="100,100">&quot;What do you do for work, child?&quot;
 
 He &lt;%= window.idleAbel() %&gt;. &quot;I make websites for clients of **MegaCorp**,&quot; he says matter-of-factly. He doesn&#39;t seem particularly interested in talking about this.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="87" name="abelmegacorp" tags="" position="850,1100" size="100,100">&quot;What is it like, working at MegaCorp?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="88" name="abelmegacorp" tags="" position="975,1100" size="100,100">&quot;What is it like, working at MegaCorp?&quot;
 
 &quot;Oh, you know,&quot; he says, &quot;it pays the bills. More than enough, actually. I donate to **charity** what I don&#39;t need. Doing more good than you pigs in the *Ministry*.&quot; He seems to spit out that final word.
 
 [[&quot;That&#39;s very admirable.&quot;|abelmegacorp1]] &lt;br/&gt;
-[[&quot;Our Lord&#39;s work bears no worldly comparison, my child. Do not forget your place.&quot;|abelmegacorp2]]</tw-passagedata><tw-passagedata pid="88" name="abelmegacorp1" tags="" position="975,1100" size="100,100">&quot;That&#39;s very admirable.&quot;
+[[&quot;Our Lord&#39;s work bears no worldly comparison, my child. Do not forget your place.&quot;|abelmegacorp2]]</tw-passagedata><tw-passagedata pid="89" name="abelmegacorp1" tags="" position="1100,1100" size="100,100">&quot;That&#39;s very admirable.&quot;
 
 He seems touched, if only for a second, and scoffs. &quot;Thanks, Father.&quot;
 
 &lt;% window.changeStress(&quot;abel&quot;, -1) %&gt;
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="89" name="abelmegacorp2" tags="" position="1100,1100" size="100,100">&quot;Our Lord&#39;s work bears no worldly comparison, my child. Do not forget your place.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="90" name="abelmegacorp2" tags="" position="1225,1100" size="100,100">&quot;Our Lord&#39;s work bears no worldly comparison, my child. Do not forget your place.&quot;
 
 &quot;How classy of you, Father,&quot; he says, raising his voice. &quot;Oh, please leave some good for the rest of us to do! Don&#39;t eat it all up, shaking down innocent folk for a confession to pad your paycheck.&quot;
 
 He looks at you expectantly.
 
 &lt;% window.changeStress(&quot;abel&quot;, 1) %&gt;
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="90" name="abelcharity" tags="" position="1225,1100" size="100,100">&quot;You said you donated to charity.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="91" name="abelcharity" tags="" position="100,1225" size="100,100">&quot;You said you donated to charity.&quot;
 
 &quot;Yeah. What of it?&quot;
 
 [[&quot;Where do you donate?&quot;|abelcharity1]] &lt;br/&gt;
-[[&quot;Why do you donate?&quot;|abelcharity2]]</tw-passagedata><tw-passagedata pid="91" name="abelcharity1" tags="" position="100,1225" size="100,100">&quot;Where do you donate?&quot;
+[[&quot;Why do you donate?&quot;|abelcharity2]]</tw-passagedata><tw-passagedata pid="92" name="abelcharity1" tags="" position="225,1225" size="100,100">&quot;Where do you donate?&quot;
 
 He speaks coolly, &quot;I change it up every now and then,&quot; as if he knows this by heart, &quot;sometimes children&#39;s medical care, sometimes aid to countries in famine, other times to help the environment.&quot;
 
 [[&quot;How do you pick the charity?&quot;|abelcharity11]] &lt;br/&gt;
-[[&quot;Why those particular causes?&quot;|abelcharity12]]</tw-passagedata><tw-passagedata pid="92" name="abelcharity11" tags="" position="225,1225" size="100,100">&quot;How do you pick the charity?&quot;
+[[&quot;Why those particular causes?&quot;|abelcharity12]]</tw-passagedata><tw-passagedata pid="93" name="abelcharity11" tags="" position="350,1225" size="100,100">&quot;How do you pick the charity?&quot;
 
 &quot;I do my own research. Sometimes **Mia** will- I mean, would, recommend me one, but I&#39;d always verify that they did good. I still can&#39;t believe she&#39;s gone.&quot; He seems to choke up a little.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="93" name="abelcharity12" tags="" position="350,1225" size="100,100">&quot;Why those particular causes?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="94" name="abelcharity12" tags="" position="475,1225" size="100,100">&quot;Why those particular causes?&quot;
 
 He speaks in a matter-of-fact tone of voice, &quot;It&#39;s about those who can&#39;t help themselves,&quot; and seems to feel no need to elaborate.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="94" name="abelcharity2" tags="" position="475,1225" size="100,100">&quot;Why do you donate?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="95" name="abelcharity2" tags="" position="600,1225" size="100,100">&quot;Why do you donate?&quot;
 
 &lt;%= s.abelstress &gt; 1 ? &#39;He takes a deep breath, and exhales, leaning back and crossing his arms. &quot;You wouldn\&#39;t get it.&quot; &lt;br/&gt; &lt;br/&gt; *He\&#39;s too agitated to say more about this.*&#39; : &#39;&quot;Why do we do anything, Father? Charity leaves a good mark on the world, the real world. It\&#39;s a way of balancing out the **guilt** we feel.&quot;&#39; %&gt;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="95" name="abelguilt" tags="" position="600,1225" size="100,100">&quot;Tell me, child, what is it that you feel guilty about?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="96" name="abelguilt" tags="" position="725,1225" size="100,100">&quot;Tell me, child, what is it that you feel guilty about?&quot;
 
 &lt;% if (s.abelstress == 3 &amp;&amp; s.abelstress == 4) {
     %&gt; &quot;I killed her. I strangled her in my brother&#39;s bed.&quot; &lt;%
@@ -732,37 +736,37 @@ He speaks in a matter-of-fact tone of voice, &quot;It&#39;s about those who can&
     %&gt; &quot;Beyond the fact that merely existing harms the environment and takes resources away from those who need it? Not much.&quot; &lt;%
 } %&gt;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="96" name="abelcheat" tags="" position="725,1225" size="100,100">&quot;Have you ever cheated, child?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="97" name="abelcheat" tags="" position="850,1225" size="100,100">&quot;Have you ever cheated, child?&quot;
 
 Abel &lt;%= window.idleAbel() %&gt;. &quot;I have not, and would never cheat at anything. Nor would I ever cheat on anyone, Father.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="97" name="abelsteal" tags="" position="850,1225" size="100,100">&quot;Have you ever stolen, child?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="98" name="abelsteal" tags="" position="975,1225" size="100,100">&quot;Have you ever stolen, child?&quot;
 
 Abel &lt;%= window.idleAbel() %&gt;. &quot;No, Father. My family always had enough to live comfortable, and I make a good living these days.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="98" name="abellie" tags="" position="975,1225" size="100,100">&quot;Have you ever lied, child?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="99" name="abellie" tags="" position="1100,1225" size="100,100">&quot;Have you ever lied, child?&quot;
 
 Abel &lt;%= window.idleAbel() %&gt;. &quot;Nothing important, Father. White lies are a natural part of life.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="99" name="abelkane" tags="" position="1100,1225" size="100,100">You ask Abel about Kane Atkins. He seems to tense up somewhat as he answers.
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="100" name="abelkane" tags="" position="1225,1225" size="100,100">You ask Abel about Kane Atkins. He seems to tense up somewhat as he answers.
 
 &quot;Kane&#39;s my younger brother, he&#39;s a good kid. &quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="100" name="abelloyalty" tags="" position="1225,1225" size="100,100">&quot;What does loyalty mean to you, Abel?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="101" name="abelloyalty" tags="" position="100,1350" size="100,100">&quot;What does loyalty mean to you, Abel?&quot;
 
 &lt;%= s.abelstress &lt; 2 ? &#39;&quot;What does that matter?&quot;&#39; : &#39;&quot;I care about it. The worst thing you can do to someone is betray their trust.&quot;&#39; %&gt;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="101" name="abelrelationship to the victim" tags="" position="100,1350" size="100,100">You ask Abel about his relationship to the victim, Mia.
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="102" name="abelrelationship to the victim" tags="" position="225,1350" size="100,100">You ask Abel about his relationship to the victim, Mia.
 
 &quot;What can I say? I loved her. I&#39;m sad she&#39;s gone.&quot;
 
 [[&quot;How did you two meet?&quot;|abelmia1]] &lt;br/&gt;
-[[&quot;How long had you been together?&quot;|abelmia2]]</tw-passagedata><tw-passagedata pid="102" name="abelmia" tags="" position="225,1350" size="100,100">You ask Abel about the victim, Mia.
+[[&quot;How long had you been together?&quot;|abelmia2]]</tw-passagedata><tw-passagedata pid="103" name="abelmia" tags="" position="350,1350" size="100,100">You ask Abel about the victim, Mia.
 
 &quot;What can I say? I loved her. I&#39;m sad she&#39;s gone.&quot;
 
 [[&quot;How did you two meet?&quot;|abelmia1]] &lt;br/&gt;
-[[&quot;How long had you been together?&quot;|abelmia2]]</tw-passagedata><tw-passagedata pid="103" name="abelmia1" tags="" position="350,1350" size="100,100">&quot;How did you two meet?&quot;
+[[&quot;How long had you been together?&quot;|abelmia2]]</tw-passagedata><tw-passagedata pid="104" name="abelmia1" tags="" position="475,1350" size="100,100">&quot;How did you two meet?&quot;
 
 &lt;% if (s.abelstress == 3) {
     %&gt;Abel&#39;s head is in his hands, and he doesn&#39;t repond.
@@ -777,7 +781,7 @@ Abel &lt;%= window.idleAbel() %&gt;. &quot;Nothing important, Father. White lies
     %&gt;&quot;Why do you want to know? Not like it&#39;s going to bring her back.&quot;
     &lt;br/&gt; &lt;br/&gt;
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-} %&gt;</tw-passagedata><tw-passagedata pid="104" name="abelmia11" tags="" position="475,1350" size="100,100">&quot;Is there a reason you were single for so long?&quot;
+} %&gt;</tw-passagedata><tw-passagedata pid="105" name="abelmia11" tags="" position="600,1350" size="100,100">&quot;Is there a reason you were single for so long?&quot;
 
 &lt;% if (s.abelasked.length &gt; 5) { 
     %&gt;&quot;There is, Father.&quot;
@@ -790,13 +794,13 @@ Abel &lt;%= window.idleAbel() %&gt;. &quot;Nothing important, Father. White lies
     *You might need to build a rapport with him before he tells you more.*
     &lt;br/&gt;
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-} %&gt;</tw-passagedata><tw-passagedata pid="105" name="abelmia111" tags="" position="600,1350" size="100,100">&quot;You must tell me what it is, child,&quot; you say, raising your voice. He winces slightly.
+} %&gt;</tw-passagedata><tw-passagedata pid="106" name="abelmia111" tags="" position="725,1350" size="100,100">&quot;You must tell me what it is, child,&quot; you say, raising your voice. He winces slightly.
 
 &lt;% window.changeStress(&quot;abel&quot;, 1) %&gt;
 
 &quot;I had some... trust issues, Father. From a previous relationship.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="106" name="abelmia112" tags="" position="725,1350" size="100,100">&quot;You may speak freely, child. First and foremost, I am here to listen.&quot; Your words seem to soothe him somewhat.
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="107" name="abelmia112" tags="" position="850,1350" size="100,100">&quot;You may speak freely, child. First and foremost, I am here to listen.&quot; Your words seem to soothe him somewhat.
 
 &lt;% window.changeStress(&quot;abel&quot;, -1) %&gt;
 &lt;% s.abelasked.push(&quot;abelmia112&quot;) %&gt;
@@ -807,30 +811,30 @@ The memories seems to anger him, and a confident expression returns to his face.
 
 &quot;You can imagine why I wasn&#39;t rushing to get with someone after that.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="107" name="abelmia12" tags="" position="850,1350" size="100,100">&quot;Tell me more about your relationship with Mia.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="108" name="abelmia12" tags="" position="975,1350" size="100,100">&quot;Tell me more about your relationship with Mia.&quot;
 
 &quot;What can I say? We started hanging out more, and eventually she moved in with me. We&#39;d just celebrated our 4 year anniversary when... well, you know the rest.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="108" name="abelmia2" tags="" position="975,1350" size="100,100">&quot;How long had you been together?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="109" name="abelmia2" tags="" position="1100,1350" size="100,100">&quot;How long had you been together?&quot;
 
 &quot;Four years... just over four years. I wonder how I will feel, another four years from now...&quot;
 
 He seems lost in thought.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="109" name="abelcasey" tags="" position="1100,1350" size="100,100">You ask Abel about Casey, Kane&#39;s neighbor.
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="110" name="abelcasey" tags="" position="1225,1350" size="100,100">You ask Abel about Casey, Kane&#39;s neighbor.
 
 &quot;I don&#39;t really know them, if I&#39;m being honest. Nice of them to call my brother about the **burglary**, though.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="110" name="abelalibi" tags="" position="1225,1350" size="100,100">&quot;Where were you when Mia was killed?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="111" name="abelalibi" tags="" position="100,1475" size="100,100">&quot;Where were you when Mia was killed?&quot;
 
 Abel&lt;%= window.idleAbel() %&gt;. &quot;At the **Shepherd&#39;s Tavern**, with my brother **Kane**. We&#39;d been **drinking** that night, and **Mia** got tired enough that she wanted to sleep. We were near enough **Kane**&#39;s **apartment**, so she headed to bed.&quot; 
 
 [[&quot;What time did she go to his apartment?&quot;|abelalibi1]] &lt;br/&gt;
-[[&quot;How long were you at the bar?&quot;|abelalibi2]]</tw-passagedata><tw-passagedata pid="111" name="abelalibi1" tags="" position="100,1475" size="100,100">&quot;What time did she go to his apartment?&quot;
+[[&quot;How long were you at the bar?&quot;|abelalibi2]]</tw-passagedata><tw-passagedata pid="112" name="abelalibi1" tags="" position="225,1475" size="100,100">&quot;What time did she go to his apartment?&quot;
 
 He thinks for a moment. &quot;About... 10 o&#39;clock. She was very tired that evening.&quot;
 
-[[&quot;Why?&quot;|abelalibi11]]</tw-passagedata><tw-passagedata pid="112" name="abelalibi11" tags="" position="225,1475" size="100,100">&quot;Why?&quot;
+[[&quot;Why?&quot;|abelalibi11]]</tw-passagedata><tw-passagedata pid="113" name="abelalibi11" tags="" position="350,1475" size="100,100">&quot;Why?&quot;
 
 &lt;% if (s.abelasked.length &gt; 5) { 
     %&gt; &quot;This isn&#39;t relevant, but she&#39;d been having trouble staying asleep lately. She was always awake at 4, 5 in the mornings.&quot;
@@ -842,97 +846,80 @@ He thinks for a moment. &quot;About... 10 o&#39;clock. She was very tired that e
     &lt;br/&gt;
     *You might need to build a rapport with him before he tells you more.*
     &lt;%= story.render(&quot;abelActions&quot;) %&gt; &lt;%
-} %&gt;</tw-passagedata><tw-passagedata pid="113" name="abelalibi2" tags="" position="350,1475" size="100,100">&quot;How long were you at the bar?&quot;
+} %&gt;</tw-passagedata><tw-passagedata pid="114" name="abelalibi2" tags="" position="475,1475" size="100,100">&quot;How long were you at the bar?&quot;
 
 He squints his eyes. &quot;Couple hours, easy. We left past midnight, and walked back to find the police swarming my brother&#39;s **apartment**.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="114" name="abeldrinking" tags="" position="475,1475" size="100,100">&quot;How much did you have to drink?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="115" name="abeldrinking" tags="" position="600,1475" size="100,100">&quot;How much did you have to drink?&quot;
 
 Abel &lt;%= window.idleAbel() %&gt;. &quot;A good bit, I&#39;d say. More than a few pints.&quot;
 
-[[&quot;What was everyone having?&quot;|abeldrinking1]]
-[[&quot;Were you drunk?&quot;|abeldrinking2]]</tw-passagedata><tw-passagedata pid="115" name="abeldrinking1" tags="" position="600,1475" size="100,100">&quot;What was everyone having?&quot;
+[[&quot;What was everyone having?&quot;|abeldrinking1]]&lt;br/&gt;
+[[&quot;Were you drunk?&quot;|abeldrinking2]]</tw-passagedata><tw-passagedata pid="116" name="abeldrinking1" tags="" position="725,1475" size="100,100">&quot;What was everyone having?&quot;
 
 He thinks for a second before answering. &quot;Beer. We were all having beer that evening.&quot;
 
 &lt;% if (s.kaneasked.includes(&quot;drinking&quot;)) {
     %&gt; [[&quot;Kane said you had shots. Which is it?&quot;|abeldrinking11]] &lt;%
 } else {
-    %&gt; story.render(&quot;abelActions&quot;) &lt;%
+    %&gt; &lt;%=story.render(&quot;abelActions&quot;)%&gt; &lt;%
 }
-%&gt;</tw-passagedata><tw-passagedata pid="116" name="abeldrinking11" tags="" position="725,1475" size="100,100">&quot;Kane said you had shots. Which is it?&quot;
+%&gt;</tw-passagedata><tw-passagedata pid="117" name="abeldrinking11" tags="" position="850,1475" size="100,100">&quot;Kane said you had shots. Which is it?&quot;
 
 He blinks once, then twice. His lips purse instinctively. &quot;My mistake. Yes, we had shots that evening. I must&#39;ve mixed it up with the night before, when we were having beer.&quot;
 
 &lt;% window.changeStress(&quot;abel&quot;, 1) %&gt;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="117" name="abeldrinking2" tags="" position="850,1475" size="100,100">&quot;Were you drunk?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="118" name="abeldrinking2" tags="" position="975,1475" size="100,100">&quot;Were you drunk?&quot;
 
 He laughs for a moment. &quot;No, Father, I have quite a high tolerance to alcohol. I don&#39;t get drunk very easily. **Mia** and **Kane**, on the other hand, not so much.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="118" name="abelshepherd&#39;s tavern" tags="" position="975,1475" size="100,100">&quot;Tell me about the Shepherd&#39;s Tavern. Where is it?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="119" name="abelshepherd&#39;s tavern" tags="" position="1100,1475" size="100,100">&quot;Tell me about the Shepherd&#39;s Tavern. Where is it?&quot;
 
 Abel &lt;%= window.idleAbel() %&gt;. &quot;A couple streets over from **Kane**&#39;s.&quot;
 
-[[&quot;Do you go there often?&quot;|abelshepherd&#39;s tavern1]]
-[[&quot;How long does it take to get to the apartment from there?&quot;|abelshepherd&#39;s tavern2]]</tw-passagedata><tw-passagedata pid="119" name="abelshepherd&#39;s tavern1" tags="" position="1100,1475" size="100,100">&quot;Do you go there often?&quot;
+[[&quot;Do you go there often?&quot;|abelshepherd&#39;s tavern1]]&lt;br/&gt;
+[[&quot;How long does it take to get to the apartment from there?&quot;|abelshepherd&#39;s tavern2]]</tw-passagedata><tw-passagedata pid="120" name="abelshepherd&#39;s tavern1" tags="" position="1225,1475" size="100,100">&quot;Do you go there often?&quot;
 
 &quot;Not really. The barkeep wouldn&#39;t even recognize me if you asked him.&quot;
 
-[[Press him.|abelshepherd&#39;s tavern11]]
-[[Let it go.|abelshepherd&#39;s tavern12]]</tw-passagedata><tw-passagedata pid="120" name="abelshepherd&#39;s tavern11" tags="" position="1225,1475" size="100,100">&quot;I find that hard to believe. You have quite the distinctive face and manner, my child.&quot;
+[[Press him.|abelshepherd&#39;s tavern11]]&lt;br/&gt;
+[[Let it go.|abelshepherd&#39;s tavern12]]</tw-passagedata><tw-passagedata pid="121" name="abelshepherd&#39;s tavern11" tags="" position="100,1600" size="100,100">&quot;I find that hard to believe. You have quite the distinctive face and manner, my child.&quot;
 
 He tightly crosses his arms. &quot;You would be surprised, Father. This country is full of bald chaps with an attitude.&quot;
 
 &lt;% window.changeStress(&quot;abel&quot;, 1) %&gt;
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="121" name="abelshepherd&#39;s tavern12" tags="" position="100,1600" size="100,100">&quot;I suppose it must&#39;ve been a busy night then.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="122" name="abelshepherd&#39;s tavern12" tags="" position="225,1600" size="100,100">&quot;I suppose it must&#39;ve been a busy night then.&quot;
 
 &quot;Yeah, I guess so.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="122" name="abelmotive" tags="" position="225,1600" size="100,100">&quot;Tell me, my child. Did you have anything against Mia?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="123" name="abelmotive" tags="" position="350,1600" size="100,100">&quot;Tell me, my child. Did you have anything against Mia?&quot;
 
-&lt;% if (s.abelstress == 3 ) {
-    %&gt;&quot;N-no,&quot; he says, on the verge of breaking down. &quot;I would never harm her.&quot; There&#39;s a hint of apprehension in his voice.
-    &lt;br/&gt; &lt;br/&gt;
-    &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-} else if (s.abelstress == 2 ) {
-    %&gt;Abel shakes his head. &quot;No, of course not. Don&#39;t you understand that I loved her, Father? I loved her, and she&#39;s dead.&quot;
-    &lt;br/&gt; &lt;br/&gt;
-    *He&#39;s too composed to tell you more right now.*
-    &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-    &lt;%
-} else {
-    %&gt;Abel laughs in your face. &quot;Like any other couple, we had our disagreements. But you&#39;d be insane to suggest I would kill her.&quot;
-    &lt;br/&gt; &lt;br/&gt;
-    *He&#39;s too composed to tell you more right now.*
-    &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-} %&gt;
-
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="123" name="abelbigcorp" tags="" position="350,1600" size="100,100">&quot;What can you tell me about BigCorp?&quot;
+&lt;% if (s.abelstress == 3 ) { %&gt;&quot;N-no,&quot; he says, on the verge of breaking down. &quot;I would never harm her.&quot; There&#39;s a hint of apprehension in his voice. &lt;br/&gt; &lt;br/&gt; &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;% } else if (s.abelstress == 2 ) { %&gt;Abel shakes his head. &quot;No, of course not. Don&#39;t you understand that I loved her, Father? I loved her, and she&#39;s dead.&quot; &lt;br/&gt; &lt;br/&gt; *He&#39;s too composed to tell you more right now.* &lt;%= story.render(&quot;abelActions&quot;) %&gt; &lt;% } else { %&gt;Abel laughs in your face. &quot;Like any other couple, we had our disagreements. But you&#39;d be insane to suggest I would kill her.&quot; &lt;br/&gt; &lt;br/&gt; *He&#39;s too composed to tell you more right now.* &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="124" name="abelbigcorp" tags="" position="475,1600" size="100,100">&quot;What can you tell me about BigCorp?&quot;
 
 Abel&lt;%= window.idleAbel() %&gt;. He takes a moment to respond. &quot;**Mia** used to work there. So does **Kane**.&quot;
 
 [[&quot;How long had Mia been working there for?&quot;|abelbigcorp1]] &lt;br/&gt;
-[[&quot;How long has Kane been working there for?&quot;|abelbigcorp2]]</tw-passagedata><tw-passagedata pid="124" name="abelbigcorp1" tags="" position="475,1600" size="100,100">&quot;How long had Mia been working there for?&quot;
+[[&quot;How long has Kane been working there for?&quot;|abelbigcorp2]]</tw-passagedata><tw-passagedata pid="125" name="abelbigcorp1" tags="" position="600,1600" size="100,100">&quot;How long had Mia been working there for?&quot;
 
 &quot;She started not long after we got together, as a fresh graduate, &quot; he tells you reluctantly. &quot;They paid her reasonably well, so she stuck around.&quot;
 
 [[&quot;What work did she do?&quot;|abelbigcorp11]] &lt;br/&gt;
-[[&quot;Were there any issues at work?&quot;|abelbigcorp12]]</tw-passagedata><tw-passagedata pid="125" name="abelbigcorp11" tags="" position="600,1600" size="100,100">&quot;What work did she do?&quot;
+[[&quot;Were there any issues at work?&quot;|abelbigcorp12]]</tw-passagedata><tw-passagedata pid="126" name="abelbigcorp11" tags="" position="725,1600" size="100,100">&quot;What work did she do?&quot;
 
 &quot;Data analytics, I think. She transferred around a few times internally, and I... lost track after a point.&quot; He looks down at his feet.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="126" name="abelbigcorp12" tags="" position="725,1600" size="100,100">&quot;Were there any issues at work?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="127" name="abelbigcorp12" tags="" position="850,1600" size="100,100">&quot;Were there any issues at work?&quot;
 
 &quot;No, none that I knew of. **Mia** was the sweetest, and she transferred to work with **Kane** last year.&quot;
 
 He seems to hesitate for a moment. &quot;He would&#39;ve told me if there was anything wrong.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="127" name="abelbigcorp2" tags="" position="850,1600" size="100,100">&quot;How long has Kane been working there for?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="128" name="abelbigcorp2" tags="" position="975,1600" size="100,100">&quot;How long has Kane been working there for?&quot;
 
 He lets out a whistle. &quot;Since before he graduated uni. Did an internship with them, I think, and they offered him a job when he got his diploma.&quot; There&#39;s pride in his voice, but a hint of **resentment** as well.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="128" name="abelresentment" tags="" position="975,1600" size="100,100">&quot;Do you resent your brother?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="129" name="abelresentment" tags="" position="1100,1600" size="100,100">&quot;Do you resent your brother?&quot;
 
 &lt;% if (s.abelstress == 3) {
     %&gt;Abel stares at you, his eyes blank.
@@ -940,7 +927,7 @@ He lets out a whistle. &quot;Since before he graduated uni. Did an internship wi
     *He&#39;s too stressed to tell you more right now.*
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
 } else if (s.abelstress == 2 ) {
-    %&gt;Abel shakes his head. &quot;No, I didn&#39;t resent him. **Kane** is my brother, I&#39;ve got his back to the end. No, I was just... a bit **sorry* for him.&quot;
+    %&gt;Abel shakes his head. &quot;No, I didn&#39;t resent him. **Kane** is my brother, I&#39;ve got his back to the end. No, I was just... a bit *sorry* for him.&quot;
     &lt;br/&gt; &lt;br/&gt;
     [[&quot;Why were you sorry for Kane?&quot;|abelresentment1]] &lt;br/&gt;
     &lt;%
@@ -949,25 +936,25 @@ He lets out a whistle. &quot;Since before he graduated uni. Did an internship wi
     &lt;br/&gt; &lt;br/&gt;
     *He&#39;s too composed to tell you more right now.*
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-} %&gt;</tw-passagedata><tw-passagedata pid="129" name="abelresentment1" tags="" position="1100,1600" size="100,100">&quot;Why were you sorry for Kane?&quot;
+} %&gt;</tw-passagedata><tw-passagedata pid="130" name="abelresentment1" tags="" position="1225,1600" size="100,100">&quot;Why were you sorry for Kane?&quot;
 
-He lets out a deep sigh. &quot;Can&#39;t you tell? **Kane** hasn&#39;t always been the most popular. Being the clever kid, he got bullied a lot.Had to save his rear more than a couple times.&quot; He lets out a mirthless chuckle. &quot;Was never popular with the ladies, either.&quot;
+He lets out a deep sigh. &quot;Can&#39;t you tell? **Kane** hasn&#39;t always been the most popular. Being the clever kid, he got bullied a lot. Had to save his rear more than a couple times.&quot; He lets out a mirthless chuckle. &quot;Was never popular with the ladies, either.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="130" name="abelstrangulation" tags="" position="1225,1600" size="100,100">You ask Abel about Mia&#39;s strangulation.
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="131" name="abelstrangulation" tags="" position="100,1725" size="100,100">You ask Abel about Mia&#39;s strangulation.
 
 He shakes his head. &quot;Please, Father. I don&#39;t want to talk about that.&quot;
 &lt;% window.changeStress(&quot;abel&quot;, 1) %&gt;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="131" name="abelapartment" tags="" position="100,1725" size="100,100">&quot;Tell me about Kane&#39;s apartment.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="132" name="abelapartment" tags="" position="225,1725" size="100,100">&quot;Tell me about Kane&#39;s apartment.&quot;
 
 He&lt;%= window.idleAbel() %&gt;. &quot;It&#39;s fairly small, just enough space for him to be comfortable in, I suppose. I imagine he&#39;d have more to tell you about it.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="132" name="abelburglary" tags="" position="225,1725" size="100,100">&quot;What do you know about the burglary that supposedly occured the evening of the 16th?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="133" name="abelburglary" tags="" position="350,1725" size="100,100">&quot;What do you know about the burglary that supposedly occured the evening of the 16th?&quot;
 
 He&lt;%= window.idleAbel() %&gt;. &quot;All I know is someone broke in through a window, strangled the love of my life, and left before anyone could catch them.&quot;
 
-[[&quot;Why do you think they strangled Mia?&quot;|abelburglary1]]
-[[&quot;How do you think they got away?&quot;|abelburglary2]]</tw-passagedata><tw-passagedata pid="133" name="abelburglary1" tags="" position="350,1725" size="100,100">&quot;Why do you think they strangled Mia?&quot;
+[[&quot;Why do you think they strangled Mia?&quot;|abelburglary1]]&lt;br/&gt;
+[[&quot;How do you think they got away?&quot;|abelburglary2]]</tw-passagedata><tw-passagedata pid="134" name="abelburglary1" tags="" position="475,1725" size="100,100">&quot;Why do you think they strangled Mia?&quot;
 
 &lt;% if (s.abelstress == 3) {
     %&gt;Abel shrugs softly. &quot;Maybe...&quot; He trails off, before shaking his head. &quot;Nevermind.&quot;
@@ -982,7 +969,7 @@ He&lt;%= window.idleAbel() %&gt;. &quot;All I know is someone broke in through a
     &lt;br/&gt; &lt;br/&gt;
     *He&#39;s too composed to tell you more right now.*
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-} %&gt;</tw-passagedata><tw-passagedata pid="134" name="abelburglary2" tags="" position="475,1725" size="100,100">&quot;How do you think they got away?&quot;
+} %&gt;</tw-passagedata><tw-passagedata pid="135" name="abelburglary2" tags="" position="600,1725" size="100,100">&quot;How do you think they got away?&quot;
 
 &lt;% if (s.abelstress == 3) {
     %&gt;&quot;How should I know?&quot;
@@ -996,38 +983,36 @@ He&lt;%= window.idleAbel() %&gt;. &quot;All I know is someone broke in through a
     %&gt;&quot;Why don&#39;t you ask the police that question, *Father*?&quot;
     &lt;br/&gt; &lt;br/&gt;
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-} %&gt;
+} %&gt;</tw-passagedata><tw-passagedata pid="136" name="abelbroken window" tags="" position="725,1725" size="100,100">You ask Abel about the broken window.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="135" name="abelbroken window" tags="" position="600,1725" size="100,100">You ask Abel about the broken window.
+He&lt;%= window.idleAbel() %&gt;. &quot;Yeah, I suppose the burgler broke it for some reason. Couldn&#39;t tell you why.&quot;
 
-He&lt;%= window.idleAbel %&gt;. &quot;Yeah, I suppose the burgler broke it for some reason. Couldn&#39;t tell you why.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="137" name="abelsafe" tags="" position="850,1725" size="100,100">You ask Abel about the safe.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="136" name="abelsafe" tags="" position="725,1725" size="100,100">You ask Abel about the safe.
+He&lt;%= window.idleAbel() %&gt;. &quot;I don&#39;t really know much about that. You should ask **Kane**.&quot;
 
-He&lt;%= window.idleAbel %&gt;. &quot;I don&#39;t really know much about that. You should ask **Kane**.&quot;
-
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="137" name="abel1912" tags="" position="850,1725" size="100,100">&quot;Do the digits 1912 have any significance to you?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="138" name="abel1912" tags="" position="975,1725" size="100,100">&quot;Do the digits 1912 have any significance to you?&quot;
 
 Abel looks confused for a moment. &quot;That&#39;s **Mia&#39;s birthday**.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="138" name="abelmia&#39;s birthday" tags="" position="975,1725" size="100,100">&quot;Why would Kane&#39;s safe code be Mia&#39;s birthday?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="139" name="abelmia&#39;s birthday" tags="" position="1100,1725" size="100,100">&quot;Why would Kane&#39;s safe code be Mia&#39;s birthday?&quot;
 
 &lt;% if (s.abelstress == 3) {
-    %&gt;&quot;I- I don&#39;t really know. There might be some reason why it would be... nothing important, I&#39;m sure.&quot; He trails off, unable to give you an answer.
-    &lt;br/&gt; &lt;br/&gt;
-    [[Press him.|abelmia&#39;s birthday1]]
-    [[Let it go.|abelmia&#39;s birthday2]] &lt;%
+    %&gt;&lt;p&gt;&quot;I- I don&#39;t really know. There might be some reason why it would be... nothing important, I&#39;m sure.&quot; He trails off, unable to give you an answer.&lt;/p&gt;
+    &lt;p&gt;
+    [[Press him.|abelmia&#39;s birthday1]]&lt;br/&gt;
+    [[Let it go.|abelmia&#39;s birthday2]] &lt;/p&gt;&lt;%
 } else if (s.abelstress == 2 ) {
-    %&gt;He rests his chin on his hand. &quot;I&#39;m sure it also happens to be the number to something else he cares about. Maybe the year **1912**?&quot; He doesn&#39;t even seem to find his own haphazard guess believable.
-    &lt;br/&gt; &lt;br/&gt;
-    [[Press him.|abelmia&#39;s birthday3]]
-    [[Let it go.|abelmia&#39;s birthday31]] &lt;%
+    %&gt;&lt;p&gt;He rests his chin on his hand. &quot;I&#39;m sure it also happens to be the number to something else he cares about. Maybe the year **1912**?&quot; He doesn&#39;t even seem to find his own haphazard guess believable.
+    &lt;/p&gt;&lt;p&gt;
+    [[Press him.|abelmia&#39;s birthday3]]&lt;br/&gt;
+    [[Let it go.|abelmia&#39;s birthday31]] &lt;/p&gt;&lt;%
 } else {
-    %&gt;&quot;Whatever it is you want to know about my brother&#39;s actions, go ask him. I&#39;m not telling you jack.&quot;
-    &lt;br/&gt; &lt;br/&gt;
-    *He&#39;s too composed to tell you more right now.*
+    %&gt;&lt;p&gt;&quot;Whatever it is you want to know about my brother&#39;s actions, go ask him. I&#39;m not telling you jack.&quot;&lt;/p.&gt;
+    &lt;p&gt;
+    *He&#39;s too composed to tell you more right now.*&lt;/p&gt;
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-} %&gt;</tw-passagedata><tw-passagedata pid="139" name="abelmia&#39;s birthday1" tags="" position="1100,1725" size="100,100">&quot;My child, it&#39;s clear in your trembling lips that you know the answer. Tell me, and I will absolve you of your sins.&quot;
+} %&gt;</tw-passagedata><tw-passagedata pid="140" name="abelmia&#39;s birthday1" tags="" position="1225,1725" size="100,100">&quot;My child, it&#39;s clear in your trembling lips that you know the answer. Tell me, and I will absolve you of your sins.&quot;
 
 &lt;% if (s.abelasked.includes(&quot;christmas party&quot;)) {
     %&gt;He is trembling in his chair.&quot;Since the **christmas party**... they seemed closer.&quot; He starts shaking his head violently. &lt;br/&gt; &lt;br/&gt;
@@ -1039,92 +1024,92 @@ Abel looks confused for a moment. &quot;That&#39;s **Mia&#39;s birthday**.&quot;
     &lt;br/&gt; &lt;br/&gt;
     *He has more to say, but you need to bring up another topic first.*
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-} %&gt;</tw-passagedata><tw-passagedata pid="140" name="abelmia&#39;s birthday2" tags="" position="1225,1725" size="100,100">&quot;Let us move on, child. It is in the past and her soul has ascended to heaven.&quot;
+} %&gt;</tw-passagedata><tw-passagedata pid="141" name="abelmia&#39;s birthday2" tags="" position="100,1850" size="100,100">&quot;Let us move on, child. It is in the past and her soul has ascended to heaven.&quot;
 
 He has trouble looking you in the eye. &quot;Yes, Father, let&#39;s.&quot;
 
 &lt;% window.changeStress(&quot;abel&quot;, -1) %&gt;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="141" name="abelmia&#39;s birthday3" tags="" position="100,1850" size="100,100">&quot;My child, it&#39;s clear in your voice that even you do not believe yourself. Tell me, and I will absolve you of your sins.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="142" name="abelmia&#39;s birthday3" tags="" position="225,1850" size="100,100">&quot;My child, it&#39;s clear in your voice that even you do not believe yourself. Tell me, and I will absolve you of your sins.&quot;
 
 &quot;No, really, Father. **1912** was... the year the **Titanic** sank, right?&quot; His eyes seem to be urging you to accept his explanation. &quot;He&#39;s always been fascinated with that ship. I&#39;m sure that&#39;s why.&quot;
 
 [[Accept it.|abelmia&#39;s birthday31]] &lt;br/&gt;
-[[Press him further, aggressively.|abelmia&#39;s birthday32]]</tw-passagedata><tw-passagedata pid="142" name="abelmia&#39;s birthday31" tags="" position="225,1850" size="100,100">&quot;Very well, my child.&quot;
+[[Press him further, aggressively.|abelmia&#39;s birthday32]]</tw-passagedata><tw-passagedata pid="143" name="abelmia&#39;s birthday31" tags="" position="350,1850" size="100,100">&quot;Very well, my child.&quot;
 
 He seems relieved.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="143" name="abelmia&#39;s birthday32" tags="" position="350,1850" size="100,100">You slam your hands on the table. &quot;You are not being honest with me, child.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="144" name="abelmia&#39;s birthday32" tags="" position="475,1850" size="100,100">You slam your hands on the table. &quot;You are not being honest with me, child.&quot;
 
 He winces at the loud noise. &quot;I swear to all that is holy, Father. I can&#39;t think of any other reason he&#39;d use the code **1912** for this **safe**.&quot; He meets your gaze. &quot;You must believe me.&quot;
 
 &lt;% window.changeStress(&quot;abel&quot;, 1) %&gt;
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="144" name="abelchristmas party" tags="" position="475,1850" size="100,100">&quot;What do you know about the BigCorp Christmas party last year?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="145" name="abelchristmas party" tags="" position="600,1850" size="100,100">&quot;What do you know about the BigCorp Christmas party last year?&quot;
 
 &quot;I know they had it, and both my brother and **Mia** were there. What else is there to know?&quot;
 
-[[&quot;Kane told me about an... incident.&quot;|abelchristmas party1]]</tw-passagedata><tw-passagedata pid="145" name="abelchristmas party1" tags="" position="600,1850" size="100,100">&quot;Kane told me about an... incident.&quot;
+[[&quot;Kane told me about an... incident.&quot;|abelchristmas party1]]</tw-passagedata><tw-passagedata pid="146" name="abelchristmas party1" tags="" position="725,1850" size="100,100">&quot;Kane told me about an... incident.&quot;
 
 You tell him about what happened at the Christmas party.
 
 &lt;% if (s.abelstress == 3) {
-    %&gt;Abel looks at you in disbelief. &quot;So... so what? I still loved **Mia**, okay? We all have our flaws and weaknesses. I forgive her.&quot; The words seem forced.
-    &lt;br/&gt; &lt;br/&gt;
+    %&gt;&lt;p&gt;Abel looks at you in disbelief. &quot;So... so what? I still loved **Mia**, okay? We all have our flaws and weaknesses. I forgive her.&quot; The words seem forced.&lt;/p&gt;
+    &lt;p&gt;
     [[Press him.|abelchristmas party11]] &lt;br/&gt;
-    [[Let it go, he&#39;s very upset.|abelchristmas party12]] &lt;%
+    [[Let it go, he&#39;s very upset.|abelchristmas party12]]&lt;/p&gt; &lt;%
 } else if (s.abelstress == 2 ) {
-    %&gt; He stares at you for several seconds before leaning back. &quot;I don&#39;t believe for a second they would do that to me, Father.&quot; His words seem a little hollow, though.
-    &lt;br/&gt; &lt;br/&gt;
+    %&gt;&lt;p&gt; He stares at you for several seconds before leaning back. &quot;I don&#39;t believe for a second they would do that to me, Father.&quot; His words seem a little hollow, though.&lt;/p&gt;
+    &lt;p&gt;
     [[Press him.|abelchristmas party13]] &lt;br/&gt;
-    [[Let it go.|abelchristmas party14]] &lt;%
+    [[Let it go.|abelchristmas party14]] &lt;/p&gt;&lt;%
 } else {
-    %&gt; He blinks at you, once, before laughing. &quot;Father, did you really think I&#39;d believe some lie about **Mia** designed to upset me?&quot;
-    &lt;br/&gt; &lt;br/&gt;
-    *He&#39;s too composed to tell you more right now.*
+    %&gt; &lt;p&gt;He blinks at you, once, before laughing. &quot;Father, did you really think I&#39;d believe some lie about **Mia** designed to upset me?&quot;&lt;/p&gt;
+    &lt;p&gt;
+    *He&#39;s too composed to tell you more right now.*&lt;/p&gt;
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-} %&gt;</tw-passagedata><tw-passagedata pid="146" name="abelchristmas party11" tags="" position="725,1850" size="100,100">&lt;% if (s.abelasked.includes(&quot;abelmia112&quot;)) {
-    %&gt; &quot;I find that very hard to believe, child, given your past history with infidelity. Be truthful and God shall cleanse your sins.&quot; &lt;br/&gt; &lt;br/&gt;
-    Abel stares off, not speaking. His chest rises with his breaths. &lt;br/&gt; &lt;br/&gt;
-    [[Press him harder. Make him talk.|abelchristmas party111]]
-    [[Let him go, this man has gone through enough.|abelchristmas party112]] &lt;%
+} %&gt;</tw-passagedata><tw-passagedata pid="147" name="abelchristmas party11" tags="" position="850,1850" size="100,100">&lt;% if (s.abelasked.includes(&quot;abelmia112&quot;)) {
+    %&gt;&lt;p&gt; &quot;I find that very hard to believe, child, given your past history with infidelity. Be truthful and God shall cleanse your sins.&quot; &lt;br/&gt; &lt;br/&gt;
+    Abel stares off, not speaking. His chest rises with his breaths. &lt;/p&gt;&lt;p&gt;
+    [[Press him harder. Make him talk.|abelchristmas party111]]&lt;br/&gt;
+    [[Let him go, this man has gone through enough.|abelchristmas party112]] &lt;/p&gt;&lt;%
 } else if (s.abelasked.includes(&quot;loyalty&quot;)) {
-    %&gt; &quot;I find that hard to believe, child. Didn&#39;t you say yourself that you valued loyalty?&quot; &lt;br/&gt; &lt;br/&gt;
+    %&gt; &lt;p&gt;&quot;I find that hard to believe, child. Didn&#39;t you say yourself that you valued loyalty?&quot; &lt;br/&gt; &lt;br/&gt;
     He speaks slowly. &quot;I did, Father.&quot; He crosses his arms, looking down at the table. &quot;But she&#39;s dead. And being angry at her isn&#39;t going to bring her back. It&#39;s not going to achieve anything at all.&quot; &lt;br/&gt; &lt;br/&gt;
-    His words seem heavy, somehow, but you don&#39;t know why. &lt;br/&gt; &lt;br/&gt;
-    *If only you knew more to press him on. Maybe about his relationship with Mia?*
+    His words seem heavy, somehow, but you don&#39;t know why. &lt;/p&gt;
+    &lt;p&gt;*If only you knew more to press him on. Maybe about his relationship with Mia?*&lt;/p&gt;
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
 } else {
-    %&gt; &quot;Are you sure about that, child? Your girlfriend and brother went behind your back and-&quot; &lt;br/&gt; &lt;br/&gt;
-    He cuts you off. &quot;Yes, Father, you told me. I&#39;m fine with it.&quot; &lt;br/&gt; &lt;br/&gt;
-    *You don&#39;t know enough at the moment to press him effectively.*
+    %&gt; &lt;p&gt;&quot;Are you sure about that, child? Your girlfriend and brother went behind your back and-&quot; &lt;br/&gt; &lt;br/&gt;
+    He cuts you off. &quot;Yes, Father, you told me. I&#39;m fine with it.&quot; &lt;/p&gt;
+    &lt;p&gt;*You don&#39;t know enough at the moment to press him effectively.*&lt;/p&gt;
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-}%&gt;</tw-passagedata><tw-passagedata pid="147" name="abelchristmas party111" tags="" position="850,1850" size="100,100">You stand up, raising your voice. As you speak, you are large, and Abel is small, pressed into his chair under the curshing weight of your gaze. &quot;Speak to me now, *child*.&quot;
+}%&gt;</tw-passagedata><tw-passagedata pid="148" name="abelchristmas party111" tags="" position="975,1850" size="100,100">You stand up, raising your voice. As you speak, you are large, and Abel is small, pressed into his chair under the curshing weight of your gaze. &quot;Speak to me now, *child*.&quot;
 
 &quot;She knew.&quot;
 
-[[&quot;What did she know?&quot;|abelchristmas party1111]]</tw-passagedata><tw-passagedata pid="148" name="abelchristmas party1111" tags="" position="975,1850" size="100,100">&quot;What did she know?&quot;
+[[&quot;What did she know?&quot;|abelchristmas party1111]]</tw-passagedata><tw-passagedata pid="149" name="abelchristmas party1111" tags="" position="1100,1850" size="100,100">&quot;What did she know?&quot;
 
 &quot;She knew that Eliza- my first girlfriend- had that **affair** with my best friend.&quot;
 
-[[&quot;She knew, and yet she kissed your brother.&quot;|abel christmasparty11111]]</tw-passagedata><tw-passagedata pid="149" name="abelchristmas party11111" tags="" position="1100,1850" size="100,100">&quot;She knew, and yet she kissed your brother.&quot;
+[[&quot;She knew, and yet she kissed your brother.&quot;|abel christmasparty11111]]</tw-passagedata><tw-passagedata pid="150" name="abelchristmas party11111" tags="" position="1225,1850" size="100,100">&quot;She knew, and yet she fornicated with your brother.&quot;
 
 His face is stony, and still, his eyes staring off into space. Several seconds pass. His left eye twitches. 
 
 &quot;Yes, Father.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="150" name="abelchristmas party112" tags="" position="1225,1850" size="100,100">You sigh. &quot;Very well, then. You do not have to tell me if you don&#39;t wish so.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="151" name="abelchristmas party112" tags="" position="100,1975" size="100,100">You sigh. &quot;Very well, then. You do not have to tell me if you don&#39;t wish so.&quot;
 
 He seems relieved.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="151" name="abelchristmas party12" tags="" position="100,1975" size="100,100">You sigh. &quot;Forgiveness is a virtue, child, no matter how difficult.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="152" name="abelchristmas party12" tags="" position="225,1975" size="100,100">You sigh. &quot;Forgiveness is a virtue, child, no matter how difficult.&quot;
 
 He nods.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="152" name="abelchristmas party13" tags="" position="225,1975" size="100,100">&quot;It&#39;s the truth, child. Your brother told me himself.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="153" name="abelchristmas party13" tags="" position="350,1975" size="100,100">&quot;It&#39;s the truth, child. Your brother told me himself.&quot;
 
 He shakes his head. &quot;No, I just can&#39;t believe they would do that. Not after what they knew about me.&quot;
 
-[[&quot;What did they know about you?&quot;|abelchristmas party131]]</tw-passagedata><tw-passagedata pid="153" name="abelchristmas party131" tags="" position="350,1975" size="100,100">&quot;What did they know about you?&quot;
+[[&quot;What did they know about you?&quot;|abelchristmas party131]]</tw-passagedata><tw-passagedata pid="154" name="abelchristmas party131" tags="" position="475,1975" size="100,100">&quot;What did they know about you?&quot;
 
 &lt;% if (s.abelasked.includes(&quot;abelmia112&quot;)) {
     %&gt; &quot;I&#39;ve told you about this. The business with my first partner. Both of them know- knew I was sensitive to that.&quot; &lt;br/&gt; &lt;br/&gt;
@@ -1134,46 +1119,46 @@ He shakes his head. &quot;No, I just can&#39;t believe they would do that. Not a
     %&gt; &quot;It&#39;s- not important.&quot; He has a frown on his face, like he just remembered something unpleasant. &lt;br/&gt; &lt;br/&gt;
     *You don&#39;t know enough at the moment to press him effectively.*
     &lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%
-}%&gt;</tw-passagedata><tw-passagedata pid="154" name="abelchristmas party14" tags="" position="475,1975" size="100,100">&quot;Very well then.&quot;
+}%&gt;</tw-passagedata><tw-passagedata pid="155" name="abelchristmas party14" tags="" position="600,1975" size="100,100">&quot;Very well then.&quot;
 
 He seems relieved.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="155" name="abelbetter man" tags="" position="600,1975" size="100,100">&quot;Your brother told me Mia deserved a better man. What do you think he meant by that?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="156" name="abelbetter man" tags="" position="725,1975" size="100,100">&quot;Your brother told me Mia deserved a better man. What do you think he meant by that?&quot;
 
 &quot;That piece of- I don&#39;t know.&quot; He&#39;s completely closed off.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="156" name="abelno fingerprints" tags="" position="725,1975" size="100,100">&quot;Why do you think there weren&#39;t any fingerprints on Mia&#39;s neck?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="157" name="abelno fingerprints" tags="" position="850,1975" size="100,100">&quot;Why do you think there weren&#39;t any fingerprints on Mia&#39;s neck?&quot;
 
 He pauses for a moment. &quot;Maybe- maybe the burglar wore **gloves** or something. I don&#39;t know.&quot;
 
 The question seems to have bothered him.
 &lt;% window.changeStress(&quot;abel&quot;, 1)%&gt;
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="157" name="abelgloves" tags="" position="850,1975" size="100,100">&quot;Why do you think the murderer was wearing gloves?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="158" name="abelgloves" tags="" position="975,1975" size="100,100">&quot;Why do you think the murderer was wearing gloves?&quot;
 
 He bursts out at you. &quot;How should I know? Maybe he didn&#39;t want to leave fingerprints everywhere!&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="158" name="abelno phone" tags="" position="975,1975" size="100,100">You ask Abel about the fact that Mia&#39;s phone was missing.
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="159" name="abelno phone" tags="" position="1100,1975" size="100,100">You ask Abel about the fact that Mia&#39;s phone was missing.
 
 He&lt;%= window.idleAbel() %&gt;. &quot;Maybe the burglar took it, since he couldn&#39;t get into the **safe**.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="159" name="abelnecklace" tags="" position="1100,1975" size="100,100">You ask Abel about the necklace Mia was wearing.
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="160" name="abelnecklace" tags="" position="1225,1975" size="100,100">You ask Abel about the necklace Mia was wearing.
 
 &quot;Oh, the gold **necklace**? Yeah, that was a gift from her mother.&quot;
 
-&lt;% if (s.kaneasked.includes(&quot;necklace&quot;)) {%&gt; [[&quot;That&#39;s not what I heard from your brother.&quot;|abelnecklace1]]&lt;%} else {%&gt;&lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%}%&gt;</tw-passagedata><tw-passagedata pid="160" name="abelnecklace1" tags="" position="1225,1975" size="100,100">&quot;That&#39;s not what I heard from your brother.&quot;
+&lt;% if (s.kaneasked.includes(&quot;necklace&quot;)) {%&gt; [[&quot;That&#39;s not what I heard from your brother.&quot;|abelnecklace1]]&lt;%} else {%&gt;&lt;%= story.render(&quot;abelActions&quot;) %&gt;&lt;%}%&gt;</tw-passagedata><tw-passagedata pid="161" name="abelnecklace1" tags="" position="100,2100" size="100,100">&quot;That&#39;s not what I heard from your brother.&quot;
 
 &quot;Oh. Huh. I guess I must have been mistaken, then. Maybe she got it for herself.&quot;
 
 [[&quot;Your brother said it was a Valentine&#39;s day gift from you.&quot;|abelnecklace11]] &lt;br/&gt;
-[[&quot;Maybe so.&quot;|abelnecklace12]]</tw-passagedata><tw-passagedata pid="161" name="abelnecklace11" tags="" position="100,2100" size="100,100">&quot;Your brother said it was a Valentine&#39;s day gift from you.&quot;
+[[&quot;Maybe so.&quot;|abelnecklace12]]</tw-passagedata><tw-passagedata pid="162" name="abelnecklace11" tags="" position="225,2100" size="100,100">&quot;Your brother said it was a Valentine&#39;s day gift from you.&quot;
 
 Abel looks as if he just remembered something. &quot;Right, right. Got that for her. Sorry. I must&#39;ve been mistaken.&quot;
 
 You watch his motions, and he shifts under your gaze.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="162" name="abelnecklace12" tags="" position="225,2100" size="100,100">&quot;Maybe so.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="163" name="abelnecklace12" tags="" position="350,2100" size="100,100">&quot;Maybe so.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="163" name="abellingerie" tags="" position="350,2100" size="100,100">&quot;Abel, do tell me, why was Mia wearing nothing but a lingerie set the night of her murder?&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="164" name="abellingerie" tags="" position="475,2100" size="100,100">&quot;Abel, do tell me, why was Mia wearing nothing but a lingerie set the night of her murder?&quot;
 
 &lt;% if (s.abelstress == 3) {
     %&gt;&quot;I don&#39;t know. That couldn&#39;t possibly be relevant.&quot;
@@ -1194,11 +1179,11 @@ You watch his motions, and he shifts under your gaze.
     &lt;br/&gt; &lt;br/&gt;
     *You might need to build more of a rapport with him before he&#39;ll talk.*
     &lt;%= story.render(&quot;abelActions&quot;) %&gt; &lt;%
-} %&gt;</tw-passagedata><tw-passagedata pid="164" name="abelplayful" tags="" position="475,2100" size="100,100">&quot;What do you mean by plaful?&quot;
+} %&gt;</tw-passagedata><tw-passagedata pid="165" name="abelplayful" tags="" position="600,2100" size="100,100">&quot;What do you mean by plaful?&quot;
 
 He&lt;%= window.idleAbel() %&gt;.&quot;Just what it sounds like, Father.&quot;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="165" name="abelaffair" tags="" position="600,2100" size="100,100">&quot;Admit it to me, my child. Mia was having an affair with your brother.&quot;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="166" name="abelaffair" tags="" position="725,2100" size="100,100">&quot;Admit it to me, my child. Mia was having an affair with your brother.&quot;
 
 &lt;% if (s.abelasked.includes(&quot;lingerie&quot;) &amp;&amp; s.abelasked.includes(&quot;better man&quot;) &amp;&amp; s.abelasked.includes(&quot;christmas party&quot;)) { 
     %&gt;&quot;She... I guess she was.&quot; He doesn&#39;t seem entirely surprised by that fact. &lt;br/&gt; &lt;br/&gt;
@@ -1209,20 +1194,20 @@ He&lt;%= window.idleAbel() %&gt;.&quot;Just what it sounds like, Father.&quot;
         %&gt;&quot;No, Mia would never do that.&quot; &lt;br/&gt; &lt;br/&gt;
         *You&#39;ll probably need to ask him more sensitive questions before he&#39;ll admit it.*
         &lt;%= story.render(&quot;abelActions&quot;) %&gt; &lt;% 
-        } %&gt;.</tw-passagedata><tw-passagedata pid="166" name="abelBadask" tags="" position="725,2100" size="100,100">You ask Abel about &lt;%= inputtext.length ? inputtext : &quot;nothing&quot; %&gt;. &lt;br/&gt;
+        } %&gt;.</tw-passagedata><tw-passagedata pid="167" name="abelBadask" tags="" position="850,2100" size="100,100">You ask Abel about &lt;%= inputtext.length ? inputtext : &quot;nothing&quot; %&gt;. &lt;br/&gt;
 &lt;% if (s.abelstress &lt; 3) { 
     %&gt;&lt;%= [&quot;He crosses his arms, yawning.&quot;, &quot;&#39;I have no idea what you&#39;re on about,&#39; he says.&quot;, &quot;He snorts. &#39;And why should I have anything to say about that?&#39;&quot;][Math.floor(3*(Math.random()))] %&gt;&lt;% 
     } else { 
         %&gt;&lt;%= [&quot;He sits in his chair, subtly tensing up.&quot;, &quot;&#39;I don&#39;t know what you&#39;re talking about, okay?&#39; he shouts.&quot;, &quot;He clasps his hands over his head, whispering, &#39;What are you even talking about?&#39;&quot;][Math.floor(3*(Math.random()))] %&gt;&lt;% 
         } %&gt;.
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="167" name="abelActions" tags="" position="850,2100" size="100,100">&lt;p id=&quot;choices&quot;&gt;
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="168" name="abelActions" tags="" position="975,2100" size="100,100">&lt;p id=&quot;choices&quot;&gt;
 &lt;input type=&quot;text&quot; name=&quot;question&quot; onchange=&quot;inputtext=this.value?this.value:&#39;nothing&#39;&quot;&gt;&lt;button id=&quot;submitq&quot; type=&quot;button&quot; onclick=&quot;window.story.show(window.askQuestion(&#39;abel&#39;, inputtext)); inputtext = &#39;nothing&#39;&quot;&gt;Ask him.&lt;/button&gt;
 &lt;br/&gt;
 Talk to [[Kane|kaneext]]
 &lt;br/&gt;
 Check your [[case file|Case File]]
-&lt;/p&gt;</tw-passagedata><tw-passagedata pid="168" name="Start" tags="" position="975,2100" size="100,100">Your name is Father Matthews. You are a Confessor at the Ministry of Reconciliation, and you have been assigned to case #44B-9081-DZ, the murder of one 24-year-old Mia Conti. 
+&lt;/p&gt;</tw-passagedata><tw-passagedata pid="169" name="Start" tags="" position="1100,2100" size="100,100">Your name is Father Matthews. You are a Confessor at the Ministry of Reconciliation, and you have been assigned to case #44B-9081-DZ, the murder of one 24-year-old Mia Conti. 
 
 Your task is to extract a confession from the person responsible for Mia&#39;s death. 
 
@@ -1242,14 +1227,14 @@ You have two penitents, [[Abel Atkins|abelext]] and [[Kane Atkins|kaneext]], in 
   s.inputtext = &quot;&quot;
   s.abelquestions = [&quot;relationship to the victim&quot;, &quot;resentment&quot;, &quot;cheat&quot;, &quot;steal&quot;, &quot;lie&quot;, &quot;guilt&quot;, &quot;loyalty&quot;, &quot;charity&quot;, &quot;megacorp&quot;, &quot;playful&quot;, &quot;affair&quot;, &quot;abel&quot;, &quot;kane&quot;, &quot;mia&quot;, &quot;relationship to the victim&quot;, &quot;casey&quot;, &quot;alibi&quot;, &quot;drinking&quot;, &quot;shepherd&#39;s tavern&quot;, &quot;motive&quot;, &quot;work&quot;, &quot;bigcorp&quot;, &quot;strangulation&quot;, &quot;apartment&quot;, &quot;burglary&quot;, &quot;broken window&quot;, &quot;safe&quot;, &quot;1912&quot;, &quot;mia&#39;s birthday&quot;, &quot;christmas party&quot;, &quot;better man&quot;, &quot;no fingerprints&quot;, &quot;gloves&quot;, &quot;no phone&quot;, &quot;necklace&quot;, &quot;lingerie&quot;]
   s.abelasked = []
-  s.kanequestions = [&quot;abel&quot;, &quot;abelreview&quot;, &quot;kane&quot;, &quot;kanereview&quot;, &quot;books&quot;, &quot;mia&quot;, &quot;miareview&quot;, &quot;casey&quot;, &quot;mute&quot;, &quot;call was declined&quot;, &quot;alibi&quot;, &quot;relationship to the victim&quot;, &quot;relationship to the victimreview&quot;, &quot;drinking&quot;, &quot;drinkingreview&quot;, &quot;motive&quot;, &quot;work&quot;, &quot;bigcorp&quot;, &quot;apartment&quot;, &quot;alone&quot;, &quot;third floor&quot;, &quot;burglary&quot;, &quot;broken window&quot;, &quot;code&quot;, &quot;1912&quot;, &quot;no fingerprints&quot;, &quot;strangulation&quot;, &quot;strangulationreview&quot;, &quot;shepherd&#39;s tavern&quot;, &quot;angry&quot;, &quot;gloves&quot;, &quot;necklace&quot;, &quot;no phone&quot;, &quot;lingerie&quot;, &quot;mia&#39;s birthday&quot;, &quot;party&quot;, &quot;christmas party&quot;, &quot;better man&quot;, &quot;playful&quot;, &quot;spare key&quot;, &quot;affair&quot;, &quot;eliza&quot;, &quot;regret&quot;]
+  s.kanequestions = [&quot;abel&quot;, &quot;abelreview&quot;, &quot;kane&quot;, &quot;kanereview&quot;, &quot;books&quot;, &quot;mia&quot;, &quot;miareview&quot;, &quot;casey&quot;, &quot;mute&quot;, &quot;call was declined&quot;, &quot;alibi&quot;, &quot;relationship to the victim&quot;, &quot;relationship to the victimreview&quot;, &quot;drinking&quot;, &quot;drinkingreview&quot;, &quot;motive&quot;, &quot;work&quot;, &quot;bigcorp&quot;, &quot;apartment&quot;, &quot;alone&quot;, &quot;third floor&quot;, &quot;burglary&quot;, &quot;broken window&quot;, &quot;code&quot;, &quot;1912&quot;, &quot;no fingerprints&quot;, &quot;strangulation&quot;, &quot;strangulationreview&quot;, &quot;shepherd&#39;s tavern&quot;, &quot;angry&quot;, &quot;gloves&quot;, &quot;necklace&quot;, &quot;no phone&quot;, &quot;lingerie&quot;, &quot;mia&#39;s birthday&quot;, &quot;party&quot;, &quot;christmas party&quot;, &quot;better man&quot;, &quot;playful&quot;, &quot;spare key&quot;, &quot;affair&quot;, &quot;eliza&quot;, &quot;regret&quot;, &quot;safe&quot;]
   s.kaneasked = []
   s.todoticks = [&quot; &quot;, &quot; &quot;, &quot; &quot;]
   s.abelticslow = [&quot; sits still, with his arms crossed&quot;, &quot; rolls his eyes&quot;, &quot; shrugs calmly&quot;, &quot; stares at you&quot;, &quot; raps his knuckles against the table, a single time&quot;]
   s.abelticsmed = [&quot; cracks his neck&quot;, &quot; idly looks around the room, his gaze occasionally resting on you before leaving again&quot;, &quot; folds one a leg over the other knee&quot;, &quot; shifts in his chair, trying to get comfortable&quot;, &quot; places his hands on the table, leaning forward slightly&quot;]
   s.abelticshigh = [&quot; is tapping his right foot&quot;, &quot; darts his gaze around the room, avoiding eye contact&quot;, &quot; clenches his fists, his knuckles turning white&quot;, &quot; holds onto the table, shaking back and forth&quot;, &quot; strains himself to keep his eye from twitching&quot;]
 %&gt;
-/* s is shorthand for window.story.state, the only variable that persists across passages */</tw-passagedata><tw-passagedata pid="169" name="StorySettings" tags="" position="1100,2100" size="100,100">undo:off
+/* s is shorthand for window.story.state, the only variable that persists across passages */</tw-passagedata><tw-passagedata pid="170" name="StorySettings" tags="" position="1225,2100" size="100,100">undo:off
 bookmark:off
 hash:off
 exitprompt:on</tw-passagedata></tw-storydata>
