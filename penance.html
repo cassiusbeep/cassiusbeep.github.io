@@ -511,7 +511,7 @@ Kane&#39;s expression turns a shade darker.
 [[&quot;What did they take?&quot;|kaneburglary1]]&lt;br/&gt;
 &lt;% if (s.kaneasked.includes(&quot;strangulation&quot;)) {%&gt;[[&quot;Strange, though, isn&#39;t it...&quot;|kaneburglarstrangle]]&lt;%}%&gt;</tw-passagedata><tw-passagedata pid="49" name="kaneburglary1" tags="" position="1100,600" size="100,100">&quot;What did they take?&quot; You ask. 
 
-&quot;An old laptop, some loose cash... They left a **broken window** behind, and the police said that **Mia&#39;s phone** was missing. I keep most of my own valuables in my safe when I&#39;m out. I was lucky they couldn&#39;t crack the **code**.&quot;
+&quot;An old laptop, some loose cash... They left a **broken window** behind, and the police said that Mia&#39;s phone was missing. I keep most of my own valuables in my safe when I&#39;m out. I was lucky they couldn&#39;t crack the **code**.&quot;
 
 &lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="50" name="kanebroken window" tags="" position="1225,600" size="100,100">&quot;A **broken window**?&quot;
 
@@ -756,7 +756,7 @@ Abel &lt;%= window.idleAbel() %&gt;. &quot;Nothing important, Father. White lies
 
 &lt;%= s.abelstress &lt; 2 ? &#39;&quot;What does that matter?&quot;&#39; : &#39;&quot;I care about it. The worst thing you can do to someone is betray their trust.&quot;&#39; %&gt;
 
-&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="102" name="abelrelationship to victim" tags="" position="225,1350" size="100,100">You ask Abel about his relationship to the victim, Mia.
+&lt;%= story.render(&quot;abelActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="102" name="abelrelationship to the victim" tags="" position="225,1350" size="100,100">You ask Abel about his relationship to the victim, Mia.
 
 &quot;What can I say? I loved her. I&#39;m sad she&#39;s gone.&quot;
 
@@ -1224,7 +1224,7 @@ You have two penitents, [[Abel Atkins|abelext]] and [[Kane Atkins|kaneext]], in 
   s.kanestress = 1
   s.violence = 0
   s.inputtext = &quot;&quot;
-  s.abelquestions = [&quot;christmas party1111&quot;, &quot;relationship to the victim&quot;, &quot;resentment&quot;, &quot;cheat&quot;, &quot;steal&quot;, &quot;lie&quot;, &quot;guilt&quot;, &quot;loyalty&quot;, &quot;charity&quot;, &quot;megacorp&quot;, &quot;playful&quot;, &quot;affair&quot;, &quot;abel&quot;, &quot;kane&quot;, &quot;mia&quot;, &quot;relationship to the victim&quot;, &quot;casey&quot;, &quot;alibi&quot;, &quot;drinking&quot;, &quot;shepherd&#39;s tavern&quot;, &quot;motive&quot;, &quot;work&quot;, &quot;bigcorp&quot;, &quot;strangulation&quot;, &quot;apartment&quot;, &quot;burglary&quot;, &quot;broken window&quot;, &quot;safe&quot;, &quot;1912&quot;, &quot;mia&#39;s birthday&quot;, &quot;christmas party&quot;, &quot;better man&quot;, &quot;no fingerprints&quot;, &quot;gloves&quot;, &quot;no phone&quot;, &quot;necklace&quot;, &quot;lingerie&quot;]
+  s.abelquestions = [&quot;christmas party1111&quot;, &quot;relationship to the victim&quot;, &quot;resentment&quot;, &quot;cheat&quot;, &quot;steal&quot;, &quot;lie&quot;, &quot;guilt&quot;, &quot;loyalty&quot;, &quot;charity&quot;, &quot;megacorp&quot;, &quot;playful&quot;, &quot;affair&quot;, &quot;abel&quot;, &quot;kane&quot;, &quot;mia&quot;, &quot;casey&quot;, &quot;alibi&quot;, &quot;drinking&quot;, &quot;shepherd&#39;s tavern&quot;, &quot;motive&quot;, &quot;work&quot;, &quot;bigcorp&quot;, &quot;strangulation&quot;, &quot;apartment&quot;, &quot;burglary&quot;, &quot;broken window&quot;, &quot;safe&quot;, &quot;1912&quot;, &quot;mia&#39;s birthday&quot;, &quot;christmas party&quot;, &quot;better man&quot;, &quot;no fingerprints&quot;, &quot;gloves&quot;, &quot;no phone&quot;, &quot;necklace&quot;, &quot;lingerie&quot;]
   s.abelasked = []
   s.kanequestions = [&quot;abel&quot;, &quot;abelreview&quot;, &quot;kane&quot;, &quot;kanereview&quot;, &quot;books&quot;, &quot;mia&quot;, &quot;miareview&quot;, &quot;casey&quot;, &quot;mute&quot;, &quot;call was declined&quot;, &quot;alibi&quot;, &quot;relationship to the victim&quot;, &quot;relationship to the victimreview&quot;, &quot;drinking&quot;, &quot;drinkingreview&quot;, &quot;motive&quot;, &quot;work&quot;, &quot;bigcorp&quot;, &quot;apartment&quot;, &quot;alone&quot;, &quot;third floor&quot;, &quot;burglary&quot;, &quot;broken window&quot;, &quot;code&quot;, &quot;1912&quot;, &quot;no fingerprints&quot;, &quot;strangulation&quot;, &quot;strangulationreview&quot;, &quot;shepherd&#39;s tavern&quot;, &quot;angry&quot;, &quot;gloves&quot;, &quot;necklace&quot;, &quot;no phone&quot;, &quot;lingerie&quot;, &quot;mia&#39;s birthday&quot;, &quot;party&quot;, &quot;christmas party&quot;, &quot;better man&quot;, &quot;playful&quot;, &quot;spare key&quot;, &quot;affair&quot;, &quot;eliza&quot;, &quot;regret&quot;, &quot;safe&quot;]
   s.kaneasked = []
