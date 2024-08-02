@@ -195,6 +195,7 @@ $(document).on('showpassage:after', (eventObject, passageObject) => {
         }
       }
     });
+    fields[fields.length - 1].focus();
 });
 
 /*
@@ -662,7 +663,7 @@ Tears shine in his eyes, glinting in the pitiless light. &quot;More than I can c
 &lt;% if (s.kaneasked.includes(&quot;christmas party&quot;)) {%&gt; &lt;p&gt;&quot;**Abel**&#39;s girlfriend, before **Mia**. She cheated on him with his own best friend. He was heartbroken.&quot;&lt;/p&gt; &lt;%} else {%&gt;&lt;p&gt;Kane looks puzzled. &quot;Eliza? That was Abel&#39;s last girlfriend. Do you think she had something to do with this? I didn&#39;t know she was even in town.&quot;&lt;/p&gt;&lt;%}%&gt;
 
 &lt;%= story.render(&quot;kaneActions&quot;) %&gt;</tw-passagedata><tw-passagedata pid="82" name="kaneActions" tags="" position="225,1100" size="100,100">&lt;p id=&quot;choices&quot;&gt;
-&lt;input type=&quot;text&quot; name=&quot;question&quot; onchange=&quot;inputtext=this.value&quot;&gt;&lt;button id=&quot;submitq&quot; type=&quot;button&quot; onclick=&quot;window.story.show(window.askQuestion(&#39;kane&#39;, inputtext.toLowerCase())); inputtext = &#39;nothing&#39;&quot;&gt;&lt;em&gt;Ask him.&lt;/em&gt;&lt;/button&gt;
+&lt;input autofocus type=&quot;text&quot; name=&quot;question&quot; onchange=&quot;inputtext=this.value&quot;&gt;&lt;button id=&quot;submitq&quot; type=&quot;button&quot; onclick=&quot;window.story.show(window.askQuestion(&#39;kane&#39;, inputtext.toLowerCase())); inputtext = &#39;nothing&#39;&quot;&gt;&lt;em&gt;Ask him.&lt;/em&gt;&lt;/button&gt;
 &lt;br/&gt;
 Talk to [[Abel|abelext]]
 &lt;br/&gt;
