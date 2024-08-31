@@ -342,6 +342,14 @@ header .current-date {
   animation: toRight linear 6.8s infinite alternate,
     bounce linear 17s infinite alternate;
 }
+::-moz-selection {
+  color: #ebf8f1;
+  background: #18fc7f;
+}
+::selection {
+  color: #ebf8f1;
+  background: #18fc7f;
+}
 @keyframes bounce {
   0% {
     top: 0;
