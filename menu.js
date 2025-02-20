@@ -9,6 +9,15 @@ if (menuBut && menu) {
   menuBut.addEventListener("click", function () {
     menuToggle(menuBut, menu);
   });
+  fetch("/menu-component.html").then(function (response) {
+    if (response.ok) {
+      return response.text();
+    }
+    throw response;
+  }).then(function (text) {
+    console.log(text);
+    menu.innerHTML = text;
+  });
 } else {
   console.log("menu not working");
 }
