@@ -12,7 +12,7 @@
       type="image/x-icon"
     />
   </head>
-  <!-- TODO: make collapsible/accordion style image viewer, make back to top links for each part, figure out conditional rendering so mobile sees an alternative format to the table -->
+  <!-- TODO: make collapsible/accordion style image & table viewer, make back to top links for each part (DONE), figure out conditional rendering so mobile sees an alternative format to the table (DONE) -->
   <body>
     <div id="menu-wrapper">
       <div id="menu"></div>
@@ -28,21 +28,25 @@
           <span id="whole-title">accessible components: a case study</span>
         </h1>
       </div>
+
       <p id="intro">
         In this small case study for my Interaction Design class I'm looking at different implementations of a common component &mdash; the search box &mdash; and evaluating it for accessibility, discoverability, efficiency, & learnability. I'll use my findings from this investigation to practise my own design skills and exercise accessible interaction design for my own simple search box component. 
       </p>
+
       <p class="left-list" style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 20px;">
         <a href="accessible-components#part-1"><b>part 1</b>: input</a><br/>
         <a href="accessible-components#part-2"><b>part 2</b>: output</a><br/>
         <a href="accessible-components#part-3"><b>part 3</b>: state models + component redesign</a><br/>
         <a href="accessible-components#part-4"><b>part 4</b>: reflection</a>
       </p>
+
       <h2 id="part-1"><span>part 1: input <a href="accessible-components#whole-title" style="text-decoration: none;">^</a></span></h2>
       <p>
         Since a search box's main goal is to take input from a user and provide results or feedback, it's important that a well designed component can work well with different input methods. In this part I take a look at the different states each component can go through, and then dive deeper into how it behaves when I provide input in various ways.
         <br/><br/>
         The first application I'm examining is Mozilla Firefox, my web browser of choice. The search bar of the app is located at the top of the window, and allows users to input URLs or search terms which can be directed to different search engines. The screencaps below show the component in various states: inactive, automatically focused (which happens when you open a new tab), focused on a click, and active (while text is being input).
       </p>
+
       <img class="ac-img" src="assets/accessible-components/AC-firefox-initial.jpg" alt="Firefox search bar in initial state"/>
       <p class="caption">Firefox search bar: Initial state</p>
       <img class="ac-img" src="assets/accessible-components/AC-firefox-focus.jpg" alt="Auto-focused Firefox search bar"/>
@@ -54,7 +58,9 @@
         <p class="caption">Firefox search bar: Active</p>
       </div>
 
-      <p>The next application is <a href="https://citymapper.com/?lang=en" target="_blank">Citymapper</a>, a mobile and web navigation app. Citymapper's home page presents two fields for the start and end of a journey, inviting users to search for directions. Each one acts as a search box for locations looked up from Google Maps. I took screencaps of the top ("Start") field in inactive, focused, and active states.</p>
+      <p>
+        The next application is <a href="https://citymapper.com/?lang=en" target="_blank">Citymapper</a>, a mobile and web navigation app. Citymapper's home page presents two fields for the start and end of a journey, inviting users to search for directions. Each one acts as a search box for locations looked up from Google Maps. I took screencaps of the top ("Start") field in inactive, focused, and active states.
+      </p>
       <div class="ac-img-compact-box">
       <img class="ac-img-compact" src="assets/accessible-components/AC-citymapper-initial.jpg" alt="Citymapper search bar in initial state"/>
       <p class="caption">Citymapper search bar: Initial</p>
@@ -64,7 +70,9 @@
       <p class="caption">Citymapper search bar: Active</p>
       </div>
 
-      <p>Finally, I'm considering the Windows 11 File Explorer search bar, which allows users to search their local files. This component has different states for being inactive, hovered over, focused on a click, and active typing.</p>
+      <p>
+        Finally, I'm considering the Windows 11 File Explorer search bar, which allows users to search their local files. This component has different states for being inactive, hovered over, focused on a click, and active typing.
+      </p>
       <div class="ac-img-compact-box">
       <img class="ac-img-compact" src="assets/accessible-components/AC-explorer-initial.jpg" alt="File Explorer search bar in initial state"/>
       <p class="caption">Explorer search bar: Initial</p>
@@ -258,8 +266,9 @@
           - one additional state
         - annotate: what ur redesigning, how improved, how it affects L/M/E/A
       </p>
+
       <h2><span>part 4: reflection <a href="accessible-components#whole-title" style="text-decoration: none;">^</a></span></h2>
-      <p> PART 4: REFLECTION
+      <p>
         - where did the components do well in usability + accessibility?
         - how have u applied this to ur design?
         - are there unaddressed access considerations u accounted for?
