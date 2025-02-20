@@ -31,11 +31,11 @@
       <p id="intro">
         intro/research Q, why search box. brief desc of component and task ahead
       </p>
-      <p class="left-list">
-        <a href="accessible-components#part-1">part 1: input</a><br/>
-        <a href="accessible-components#part-2">part 2: output</a><br/>
-        <a href="accessible-components#part-3">part 3: state models + component redesign</a><br/>
-        <a href="accessible-components#part-4">part 4: reflection</a>
+      <p class="left-list" style="width:50vw; text-indent: 5% hanging each-line;">
+        <a href="accessible-components#part-1"><b>part 1</b>: input</a><br/>
+        <a href="accessible-components#part-2"><b>part 2</b>: output</a><br/>
+        <a href="accessible-components#part-3"><b>part 3</b>: state models + component redesign</a><br/>
+        <a href="accessible-components#part-4"><b>part 4</b>: reflection</a>
       </p>
       <h2 id="part-1"><span>part 1: input <a href="accessible-components#whole-title" style="text-decoration: none;">^</a></span></h2>
       <p>
@@ -148,9 +148,10 @@
         </tr>
       </table>
       <p>
+        <!-- TODO -->
         I found that 
         - firefox switch to tab discoverability
-        - delete suggestion discoverable
+        - delete suggestion context button discoverable
         - delete text learnability
         - interactivity of the magnifying glass not clear (even tho it was consistent across examples)
         - delete text button not accessible for keyboard only users
@@ -195,15 +196,21 @@
           <th class="vertical">Screen Reader</th>
           <td>
             <span class="mobile-label"><b>Firefox</b><br/></span>
-            
+            On navigating onto the search bar with Tab, Windows 11 Narrator reads out the placeholder text: "Search with Google or enter address - combo edit collapse scan all new line"<br/>
+            When Narrator is enabled, you are no longer able to open the suggestions list by pressing the up/down arrow, as it acts like Tab instead and moves to the next element on the browser. It does work once you start typing though.<br/>
+            When you begin typing, Narrator reads each character typed and reads the remainder of the text (when the search bar auto-fills the field with a URL or search term).<br/>
+            For each element of the list, when you Tab/arrow key onto it, Narrator reads out the name of the item, then "Visit", then a label for the index in the list - i.e., "1 of 10", and finally says "selected" to indicate that pressing Enter will submit that item.
           </td>
           <td>
             <span class="mobile-label"><b>Citymapper</b><br/></span>
-            
+            On navigating to the search bar with Tab, the Narrator reads "Edit - scan all - space," which does not convey any information about what should be typed into the field or what submitting will do. The visual labels "Start" and "End" which give a hint that we're planning a journey are not accessible. <br/>
+            When typing, Narrator reads the input and lets you use the arrow key to navigate onto the delete (X) button. You can also use the arrow keys to navigate the suggestion list, but Tab moves onto other elements on the page.
           </td>
           <td>
             <span class="mobile-label"><b>File Explorer</b><br/></span>
-            
+            On Tab-keying onto the search bar in the app header, the Narrator reads "Search Home," which provides a succinct description of the function of the component <br/>
+            Typing causes the Narrator to read the input character by character. <br/>
+            It's not possible to access the clear/delete button (X) through key presss, and Tab leaves the component.
           </td>
         </tr>
         <tr>
