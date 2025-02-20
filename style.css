@@ -83,6 +83,22 @@ p {
   /* padding-bottom: 8px; */
   border-radius: 5px;
 }
+p.caption {
+  background-color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8em;
+  max-width:fit-content;
+  margin: auto;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 1px 5px 1px 5px;
+  border-radius: 5px;
+}
+.two-col {
+  column-count: 2; 
+  column-gap: 20px;
+}
 table {
   background-color: white;
   font-family: "Courier New", Courier, monospace;
@@ -510,6 +526,10 @@ header .current-date {
   }
   p {
     width: 90%;
+  }
+  .two-col {
+    column-count: 1; 
+    column-gap: 0px;
   }
   table {
     width: 90%;
