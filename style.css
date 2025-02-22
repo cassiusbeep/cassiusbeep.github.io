@@ -1,11 +1,15 @@
 /* universal style stuff */
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+#accessible-components-body {
+  backdrop-filter: brightness(80%) blur(2px);
 }
 .circle {
   height: 50px;
@@ -27,6 +31,13 @@ h1 {
   font-family: "Rubik Iso", "Segoe UI", cursive;
   color: white;
   font-size: 4vw;
+}
+.accessible-h1 {
+  font-family:"Rubik Doodle Shadow";
+}
+.top-link {
+  font-size:x-small;
+  vertical-align: text-top;
 }
 h2 {
   /* background-color: white; */
@@ -54,7 +65,7 @@ ul {
   margin: auto;
   margin-top: 25px;
   text-align: center;
-  padding: 5px;
+  padding: 15px;
   padding-bottom: 8px;
   border-radius: 5px;
   /* filter: drop-shadow(10px 10px 0px #000000); */
@@ -79,9 +90,9 @@ p {
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: center;
-  padding: 10px;
+  padding: 25px;
   /* padding-bottom: 8px; */
-  border-radius: 5px;
+  border-radius: 15px;
 }
 p.caption {
   background-color: white;
@@ -95,6 +106,9 @@ p.caption {
   padding: 1px 5px 1px 5px;
   border-radius: 5px;
 }
+.ac-img-compact-inline-box .caption {
+  display: inline-block;
+}
 .two-col {
   column-count: 2; 
   column-gap: 20px;
@@ -107,7 +121,7 @@ table {
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: left;
-  padding: 10px;
+  padding: 15px;
   /* padding-bottom: 8px; */
   border-radius: 5px;
 }
@@ -126,9 +140,11 @@ th {
 .mobile-label {
   display: none;
   font-size: 1.1em;
+  margin-top: 15px;
 }
 th.vertical {
   writing-mode: vertical-lr; 
+  text-orientation: sideways; /* should cover safari compatibility */
   transform: rotate(180deg);
 }
 td:nth-child(even), th:nth-child(even) {
@@ -138,8 +154,10 @@ td:nth-child(even), th:nth-child(even) {
   display: block;
   width: 54vw;
   margin: auto;
-  /* margin-top: 5px; */
-  padding: 5px;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
 }
 .ac-img-compact-box {
   width:35vw;
@@ -149,7 +167,10 @@ td:nth-child(even), th:nth-child(even) {
 .ac-img-compact {
   display: block;
   width: 100%;
-  padding: 5px;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
 }
 .ac-img-compact-inline-box {
   width:50vw;
@@ -159,8 +180,11 @@ td:nth-child(even), th:nth-child(even) {
 .ac-img-compact-inline {
   display: inline-block;
   width: 49%;
-  padding: 5px;
   vertical-align: middle;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
 }
 a {
   text-decoration: underline;
@@ -186,7 +210,6 @@ a:active {
   color: blue;
 }
 #menu-button-container {
-  /* position: sticky; */
   top: 0px;
   display: inline;
   cursor: pointer;
@@ -455,7 +478,7 @@ header .current-date {
     bounce linear 17s infinite alternate;
 }
 ::-moz-selection {
-  color: #ebf8f1;
+  color: #000000;
   background: #18fc7f;
 }
 ::selection {

@@ -13,19 +13,20 @@
     />
   </head>
   <!-- TODO: make collapsible/accordion style image & table viewer, make back to top links for each part (DONE), figure out conditional rendering so mobile sees an alternative format to the table (DONE) -->
-  <body>
+   <!-- FIXME FIGURE OUT WHY THE MENU DOESNT SHOW UP ONLYYYY ON THIS PAGE!!! -->
+  <body id="accessible-components-body">
     <div id="menu-wrapper">
       <div id="menu"></div>
     </div>
     <main>
-      <div class="title-bar">
+      <div class="title-bar access">
         <div id="menu-button-container">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
         </div>
         <h1>
-          <span id="whole-title">accessible components: a case study</span>
+          <span id="whole-title" class="accessible-h1">accessible components: a case study</span>
         </h1>
       </div>
 
@@ -40,7 +41,7 @@
         <a href="accessible-components#part-4"><b>part 4</b>: reflection</a>
       </p>
 
-      <h2 id="part-1"><span>part 1: input <a href="accessible-components#whole-title" style="text-decoration: none;">^</a></span></h2>
+      <h2 id="part-1"><span>part 1: input <a href="accessible-components#whole-title" class="top-link">back to top</a></span></h2>
       <p>
         Since a search box's main goal is to take input from a user and provide results or feedback, it's important that a well designed component can work well with different input methods. In this part I take a look at the different states each component can go through, and then dive deeper into how it behaves when I provide input in various ways.
         <br/><br/>
@@ -179,7 +180,7 @@
         <li>The interactivity of symbols appearing inside the search bar is inconsistent across different contexts and not always easy to guess. The magnifying glass icon was not clickable in any of these examples, but I wondered whether I could click it to submit (performing the "search" action) &mdash; especially in File Explorer, where it's in the same place as Firefox's Arrow button.</li>
       </ul>
 
-      <h2 id="part-2"><span>part 2: output <a href="accessible-components#whole-title" style="text-decoration: none;">^</a></span></h2>
+      <h2 id="part-2"><span>part 2: output <a href="accessible-components#whole-title" class="top-link">back to top</a></span></h2>
       <p>
         My next goal is to see how each component provides output or feedback to the user's input. This output will take different forms for different users, for example based on whether they can perceive visual output, colour, or use audio i.e. with a screen reader. 
       </p>
@@ -255,19 +256,29 @@
         </tr>
       </table>
 
-      <h2 id="part-3"><span>part 3: state models + component redesign <a href="accessible-components#whole-title" style="text-decoration: none;">^</a></span></h2>
+      <h2 id="part-3"><span>part 3: state models + component redesign <a href="accessible-components#whole-title" class="top-link">back to top</a></span></h2>
       <p>
+
         - create 2 state models
           - mouse users
           - keyboard users
         - revise the state models, making a trade-off to affect learnability/memorability/efficiency/accessibility
+          - add ability to distinguish between new tab and switch to tab with only mouse. makes keyboard navigation less efficient because its one more thing to tab through when you go down the list
+          - think of something to add for keyboard that has a drawback for mouse people
         - make improved search bar in figma
           - one design for initial state (before interaction)
           - one additional state
         - annotate: what ur redesigning, how improved, how it affects L/M/E/A
       </p>
 
-      <h2><span>part 4: reflection <a href="accessible-components#whole-title" style="text-decoration: none;">^</a></span></h2>
+      <div class="ac-img-compact-inline-box">
+        <img class="ac-img-compact-inline" src="assets/accessible-components/status-model-mouse.png" alt="Status model for Firefox search bar with mouse"/>
+        <p class="caption">Status Model for Firefox search bar with mouse</p>
+        <img class="ac-img-compact-inline" src="assets/accessible-components/status-model-keyboard.png" alt="Status model for Firefox search bar with keyboard"/>
+        <p class="caption">Status Model for Firefox search bar with keyboard</p>
+      </div>
+
+      <h2><span>part 4: reflection <a href="accessible-components#whole-title" class="top-link">back to top</a></span></h2>
       <p>
         - where did the components do well in usability + accessibility?
         - how have u applied this to ur design?
