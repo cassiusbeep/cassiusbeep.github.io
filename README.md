@@ -45,3 +45,4 @@ to codingnepalweb.com for the calendar template!
 - highlight elements you add or take away - green vs red? like Git diff
 - device models figma plugin
 - add more context - what's a component? what are the state models? etc.
+- make title status clickability more noticeable DONE

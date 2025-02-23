@@ -18,9 +18,13 @@
   background-color: red;
   z-index: 3;
 }
+#top-spacer {
+  height: 50px;
+  display:block;
+}
 .title-bar {
   text-align: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   backdrop-filter: blur(2px);
   backdrop-filter: brightness(0.3);
   z-index: 0;
@@ -75,8 +79,10 @@ ul {
 .left-list {
   text-align: left;
   list-style-type:disc;
+  padding: 25px;
   padding-left: 1.5em;
   line-height: 125%;
+  border-radius: 15px;
 }
 .left-list li {
   padding-left: 0.5em;
@@ -121,9 +127,9 @@ table {
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: left;
-  padding: 15px;
+  padding: 25px;
   /* padding-bottom: 8px; */
-  border-radius: 5px;
+  border-radius: 15px;
 }
 td {
   font-size: 0.7em;
@@ -249,6 +255,7 @@ a:active {
   z-index: 100;
   max-height: 0px;
   transition: 0.75s;
+  width:fit-content;
 }
 #menu.open {
   color: black;
@@ -264,9 +271,36 @@ a:active {
     text-shadow: 0px 0px 2px #aef4af;
   }
 }
+@keyframes wiggle {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 #title-card {
   cursor: help;
   animation: glow 1.5s infinite alternate;
+}
+.wiggle span {
+  animation: wiggle 1s infinite ease;
+  display:inline-block;
+}
+.wiggle span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.wiggle span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.wiggle span:nth-child(3) {
+  animation-delay: 0.3s;
 }
 @keyframes blue-alert-fade-in {
   0% {

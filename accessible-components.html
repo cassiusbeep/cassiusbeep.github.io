@@ -13,12 +13,12 @@
     />
   </head>
   <!-- TODO: make collapsible/accordion style image & table viewer, make back to top links for each part (DONE), figure out conditional rendering so mobile sees an alternative format to the table (DONE) -->
-   <!-- FIXME FIGURE OUT WHY THE MENU DOESNT SHOW UP ONLYYYY ON THIS PAGE!!! -->
-  <body id="accessible-components-body">
+  <body>
     <div id="menu-wrapper">
       <div id="menu"></div>
     </div>
-    <main>
+    <main id="accessible-components-body">
+      <div id="top-spacer"></div>
       <div class="title-bar access">
         <div id="menu-button-container">
           <div class="bar1"></div>
@@ -31,10 +31,10 @@
       </div>
 
       <p id="intro">
-        In this small case study for my Interaction Design class I'm looking at different implementations of a common component &mdash; the search box &mdash; and evaluating it for accessibility, discoverability, efficiency, & learnability. I'll use my findings from this investigation to practise my own design skills and exercise accessible interaction design for my own simple search box component. 
+        In this small case study for my Interaction Design class I'm looking at different implementations of a common component &mdash; the search box and (optionally) the attached search suggestion list &mdash; and evaluating it for accessibility, discoverability, efficiency, & learnability. I'll use my findings from this investigation to practise my own design skills and exercise accessible interaction design for my own simple search box component. 
       </p>
 
-      <p class="left-list" style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 20px;">
+      <p class="left-list" style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
         <a href="accessible-components#part-1"><b>part 1</b>: input</a><br/>
         <a href="accessible-components#part-2"><b>part 2</b>: output</a><br/>
         <a href="accessible-components#part-3"><b>part 3</b>: state models + component redesign</a><br/>
@@ -102,19 +102,22 @@
           <th class="vertical">Mouse/Touchpad</th>
           <td class="ff">
             <span class="mobile-label"><b>Firefox</b><br/></span>
-            &gt; Clicking the search bar focuses on it. <br/>
-            &gt; Suggestions in the dropdown list that appears on focus can each be hovered over and clicked. Clicking them populates the search bar with the text of the item clicked.<br/>
+            &gt; Click to focus on search bar; opens suggestion list. <br/>
+            &gt; List elements can each be hovered over and clicked. Clicking them populates the search bar with the item.<br/>
             &gt; Clicking outside closes list, but if you click close enough to its edge, the search field remains focused. <br/>
-            Hovering over search suggestions reveals a context button (...) which gives the option to remove the suggestion from the list. <br/>
-            &gt; If you start typing, the suggestions change to include the text and an arrow button appears at the right which on click submits the text input (automatically deciding whether to treat it as a URL or search term). On focus change, text remains there but the arrow disappears.<br/>
-            &gt; Selecting a word with double click or the whole line with triple click works. The right-click context menu allows for clipboard actions, as well as a drag-and-drop feature that allows you to drag the text over the "new tab" button above and create a new tab that searches the dragged text or opens it if it's a URL.<br/>
+            Hovering over suggestions reveals a button which lets you remove the item. <br/>
+            &gt; Typing changes the suggestions in the list (autocomplete) and an arrow button appears at the right to submit the input. On focus change, text remains there but the arrow disappears. <br/>
+            &gt; Typing also causes a preview of autocomplete (highlighted text) to appear in the field itself. Clicking anywhere on autocompleted text confirms the autocomplete (so the text is in the field but not submitted).<br/>
+            &gt; You can select a word with double click or the whole line with triple click. <br/>
+            &gt; The right-click context menu allows clipboard actions.<br/>
+            &gt; You can drag selected text over the "new tab" button above and create a new tab that automatically searches the text or opens it if it's a URL.<br/>
             &gt; The placeholder text is entirely non-interactable with the mouse.
           </td>
           <td>
             <span class="mobile-label"><b>Citymapper</b><br/></span>
-            &gt; On a click, the field with the "Start" label becomes focused. <br/>
+            &gt; On click, the field becomes focused (opening suggestion list). <br/>
             &gt; Suggestions can each be hovered over and clicked.<br/>
-            The "Start" and "End" labels which disappear when the field is focused are both able to be highlighted but not dragged.<br/>
+            &gt; The "Start" and "End" labels which disappear when the field is focused are both able to be highlighted but not dragged.<br/>
             &gt; Clicking outside closes the list. <br/>
             &gt; If you start typing, the suggestions change to include the text and a cross button appears at the right which on click clears the current text box.  On focus change, the cross button remains.
           </td>
@@ -132,6 +135,7 @@
             <span class="mobile-label"><b>Firefox</b><br/></span>
             &gt; Tabbing onto the search box puts it in the "auto-focused" state I identified above, without opening the suggestion list.<br/>
             &gt; Pressing an up or down arrow key, PgUp, PgDown, or typing any character reveals the list.<br/>
+            &gt; Typing causes autocomplete: Enter submits the current previewed autocomplete; Backspace deletes the previewed autocomplete; Left or Right accepts the previewed autocomplete but does not submit the search.<br/>
             &gt; Once the list is open, it can be navigated using the up and down arrow key or Tab/Shift+Tab (after the initial keypress, otherwise Tab will move off of the component), and Enter confirms/submits.<br/>
             &gt; Pressing Ctrl, Shift, or Alt changes the behaviour of the "Switch to tab" feature (Firefox opens a duplicate tab instead of switching to it). I only discovered this in the keyboard section but it also works in combination with hovering with the cursor.<br/>
             &gt; The discoverable-on-hover button from before is now visible when an item is selected with keys, and can be focused on with Tab (but not the arrow keys).
@@ -200,7 +204,8 @@
             &gt; On click the box changes colour, highlights with a drop shadow, + brings up suggested searches.<br/>
             &gt; The active state of the search box is indicated by a blue border. Whenever the box is focused (i.e., when keyboard input will show up in the search bar), the background of the field is white instead of grey.<br/>
             &gt; Hovering over search suggestions, or the arrow button on the right, darkens the background colour of the item for visual feedback. <br/>
-            &gt; Icons like the search engines at the bottom of the suggestion list have no label, but hovering reveals a tool tip with information about each option.
+            &gt; Icons like the search engines at the bottom of the suggestion list have no label, but hovering reveals a tool tip with information about each option.<br/>
+            &gt; The field provides a highlighted preview of the autocomplete prediction/search suggestion: if the user rejects it by pressing Backspace it disappears. If the user keeps typing, the preview changes to fit the new input. If the user presses an Arrow key the text stops being highlighted and looks the same as the user input to signal that it is part of the actual search term/URL now, and editable. 
           </td>
           <td>
             <span class="mobile-label"><b>Citymapper</b><br/></span>
@@ -258,17 +263,13 @@
 
       <h2 id="part-3"><span>part 3: state models + component redesign <a href="accessible-components#whole-title" class="top-link">back to top</a></span></h2>
       <p>
+        I'm most interested by the interaction flow of using Firefox's search bar implementation: I feel like it's the most feature-rich and complex, and also used so frequently as the primary interface to navigate the internet. <br/>
+        <br/>
+        To learn more about the design of this component and get ready to create my own version, I studied the different states that the Firefox search bar can be in and how users move between each one when using either mouse or keyboard inputs. 
+      </p>
 
-        - create 2 state models
-          - mouse users
-          - keyboard users
-        - revise the state models, making a trade-off to affect learnability/memorability/efficiency/accessibility
-          - add ability to distinguish between new tab and switch to tab with only mouse. makes keyboard navigation less efficient because its one more thing to tab through when you go down the list
-          - think of something to add for keyboard that has a drawback for mouse people
-        - make improved search bar in figma
-          - one design for initial state (before interaction)
-          - one additional state
-        - annotate: what ur redesigning, how improved, how it affects L/M/E/A
+      <p>
+        First was the state model diagram for mouse users. The diagram below shows how users move from the default state of the search box to focused, active input, and scrolling suggestions through hover and click actions. The dotted red line indicates a jump in states that can only occur using a keyboard: inputting your own search term or URL. Apart from this, the diagram captures the ways in which users can navigate suggested searches and buttons in the search bar component. Also note the label indicating the missing interaction for toggling "switch to tab" mode that I mentioned above: the only way to duplicate a tab instead of switching to it is via keyboard shortcuts. 
       </p>
 
       <div class="ac-img-compact-inline-box">
@@ -277,6 +278,21 @@
         <img class="ac-img-compact-inline" src="assets/accessible-components/status-model-keyboard.png" alt="Status model for Firefox search bar with keyboard"/>
         <p class="caption">Status Model for Firefox search bar with keyboard</p>
       </div>
+
+      <p>
+        - create 2 state models
+          - mouse users DONE
+          - keyboard users DONE
+        - revise the state models, making a trade-off to affect learnability/memorability/efficiency/accessibility
+          - mouse DONE
+          - keyboard
+          - add ability to distinguish between new tab and switch to tab with only mouse. makes keyboard navigation less efficient because its one more thing to tab through when you go down the list DONE
+          - think of something to add for keyboard that has a drawback for mouse people
+        - make improved search bar in figma
+          - one design for initial state (before interaction)
+          - one additional state
+        - annotate: what ur redesigning, how improved, how it affects L/M/E/A
+      </p>
 
       <h2><span>part 4: reflection <a href="accessible-components#whole-title" class="top-link">back to top</a></span></h2>
       <p>
