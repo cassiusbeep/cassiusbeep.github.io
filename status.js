@@ -33,6 +33,7 @@ const titleStatus = document.getElementById("title-card");
 if (titleStatus) {
   titleStatus.addEventListener("click", function () {
     statusUpdate();
+    titleStatus.classList.remove("wiggle");
   });
 } else {
   console.log("title didnt work...");
