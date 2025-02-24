@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="./style.css" />
   <link rel="icon" href="./assets/faces/playdohportrait.webp" type="image/x-icon" />
 </head>
-<!-- TODO: make collapsible/accordion style image & table viewer, make back to top links for each part (DONE), figure out conditional rendering so mobile sees an alternative format to the table (DONE) -->
 
 <body>
   <div id="menu-wrapper">
@@ -368,7 +367,8 @@
       <br />
       To learn more about the design of this component and get ready to create my own version, I studied the different
       states that the Firefox search bar can be in and how users move between each one when using either mouse or
-      keyboard inputs.
+      keyboard inputs. This displays the different ways the component will change visually or behaviourally depending on
+      the sequence of actions a user takes.
     </p>
 
     <p>
@@ -433,29 +433,15 @@
       The diagram also reflects the changes to the focus order made by my mouse state model redesign, and sacrifices the
       redundancy between the arrow and tab keys to create a quick/efficient way for keyboard users to exit the
       suggestion list and move to other components.
-      <!-- TODO ^ -->
     </p>
     <img class="ac-img" src="assets/accessible-components/status-model-keyboard-redesign.png"
       alt="Status model for Firefox search bar with keyboard" />
 
     <p>
       With these changes in mind, I created a few sketches of a possible redesign for the Firefox search bar component
-      that incorporate my critiques above.
-
-      - switch out logo (less ambiguously clickable)
-      - put magnifying glass in more consistent place with other platforms and make it clickable - also allows for empty
-      search to just go to Google
-      - make switch to tab more button like (affordances!) and in a consistent spot
-      - opens by default on new tab so shortcuts are more easily accessed
-      - no more ambiguous shortcuts
-      - how to exit list and move down into the website?
-      - clash between switch to tab button and content menu is fine because they occur on different types of elements
-      - justification for duplication being default behaviour
-      <br /><br />
-      - make improved search bar in figma
-      - one design for initial state (before interaction)
-      - one additional state
-      - annotate: what ur redesigning, how improved, how it affects L/M/E/A
+      that incorporate my critiques above. The first shows the initial state of the component upon opening a new tab,
+      and the second is the state of the component when a keyboard user tabs onto the "Switch to tab" button on a list
+      element. The annotations in the diagram explain more of my thoughts behind the redesign process.
     </p>
 
     <img class="ac-img" src="assets/accessible-components/firefox-redesign-initial.png"
@@ -467,21 +453,46 @@
     <p class="caption">Redesigned Firefox search bar: Switch to tab mode selected by Down Arrow-ing onto button</p>
 
     <p>
-
+      Since it's a pretty drastic change, I think I should justify my decision to make tab duplication rather than tab
+      switching the "Default" behaviour (i.e., the one that happens without pressing a dedicated button). I think that
+      the majority of web browser users have a low number of webpages open, and tend to navigate purely by
+      Tabbing/clicking between the visual handles at the top of the page. <br />
+      <br />
+      Most people will therefore not use the search bar workflow here to find an existing tab. Instead, I
+      think if they perform the exact same action as they did to open the first tab, the same behaviour should occur. It
+      makes more sense for those expecting a different result to learn one more step (clicking or tabbing to the button)
+      than changing their behaviour to achieve the same result (opening a new tab).
     </p>
-
 
     <h2><span>part 4: reflection <a href="accessible-components#whole-title" class="top-link">back to top</a></span>
     </h2>
     <p>
       - where did the components do well in usability + accessibility?
       - how have u applied this to ur design?
-      - are there unaddressed access considerations u accounted for?
+      - are there unaddressed access considerations u accounted for? (holding 2 keys at once)
       - how do ur changes solve a mismatch in the world (holmes vid)
       - 2 examples of how (in)accessibility of in/outputs could impact users
       - which input (mouse, kb, touch, screen reader) is most commonly
       prioritised? how does this affect UX?
     </p>
+    <ul class="left-list">
+      After watching <a href="https://www.youtube.com/watch?v=-iccWRhKZa8">Kat Holmes' talk on inclusive design</a>,
+      I've written down some thoughts about this study, my
+      search component redesign and how what I've learnt impacts user experiences. <br />
+      <br />
+      <li>For the most part, the search components did well to create learnable and consistent behaviours that users can
+        have high confidence in: for example, clearly telegraphing...</li>
+      <li>Applications to my own design:... (things i took from citymapper/explorer)</li>
+      <li>unaddressed access considerations:citymapper screen reader behaviour, </li>
+      <li>solving a mismatch in the world: people with no access to a keyboard or an inability to hold two keys at once.
+      </li>
+      <li></li>
+      <li>The interactive magnifying glass button allows mouse users to submit a URL or search without using the Enter
+        key which may benefit those with reduced reach.</li>
+      <li>I tried to apply the principle of affordances to make interactive elements more obvious to users, improving
+        discoverability and memorability. This involved making buttons look 3D with shadows and inner shading. </li>
+
+    </ul>
   </main>
   <script src="menu.js"></script>
 </body>
