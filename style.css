@@ -100,6 +100,14 @@ ul {
   border-radius: 15px;
 }
 
+.menu-ul {
+  max-width: fit-content;
+  list-style-type: none;
+  line-height: 150%;
+  padding-right: 40px;
+  text-indent: 5% hanging each-line;
+}
+
 .left-list li {
   padding-left: 0.5em;
 }
