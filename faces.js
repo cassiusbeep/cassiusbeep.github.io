@@ -216,8 +216,8 @@ prevNextIcon.forEach((icon) => {
       icon.id === "prev"
         ? currMonth - 1
         : icon.id === "next"
-        ? currMonth + 1
-        : 2; // march is month of first entry
+          ? currMonth + 1
+          : 2; // march is month of first entry
 
     if (icon.id === "first") {
       currYear = 2024;
