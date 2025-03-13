@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>responsive redesign</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="./assets/faces/playdohportrait.webp" type="image/x-icon" />
+</head>
+
+<body>
+  <div id="menu-wrapper">
+    <div id="menu"></div>
+  </div>
+  <main id="accessible-components-body">
+    <div id="top-spacer"></div>
+    <div class="title-bar access">
+      <div id="menu-button-container">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <h1>
+        <span id="whole-title" class="accessible-h1">responsive redesign: a case study</span>
+      </h1>
+    </div>
+
+    <p id="intro">
+      This case study aims to analyse the weaknesses of an existing webpage, graffiti.org, and help me develop the
+      skills needed to create prototypes for a responsive redesign and eventually develop a working responsive website
+      that adapts to
+      different screen sizes.
+    </p>
+
+    <p class="left-list" style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+      <a href="redesign#part-1"><b>part 1</b>: identifying usability problems</a><br />
+      <a href="redesign#part-2"><b>part 2</b>: visual redesign</a><br />
+      <a href="redesign#part-3"><b>part 3</b>: responsive redesign</a><br />
+    </p>
+
+    <h2 id="part-1"><span>part 1: identifying usability problems <a href="redesign#whole-title" class="top-link">back to
+          top</a></span></h2>
+
+    <p>
+      The webpage I've selected is graffiti.org, an archive of graffiti and graffiti artists from around the world. It
+      also hosts articles and other resources relating to graffiti culture and news.
+    </p>
+
+    <p>
+      <a href="https://www.graffiti.org/" target="_blank" style="display:block;">
+        <img style="width:100%;" src="assets/redesign/graffitiorg.jpg"
+          alt="Screenshot linking to the Graffiti.org webpage" />
+      </a>
+    </p>
+    <p class="caption">Graffiti.org website home screen</p>
+
+    <p>
+      Find problems in efficiency, learnability, and memorability<br />
+      <br />
+      think about its conceptual model<br />
+      <br />
+      write about these problems in the form of a list, table, infographic, or bullet points
+    </p>
+
+    <p>
+      Use WebAIM WAVE to detect possible accessibility problems. do you agree with the problems detected? write a few
+      sentences about your findings.
+    </p>
+
+    <h2 id="part-2"><span>part 2: visual redesign <a href="redesign#whole-title" class="top-link">back to
+          top</a></span></h2>
+
+    <p>
+      Before you start your hi-fi prototypes, create a visual design style guide (e.g., in Figma) that displays the main
+      colors, typography, and reusable components’ different states
+      (buttons on hover, click, etc.)
+
+      Major components should be included in your style guide, but how many components this totals to will vary based on
+      your design choices. For interactive elements (e.g., elements that change on hover, on click), keep their
+      interactions consistent throughout your product to keep the user experience coherent. You may find using Figma
+      components helpful for reusing components in your hi-fi prototype.
+    </p>
+
+    <p>
+      mockups: Using Figma or other mockup tool (like Adobe XD), create a total of 3 mockups of your screen, one for
+      each of the screen sizes (mobile, tablet, desktop). Test on a phone (~375x667px), a tablet (~768x1024px) and a
+      large computer (~3840x2160px), but your interface should work on any dimensions within that range! You are
+      encouraged to sketch out how you may lay out the components before making the mockups; this will actually save you
+      time from having to change your mockups. Design a website that is actually responsive: reusing most of it between
+      screen sizes, rather than designing three fairly different interfaces for different screen sizes.
+
+      For each mockup, annotate the different elements so that a developer would be able to take your designs and
+      reproduce them without needing additional explanation. Note elements used and key layout choices that are not the
+      default (e.g., whether something is flex, or alignment attributes, or non-obvious margin/padding, or setting
+      width/max-width). Annotate how your website would be responsive to handle the different screen sizes. Is it clear
+      how the styling and/or structuring of each element will change when you move from desktop to mobile to tablet?
+      Here are some example questions to consider annotating:
+      For larger containers, will you be using flexbox, grid, or something else? Why?
+      When in-between sizes, will anything like fonts or spacing need to be adjusted slightly?
+      Does the page change because of a user-action (such as a click or a hover)? How?
+    </p>
+
+    <h2 id="part-3">
+      <span>part 3: responsive redesign <a href="personas#whole-title" class="top-link">back to
+          top</a></span>
+    </h2>
+
+    <p>
+      build the redesigned page (bring a draft to critique II)
+
+      include link to the deployed webpage
+    </p>
+
+    <p>
+      Conclusion<br />
+      <br />
+      Line about what I learnt from the project. Thank you for reading!
+    </p>
+
+    <div id="top-spacer"></div>
+    <div class="ac-img-compact-inline-box">
+      <img class="ac-img-compact-inline" src="assets/personas/dave-blunts-gif.gif" alt="Dave Blunts sitting jovially"
+        id="blunts" />
+    </div>
+
+    <div id="top-spacer"></div>
+  </main>
+  <script src="menu.js"></script>
+  <script src="blunts.js"></script>
+</body>
+
+</html>
