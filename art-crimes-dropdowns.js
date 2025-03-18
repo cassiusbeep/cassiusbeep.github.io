@@ -22,3 +22,32 @@ newsDrop.addEventListener('mouseleave', function () {
     newsDrop.children[0].classList.remove("open");
     newsSubMenu.classList.remove("open");
 })
+
+// ------------- ACCESSIBILITY FEATURES ---------------
+
+imgDrop.addEventListener('keypress', function (event) {
+    if ((event.key === 'Space') || (event.key === 'Enter')) {
+        imgDrop.children[0].classList.add("open");
+        imgSubMenu.classList.add("open");
+        imgSubMenu.children[0].focus();
+    }
+})
+
+// imgSubMenu.addEventListener('focusout', function () {
+//     imgDrop.children[0].classList.remove("open");
+//     imgSubMenu.classList.remove("open");
+//     console.log("blurring!");
+// })
+
+newsDrop.addEventListener('keypress', function (event) {
+    if ((event.key === 'Space') || (event.key === 'Enter')) {
+        newsDrop.children[0].classList.toggle("open");
+        newsSubMenu.classList.toggle("open");
+        newsSubMenu.children[0].focus();
+    }
+})
+
+// newsSubMenu.lastChild.addEventListener('focusout', function () {
+//     newsDrop.children[0].classList.remove("open");
+//     newsSubMenu.classList.remove("open");
+// })

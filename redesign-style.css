@@ -48,12 +48,14 @@ h2 {
     overflow-x: visible;
 }
 
-a,
-#images-drop,
-#news-drop {
+a {
     color: #a1f0f4;
     text-decoration: underline;
     font-family: "Inconsolata", monospace;
+}
+
+.drop-trigger {
+    cursor: pointer;
 }
 
 a:visited,
@@ -72,6 +74,18 @@ a:active,
 #images-drop:active,
 #news-drop:active {
     color: #ffffff;
+}
+
+h2 a,
+h2 a:hover,
+h2 a:active,
+h2 a:visited {
+    font-family: "Covered By Your Grace", cursive;
+    font-size: 1.1em;
+    margin: 0;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: white;
 }
 
 .sidewaystriangle {
@@ -149,7 +163,7 @@ ul ul {
 
 .triangle {
     display: inline-block;
-    transition: 0.2s;
+    transition: 0.1s;
 }
 
 .triangle.open {
@@ -312,13 +326,21 @@ ul ul {
     position: relative;
     width: min-content;
     margin: auto;
+    filter: drop-shadow(5px 5px 0px #2983a8);
+    /* max-height: 25vw; */
+    overflow: hidden;
 }
 
 .artist-spotlight img {
-    filter: drop-shadow(5px 5px 0px #2983a8);
     height: 25vw;
+    object-fit: contain;
     cursor: pointer;
     z-index: 1;
+    transition: 0.2s;
+}
+
+.artist-spotlight img:hover {
+    transform: scale(1.025);
 }
 
 .expand-button {

@@ -25,18 +25,31 @@
     - update visual design guide to include dropdown
     - update mockup to show dropdowns, menu, featured image, move button in desktop mode to top of header
     - add interactive visual design guide to site as an embed
+    - add explanation for all my changes and more of a narrative
+    - hook up search if i get really bored i guess
+    - fix defocus events for dropdown and mobile menu
+    - make hidden elements unfocusable
+-->
+
+<!-- 
+  QUESTIONS FOR CRIT:
+  - Should I move the Artist Spotlight heading more to the middle in line with the picture?
+  - are the fonts okay?
+  - do you like the animation to show you can expand the image
+  - would you know the arrow is a menu on mobile?
+  - linking behaviour of expandable image versus linking to artist page
 -->
 
 <body>
   <main>
     <div class="header">
-      <div id="menu-button"><span class="sidewaystriangle">&gt;</span></div>
+      <div id="menu-button" tabindex="0"><span class="sidewaystriangle">&gt;</span></div>
       <div id="menu-slide">
         <ul>
           <li><a href="https://www.graffiti.org/index/story.html">About</a></li>
           <li><a href="http://www.graffiti.org/faq/index.html">Contact Us</a></li>
           <li><a href="https://www.graffiti.org/faq/index.html">FAQ</a></li>
-          <li>Images <span id="menutriangleone">&#x25BC;</span></li>
+          <li tabindex="0" class="drop-trigger" id="menu-imgs">Images <span id="menutriangleone">&#x25BC;</span></li>
           <ul id="mobile-menu-images">
             <li><a href="https://www.graffiti.org/index/usa.html">USA</a></li>
             <li><a href="https://www.graffiti.org/index/europe.html">Europe</a></li>
@@ -47,7 +60,8 @@
             <li><a href="https://www.graffiti.org/war/war_18.html">War Murals</a></li>
             <li><a href="https://www.graffiti.org/911/index.html">9-11 Murals</a></li>
           </ul>
-          <li>Resources & News <span id="menutriangletwo">&#x25BC;</span></li>
+          <li tabindex="0" class="drop-trigger" id="menu-news">Resources & News <span
+              id="menutriangletwo">&#x25BC;</span></li>
           <ul id="mobile-menu-news">
             <li><a href="https://graffnews.blogspot.com/">Graffiti News & Events</a></li>
             <li><a href="https://www.graffiti.org/index/talk.html">Interviews, Articles & Research</a></li>
@@ -56,7 +70,7 @@
           </ul>
         </ul>
       </div>
-      <img class="crimes-logo" src="assets/redesign/art-crimes-logo.gif" />
+      <img class="crimes-logo" src="assets/redesign/art-crimes-logo.gif" alt="Art Crimes Graffiti logo" />
       <div class="crimes-title">
         <h1><span class="capital">A</span>rt <span class="capital">C</span>rimes</h1>
         <h2 class="crimes-slogan"><span class="capital">T</span>HE <span class="capital">W</span>RITING ON THE <span
@@ -66,7 +80,7 @@
         <div><a href="https://www.graffiti.org/index/story.html">About</a></div>
         <div><a href="http://www.graffiti.org/faq/index.html">Contact Us</a></div>
         <div><a href="https://www.graffiti.org/faq/index.html">FAQ</a></div>
-        <div id="images-drop">
+        <div id="images-drop" tabindex="0">
           Images <span class="triangle">&#x25BC;</span>
           <div id="images-submenu" class="dropdown">
             <a href="https://www.graffiti.org/index/usa.html">USA</a><br />
@@ -79,7 +93,7 @@
             <a href="https://www.graffiti.org/911/index.html">9-11 Murals</a>
           </div>
         </div>
-        <div id="news-drop">
+        <div id="news-drop" tabindex="0">
           Resources & News <span class="triangle">&#x25BC;</span>
           <div id="news-submenu" class="dropdown">
             <a href="https://graffnews.blogspot.com/">Graffiti News & Events</a><br />
@@ -97,9 +111,10 @@
 
     <div class="contents">
       <div class="spotlight-heading">
-        <h2><span class="capital">A</span>RTIST <span class="capital">S</span class="capital">POTLIGHT: <span
-            class="capital">T</span class="capital">EMPT <span class="capital">O</span class="capital">NE, FROM LOS
-          ANGELES, CALIFORNIA</h2>
+        <h2><span class="capital">A</span>RTIST <span class="capital">S</span class="capital">POTLIGHT: <a
+            href="https://www.graffiti.org/tempt/index.html"><span class="capital">T</span class="capital">EMPT <span
+              class="capital">O</span class="capital">NE, FROM LOS
+            ANGELES, CALIFORNIA</a></h2>
       </div>
 
       <div class="spotlights">
