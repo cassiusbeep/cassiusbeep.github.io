@@ -327,8 +327,8 @@ ul ul {
     width: min-content;
     margin: auto;
     filter: drop-shadow(5px 5px 0px #2983a8);
-    /* max-height: 25vw; */
     overflow: hidden;
+    height: 25vw;
 }
 
 .artist-spotlight img {
@@ -340,7 +340,7 @@ ul ul {
 }
 
 .artist-spotlight img:hover {
-    transform: scale(1.025);
+    transform: scale(1.03);
 }
 
 .expand-button {
