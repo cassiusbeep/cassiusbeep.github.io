@@ -76,9 +76,8 @@ a:active,
     color: #ffffff;
 }
 
+
 h2 a,
-h2 a:hover,
-h2 a:active,
 h2 a:visited {
     font-family: "Covered By Your Grace", cursive;
     font-size: 1.1em;
@@ -86,6 +85,14 @@ h2 a:visited {
     font-weight: lighter;
     margin-bottom: 10px;
     color: white;
+}
+
+h2 a:hover {
+    color: #a1f0f4;
+}
+
+h2 a:active {
+    color: #fff;
 }
 
 .sidewaystriangle {

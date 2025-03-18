@@ -437,7 +437,8 @@ a:active {
   color: black;
   display: block;
   height: auto;
-  max-height: 250px;
+  min-height: fit-content;
+  max-height: 500px;
 }
 
 @keyframes glow {
