@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Sedgwick+Ave+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Inconsolata:wght@200..900&family=Sedgwick+Ave+Display&display=swap');
+
+html {
+    background-color: #000000;
+    overflow-x: hidden;
+}
+
+body {
+    /* min-height: 100vw; */
+    color: #ffffff;
+    font-family: "Inconsolata", monospace;
+}
+
+::-moz-selection {
+    color: #000000;
+    background: #a1f0f4;
+}
+
+::selection {
+    color: #000000;
+    background: #a1f0f4;
+}
+
+h1 {
+    font-family: "Sedgwick Ave Display", cursive;
+    font-size: 2em;
+    margin: 0;
+}
+
+h2 {
+    font-family: "Covered By Your Grace", cursive;
+    font-size: 1.25em;
+    margin: 0;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+.capital {
+    font-size: 1.5em;
+}
+
+#images-drop,
+#news-drop {
+    cursor: pointer;
+    position: relative;
+    overflow-x: visible;
+}
+
+a,
+#images-drop,
+#news-drop {
+    color: #a1f0f4;
+    text-decoration: underline;
+    font-family: "Inconsolata", monospace;
+}
+
+a:visited,
+#images-drop:visited,
+#news-drop:visited {
+    color: #8439c2;
+}
+
+a:hover,
+#images-drop:hover,
+#news-drop:hover {
+    color: #2983a8;
+}
+
+a:active,
+#images-drop:active,
+#news-drop:active {
+    color: #ffffff;
+}
+
+.sidewaystriangle {
+    position: fixed;
+    display: inline-block;
+    transition: 0.2s;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50px;
+    padding: 5px;
+    text-align: center;
+    width: 35px;
+}
+
+.sidewaystriangle.open {
+    transform: scaleX(-100%);
+}
+
+#menu-slide {
+    height: 100vh;
+    width: 0vw;
+    z-index: 5;
+    background-color: black;
+    border-right: 1px solid #fff;
+    padding: 25px;
+    position: fixed;
+    display: block;
+    top: 0px;
+    left: -100px;
+    transition: 0.6s;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#menu-slide.open {
+    width: 100vw;
+    display: block;
+    left: 0px;
+}
+
+ul {
+    font-size: 1.4em;
+    padding: 2em;
+    position: sticky;
+}
+
+ul ul {
+    font-size: 1em;
+    padding: 0px;
+    padding-left: 35px;
+}
+
+#menutriangleone,
+#menutriangletwo {
+    cursor: pointer;
+    transform: none;
+    display: inline-block;
+    transition: 0.1s;
+    font-size: 0.9em;
+}
+
+#menutriangleone.open,
+#menutriangletwo.open {
+    transform: scaleY(-100%);
+}
+
+#mobile-menu-images,
+#mobile-menu-news {
+    display: none;
+}
+
+#mobile-menu-images.open,
+#mobile-menu-news.open {
+    display: inline-block;
+}
+
+.triangle {
+    display: inline-block;
+    transition: 0.2s;
+}
+
+.triangle.open {
+    transform: scaleY(-100%);
+}
+
+.dropdown {
+    display: none;
+    width: max-content;
+}
+
+.dropdown.open {
+    display: block;
+    position: absolute;
+    background-color: #000;
+    bottom: 30px;
+    right: 0px;
+    transform: translateY(100%);
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: underline;
+    padding: 5px;
+}
+
+.header {
+    display: grid;
+    grid-template-areas:
+        'logoArea titleArea navArea'
+        'logoArea titleArea searchArea';
+    grid-template-columns: min-content 1fr 2fr;
+    grid-template-rows: 3fr 2fr;
+    padding: 25px;
+    /* border: 2px solid blue; */
+}
+
+@media only screen and (max-width: 950px) {
+    .header {
+        grid-template-areas:
+            'logoArea titleArea'
+            'navArea navArea'
+            'searchArea searchArea';
+        grid-template-columns: 1fr 3fr;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .header {
+        grid-template-areas:
+            'menuArea titleArea'
+            'searchArea searchArea';
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 1fr min-content;
+    }
+}
+
+#menu-button {
+    display: none;
+    grid-area: menuArea;
+    font-size: xx-large;
+    cursor: pointer;
+    z-index: 6;
+}
+
+@media only screen and (max-width: 550px) {
+    #menu-button {
+        display: block;
+    }
+}
+
+.crimes-logo {
+    grid-area: logoArea;
+}
+
+@media only screen and (max-width: 550px) {
+    .crimes-logo {
+        display: none;
+    }
+}
+
+.crimes-title {
+    grid-area: titleArea;
+    padding-left: 10px;
+}
+
+.crimes-slogan {
+    line-height: 30%;
+    white-space: nowrap;
+    /* margin-bottom: 20px; */
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    grid-area: navArea;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 550px) {
+    .nav {
+        display: none;
+    }
+}
+
+.search {
+    display: flex;
+    grid-area: searchArea;
+    justify-content: right;
+    padding-right: 56px;
+    height: min-content;
+}
+
+@media only screen and (max-width: 550px) {
+    .search {
+        padding-right: 0;
+        margin-top: 15px;
+    }
+}
+
+.search-box {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Inconsolata", monospace;
+    font-size: large;
+    margin-right: 20px;
+    border: 0;
+    min-width: 55%;
+    padding-left: 10px;
+}
+
+.search-box:focus {
+    outline: 2px solid #2983a8;
+}
+
+.crimes-button {
+    padding: 5px;
+    background-color: #a1f0f4;
+    padding: 10px;
+    font-family: "Inconsolata", monospace;
+    font-size: large;
+    white-space: nowrap;
+    height: min-content;
+    cursor: pointer;
+}
+
+.crimes-button:hover {
+    background-color: #57b8df;
+}
+
+.crimes-button:active {
+    background-color: #2983a8;
+}
+
+.spotlight-heading {
+    color: #fff;
+    /* PLACEHOLDER */
+}
+
+.artist-spotlight {
+    justify-content: center;
+    position: relative;
+    width: min-content;
+    margin: auto;
+}
+
+.artist-spotlight img {
+    filter: drop-shadow(5px 5px 0px #2983a8);
+    height: 25vw;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.expand-button {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+}
+
+.expand-button div {
+    position: absolute;
+}
+
+.bar1 {
+    top: 25px;
+    left: 0px;
+    z-index: 3;
+}
+
+.bar2 {
+    top: 10px;
+    left: 0px;
+    z-index: 2;
+}
+
+.bar3 {
+    top: 0px;
+    left: 10px;
+    z-index: 2;
+}
+
+.bar4 {
+    top: 5px;
+    left: 25px;
+    z-index: 3;
+}
+
+.bar1,
+.bar3 {
+    width: 20px;
+    height: 5px;
+    background-color: #fff;
+    transition: 0.1s
+}
+
+.bar2,
+.bar4 {
+    width: 5px;
+    height: 15px;
+    background-color: #fff;
+    transition: 0.1s
+}
+
+.dark {
+    background-color: #000;
+    filter: drop-shadow(1px 1px 0px #2983a8);
+}
+
+.hover.bar1,
+.hover.bar2 {
+    transform: translate(-2.5px, 2.5px);
+}
+
+.hover.bar3,
+.hover.bar4 {
+    transform: translate(2.5px, -2.5px);
+}
+
+.grid-heading {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    margin-top: 40px;
+}
+
+@media only screen and (max-width: 950px) {
+    .search-box {
+        min-width: 80%;
+        padding: 10px;
+    }
+}
+
+@media (hover: none) {
+    .crimes-button {
+        display: none;
+    }
+
+    /* only hide submit button on touchscreens! */
+}
+
+.contents {
+    padding: 25px;
+    padding-top: 0px;
+    /* border: 2px solid red; */
+}
+
+.footer {
+    width: 80vw;
+    text-align: center;
+    padding-top: 0px;
+    margin: auto;
+    margin-top: 50px;
+    /* border: 2px solid greenyellow; */
+}
+
+main {
+    display: grid;
+    min-height: 100vh;
+    max-height: fit-content;
+    grid-template-rows: min-content 1fr min-content 50px;
+}
+
+#artist-grid {
+    margin-top: 20px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.artist-card {
+    background-color: #2983a8;
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.artist-card img {
+    /* object-fit: cover; */
+    object-position: 50% 50%;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.artist-card p {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #000;
+    padding: 3px;
+    font-size: large;
+    transition: 0.1s;
+}
+
+.artist-card:hover p {
+    color: #13485e;
+    font-weight: bold;
+    font-size: larger;
+}
+
+@media only screen and (max-width: 950px) {
+    #artist-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #artist-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.byline {
+    text-align: center;
+    margin-top: 35px;
+}

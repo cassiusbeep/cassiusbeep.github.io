@@ -28,7 +28,7 @@
     </div>
 
     <p id="intro">
-      This case study aims to analyse the weaknesses of an existing webpage, graffiti.org, and help me develop the
+      This case study aims to analyse the weaknesses of an existing webpage and help me develop the
       skills needed to create prototypes for a responsive redesign and eventually develop a working responsive website
       that adapts to
       different screen sizes.
@@ -44,12 +44,19 @@
           top</a></span></h2>
 
     <p>
-      The webpage I've selected is graffiti.org, an archive of graffiti and graffiti artists from around the world. It
-      also hosts articles and other resources relating to graffiti culture and news.
+      The webpage I've selected is Art Crimes at <a href="https://www.graffiti.org/" target="_blank"
+        title="Art Crimes">graffiti.org</a>, an archive of
+      graffiti and graffiti artists from around
+      the world. It
+      also hosts articles and other resources relating to graffiti culture and news. This site has been going a long
+      time, and has actually split off from the historic version at <a href="http://www.graffitiarchiv.org/"
+        target="_blank" title="Art Crimes Archive">graffitiarchiv.org</a> &mdash; this site doesn't
+      load for me but you may have better luck! The version I'm looking at is labelled the "future-facing" Art
+      Crimes website.
     </p>
 
     <p>
-      <a href="https://www.graffiti.org/" target="_blank" style="display:block;">
+      <a href="https://www.graffiti.org/" target="_blank" style="display:block;" title="Art Crimes">
         <img style="width:100%;" src="assets/redesign/graffitiorg.jpg"
           alt="Screenshot linking to the Graffiti.org webpage" />
       </a>
@@ -57,22 +64,103 @@
     <p class="caption">Graffiti.org website home screen</p>
 
     <p>
-      Find problems in efficiency, learnability, and memorability<br />
-      <br />
-      think about its conceptual model<br />
-      <br />
-      write about these problems in the form of a list, table, infographic, or bullet points
+      My first task is to identify any significant choices or drawbacks in the design of this website, focusing on
+      <b>efficiency, learnability,</b> and <b>memorability</b>.
     </p>
 
+    <ul class="left-list">
+      <b>efficiency:</b>
+      <li>it might be inefficient for those using keyboard/screen readers as it's essentially just a really long list to
+        tab through - no shortcuts.</li>
+      <li>having the search bar at bottom might be kind of inefficient.</li>
+      <li>the search bar is really short - it doesn't even show the whole placeholder. this is annoying for longer
+        search
+        terms.</li>
+      <br />
+      <b>learnability:</b>
+      <li>the navigation is quite learnable for mouse users as all options are presented equally (no nested menus, so no
+        having to
+        figure out which submenu your specific option is located under)</li>
+      <li>the large image is linked, which is not obvious. it just links to a larger version of the image which is hard
+        to tell without prior knowledge.</li>
+      <li>the high-level shape of the page doesn't really match our natural reading patterns (the F-shape), so
+        first-time visitors might have trouble orienting themselves.</li>
+      <li>it took me a second to realise the significance of the list of names on the right of the page (titled "March
+        2017"). it also wasn't clear that the "Previous months" list is connected to this list.</li>
+      <br />
+      <b>memorability:</b>
+      <li>it might be hard to remember the location of frequently used links since they're just in a long list rather
+        than
+        spatially distributed.</li>
+      <li>there's not much going on within the page so generally pretty memorable. i'd like to preserve this simplicity.
+      </li>
+    </ul>
+
     <p>
-      Use WebAIM WAVE to detect possible accessibility problems. do you agree with the problems detected? write a few
-      sentences about your findings.
+      <b>what is the conceptual model of graffiti.org?</b><br />
+      <br />
+      Art Crimes aims to be a kind of hub or central navigation point for all things graffiti. This
+      homepage should allow visitors to explore freely around artists and archives if they have a general interest, or
+      quickly navigate to specific resources if they know what they want to find. There's also an element of
+      - trying to showcase different artists - maybe their art should be more accessible from the list?
     </p>
+
+    <ul class="left-list">
+      I also used WebAIM WAVE to detect possible accessibility problems. It highlighted that:<br />
+      <br />
+      <li>there isn't a clear heading hierarchy, with the largest heading being H2 and no subheadings below that.</li>
+      <li>the site used some spacer images - e.g., between the body and footer - without alt text.</li>
+      <li>their HTML file doesn't specify a language or is invalid.</li>
+      <li>they include a linked image (which I mention above) without alt text, so the link is "empty".</li>
+      <li>the page uses very small text in the footer for copyright information and acknowledgements.</li>
+      <li>the page layout is mainly dictated by layout tables, which I feel are kind of old school and might not be best
+        practice for modern layouts.</li>
+      <br />
+      Separately from the WAVE toolkit, I noticed that the reason the page lacks H1 headings is because an images/logo
+      is used as the main title. I understand the appeal of this decision for an art-focused website, but for
+      accessibility and navigability it can definitely be improved.
+    </ul>
 
     <h2 id="part-2"><span>part 2: visual redesign <a href="redesign#whole-title" class="top-link">back to
           top</a></span></h2>
 
     <p>
+      Before creating high definition prototypes for my redesign across differen platforms, I put together a visual
+      design style guide that shows the main elements I'd be using. This includes important reusable components, my
+      colour palette, and typography choices.
+    </p>
+
+    <img class="ac-img" src="assets/redesign/visual_guide.png" alt="Visual style guide for my redesigned page" />
+
+    <p>
+      This guide includes the components I intend to use throughout the redesign, including variants on the components
+      for other states like hover and after click. I tried to create more responsive components like links that change
+      colour on hover and coloured buttons, to make user actions on the site more confident and predictable. <br />
+      <br />
+      I kept the colour scheme quite consistent with the existing minimal palette since a lot of colour will come from
+      the artwork itself. However, I updated the typefaces quite
+      significantly
+      to introduce faces that could provide the same stylistic energy as the image headings while still being legible by
+      the eye and screen readers.<br />
+      <br />
+      Finally, I introduced an animated component (with light and dark variants) which stretch on hover to indicate that
+      images
+      can be enlarged with a click.
+    </p>
+
+    <img class="ac-img" src="assets/redesign/prototype-desktop.png" alt="Prototype for desktop page" />
+
+    <img class="ac-img" src="assets/redesign/prototype-tablet.png" alt="Prototype for tablet page" />
+
+    <div class="ac-img-compact-inline-box"><img class="ac-img-compact-inline" src="assets/redesign/prototype-mobile.png"
+        alt="Prototype for mobile page" /></div>
+
+    <img class="ac-img" src="assets/redesign/prototype-annotated-1.png" alt="Annotated desktop prototype" />
+
+    <img class="ac-img" src="assets/redesign/prototype-annotated-2.png" alt="Annotated mobile page" />
+
+
+    <!-- 
       Before you start your hi-fi prototypes, create a visual design style guide (e.g., in Figma) that displays the main
       colors, typography, and reusable components’ different states
       (buttons on hover, click, etc.)
@@ -81,26 +169,7 @@
       your design choices. For interactive elements (e.g., elements that change on hover, on click), keep their
       interactions consistent throughout your product to keep the user experience coherent. You may find using Figma
       components helpful for reusing components in your hi-fi prototype.
-    </p>
-
-    <p>
-      mockups: Using Figma or other mockup tool (like Adobe XD), create a total of 3 mockups of your screen, one for
-      each of the screen sizes (mobile, tablet, desktop). Test on a phone (~375x667px), a tablet (~768x1024px) and a
-      large computer (~3840x2160px), but your interface should work on any dimensions within that range! You are
-      encouraged to sketch out how you may lay out the components before making the mockups; this will actually save you
-      time from having to change your mockups. Design a website that is actually responsive: reusing most of it between
-      screen sizes, rather than designing three fairly different interfaces for different screen sizes.
-
-      For each mockup, annotate the different elements so that a developer would be able to take your designs and
-      reproduce them without needing additional explanation. Note elements used and key layout choices that are not the
-      default (e.g., whether something is flex, or alignment attributes, or non-obvious margin/padding, or setting
-      width/max-width). Annotate how your website would be responsive to handle the different screen sizes. Is it clear
-      how the styling and/or structuring of each element will change when you move from desktop to mobile to tablet?
-      Here are some example questions to consider annotating:
-      For larger containers, will you be using flexbox, grid, or something else? Why?
-      When in-between sizes, will anything like fonts or spacing need to be adjusted slightly?
-      Does the page change because of a user-action (such as a click or a hover)? How?
-    </p>
+    -->
 
     <h2 id="part-3">
       <span>part 3: responsive redesign <a href="personas#whole-title" class="top-link">back to
@@ -108,10 +177,17 @@
     </h2>
 
     <p>
-      build the redesigned page (bring a draft to critique II)
-
-      include link to the deployed webpage
+      Using my critiques from the earlier parts and the style guide/prototypes I built in Figma, I went on to build a <a
+        href="./art-crimes">working, responsive version</a> of my redesigned webpage for Graffiti.org.
     </p>
+
+    <p>
+      <a href="./art-crimes" target="_blank" style="display:block;" title="Art Crimes Redesigned">
+        <img style="width:100%;" src="assets/redesign/graffitiorg.jpg"
+          alt="Screenshot linking to my Graffiti.org Redesign Prototype" />
+      </a>
+    </p>
+    <p class="caption">Graffiti.org Redesign Prototype Homepage</p>
 
     <p>
       Conclusion<br />

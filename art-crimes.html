@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>art crimes prototype</title>
+  <link rel="stylesheet" href="./redesign-style.css" />
+  <link rel="icon" href="./assets/faces/playdohportrait.webp" type="image/x-icon" />
+</head>
+
+<!-- 
+  TODO:
+    - DONE: build dropdown menu for nav bar
+    - DONE: build menu (slide in from left?) for mobile screens navigation
+    - DONE: sort out flex layout for header
+    - DONE: sort out grid layout for body
+    - fix any kinks in responsiveness
+    - DONE: grab pictures for artists
+    - DONE: fix links to go to the actual website?
+    - DONE: style search bar and buttons
+    - DONE: implement maximise function
+    - DONE: add a featured image on top to show off maximise function?
+    - update visual design guide to include dropdown
+    - update mockup to show dropdowns, menu, featured image, move button in desktop mode to top of header
+    - add interactive visual design guide to site as an embed
+-->
+
+<body>
+  <main>
+    <div class="header">
+      <div id="menu-button"><span class="sidewaystriangle">&gt;</span></div>
+      <div id="menu-slide">
+        <ul>
+          <li><a href="https://www.graffiti.org/index/story.html">About</a></li>
+          <li><a href="http://www.graffiti.org/faq/index.html">Contact Us</a></li>
+          <li><a href="https://www.graffiti.org/faq/index.html">FAQ</a></li>
+          <li>Images <span id="menutriangleone">&#x25BC;</span></li>
+          <ul id="mobile-menu-images">
+            <li><a href="https://www.graffiti.org/index/usa.html">USA</a></li>
+            <li><a href="https://www.graffiti.org/index/europe.html">Europe</a></li>
+            <li><a href="https://www.graffiti.org/index/world.html">World</a></li>
+            <li><a href="https://www.graffiti.org/index/artists.html">Featured Artists</a></li>
+            <li><a href="https://www.graffiti.org/trains/index.trains.html">Trains</a></li>
+            <li><a href="https://www.graffiti.org/blackbooks/index.html">Blackbooks</a></li>
+            <li><a href="https://www.graffiti.org/war/war_18.html">War Murals</a></li>
+            <li><a href="https://www.graffiti.org/911/index.html">9-11 Murals</a></li>
+          </ul>
+          <li>Resources & News <span id="menutriangletwo">&#x25BC;</span></li>
+          <ul id="mobile-menu-news">
+            <li><a href="https://graffnews.blogspot.com/">Graffiti News & Events</a></li>
+            <li><a href="https://www.graffiti.org/index/talk.html">Interviews, Articles & Research</a></li>
+            <li><a href="https://www.graffiti.org/byline/index.html">Byline</a></li>
+            <li><a href="https://www.graffiti.org/index/best.html">Best Graffiti Sites</a></li>
+          </ul>
+        </ul>
+      </div>
+      <img class="crimes-logo" src="assets/redesign/art-crimes-logo.gif" />
+      <div class="crimes-title">
+        <h1><span class="capital">A</span>rt <span class="capital">C</span>rimes</h1>
+        <h2 class="crimes-slogan"><span class="capital">T</span>HE <span class="capital">W</span>RITING ON THE <span
+            class="capital">W</span class="capital">ALL</h2>
+      </div>
+      <div class="nav">
+        <div><a href="https://www.graffiti.org/index/story.html">About</a></div>
+        <div><a href="http://www.graffiti.org/faq/index.html">Contact Us</a></div>
+        <div><a href="https://www.graffiti.org/faq/index.html">FAQ</a></div>
+        <div id="images-drop">
+          Images <span class="triangle">&#x25BC;</span>
+          <div id="images-submenu" class="dropdown">
+            <a href="https://www.graffiti.org/index/usa.html">USA</a><br />
+            <a href="https://www.graffiti.org/index/europe.html">Europe</a><br />
+            <a href="https://www.graffiti.org/index/world.html">World</a><br />
+            <a href="https://www.graffiti.org/index/artists.html">Featured Artists</a><br />
+            <a href="https://www.graffiti.org/trains/index.trains.html">Trains</a><br />
+            <a href="https://www.graffiti.org/blackbooks/index.html">Blackbooks</a><br />
+            <a href="https://www.graffiti.org/war/war_18.html">War Murals</a><br />
+            <a href="https://www.graffiti.org/911/index.html">9-11 Murals</a>
+          </div>
+        </div>
+        <div id="news-drop">
+          Resources & News <span class="triangle">&#x25BC;</span>
+          <div id="news-submenu" class="dropdown">
+            <a href="https://graffnews.blogspot.com/">Graffiti News & Events</a><br />
+            <a href="https://www.graffiti.org/index/talk.html">Interviews, Articles & Research</a><br />
+            <a href="https://www.graffiti.org/byline/index.html">Byline</a><br />
+            <a href="https://www.graffiti.org/index/best.html">Best Graffiti Sites</a>
+          </div>
+        </div>
+      </div>
+      <div class="search">
+        <input class="search-box" type="text" placeholder="Search..." />
+        <button class="crimes-button" type="button">Go!</button>
+      </div>
+    </div>
+
+    <div class="contents">
+      <div class="spotlight-heading">
+        <h2><span class="capital">A</span>RTIST <span class="capital">S</span class="capital">POTLIGHT: <span
+            class="capital">T</span class="capital">EMPT <span class="capital">O</span class="capital">NE, FROM LOS
+          ANGELES, CALIFORNIA</h2>
+      </div>
+
+      <div class="spotlights">
+        <div class="artist-spotlight">
+          <div class="expand-button">
+            <div class="bar1 dark"></div>
+            <div class="bar2 dark"></div>
+            <div class="bar3 dark"></div>
+            <div class="bar4 dark"></div>
+          </div>
+          <a href="assets/redesign/tempt-one.jpg"><img src="assets/redesign/tempt-one.jpg"
+              alt="Artwork by Tempt One" /></a>
+        </div>
+      </div>
+
+      <div class="grid-heading">
+        <h2><span class="capital">A</span>RTIST <span class="capital">S</span class="capital">HOWCASE: <span
+            class="capital">M</span class="capital">ARCH <span class="capital">2017</span class="capital"></h2>
+        <a href="https://www.graffiti.org/index/new.html"><button type="button" class="crimes-button">&lt;- See previous
+            months</button></a>
+      </div>
+
+      <div id="artist-grid">
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/tempt/index.html">
+            <img src="https://www.graffiti.org/tempt/1988a_temptx.jpg" alt="Thumbnail: Artwork by TemptOne" />
+            <p>TemptOne</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/apashe/index.html">
+            <img src="https://www.graffiti.org/apashe/02_apashex.jpg" alt="Thumbnail: Artwork by Apashe" />
+            <p>Apashe</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/relmsd/index.html">
+            <img src="https://www.graffiti.org/relmsd/01_5_relmx.jpg" alt="Thumbnail: Artwork by Relm" />
+            <p>Relm</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/trains/2016trains/trains_384.html">
+            <img src="https://www.graffiti.org/trains/2016trains/462x_2015x.jpg"
+              alt="Thumbnail: Photo by American Benchers" />
+            <p>Trains 384-387</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/colorask/index.html">
+            <img src="https://www.graffiti.org/colorask/color0286x.jpg"
+              alt="Thumbnail: Artwork by Color from Antwerp" />
+            <p>Color.ASK</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/grint/index.html">
+            <img src="https://www.graffiti.org/grint/grint_3359x.jpg" alt="Thumbnail: Artwork by Grint" />
+            <p>Grint</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/korb/index.html">
+            <img src="https://www.graffiti.org/korb/311_korbx.jpg" alt="Thumbnail: Artwork by Korb" />
+            <p>Korb</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/mrko/index.html">
+            <img src="https://www.graffiti.org/mrko/mrko_a_dark_car_with_epic_sky_by_denisthekko_2014x.jpg"
+              alt="Thumbnail: Artwork by MRKO" />
+            <p>MRKO</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/mynas/index.html">
+            <img src="https://www.graffiti.org/mynas/063_mynasx.jpg" alt="Thumbnail: Artwork by Mynas" />
+            <p>Myrnas</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/4sakn/index.html">
+            <img src="https://www.graffiti.org/4sakn/4sakn_020ax.jpg" alt="Thumbnail: Artwork by 4sakn" />
+            <p>4sakn</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/farbt/index.html">
+            <img src="https://www.graffiti.org/farbt/thebeast_marc_1x.jpg" alt="Thumbnail: Artwork by FarbTourette" />
+            <p>FarbTourette</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/ic/index.html">
+            <img src="https://www.graffiti.org/cas/holem_cheat_cas_crew_stockholm_swedenx.jpg"
+              alt="Thumbnail: Artwork by CAS Crew" />
+            <p>CAS Crew</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/ic/index.html">
+            <img src="https://www.graffiti.org/ic/reds_sparta_2016ccz2mediumx.jpg"
+              alt="Thumbnail: Artwork by IC Crew" />
+            <p>IC</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/chemis/chemis_4.html">
+            <img src="https://www.graffiti.org/chemis/gaza_wall_chemisx.jpg" alt="Thumbnail: Artwork by Chemis" />
+            <p>Chemis</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/sinek/sinek_2.html">
+            <img src="https://www.graffiti.org/sinek/sinekonagreece2016bx.jpg" alt="Thumbnail: Artwork by Sinek" />
+            <p>Sinek</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/jade93/jade93_2.html">
+            <img src="https://www.graffiti.org/jade93/hks181_ekose22_onset_jade93_chicago_mos_2014_1800x.jpg"
+              alt="Thumbnail: Artwork by Jade93" />
+            <p>Jade93</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/cabe/cabe_8.html">
+            <img src="https://www.graffiti.org/cabe/dame_cabe_cordoba2016x.jpg" alt="Thumbnail: Artwork by Cabe" />
+            <p>Cabe</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/mein/mein_4.html">
+            <img src="https://www.graffiti.org/mein/mein163_johannesburg_2015_1x.jpg"
+              alt="Thumbnail: Artwork by Mein" />
+            <p>Mein</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/mibsy/mibsy_2.html">
+            <img src="https://www.graffiti.org/mibsy/mibsy2016_06x.jpg" alt="Thumbnail: Artwork by Mibsy" />
+            <p>Mibsy</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/sket185/sket185_18.html">
+            <img src="https://www.graffiti.org/sket185/bust_sket185_flevopark2014x.jpg"
+              alt="Thumbnail: Artwork by Sket185" />
+            <p>Sket185</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/violent/violent_2.html">
+            <img src="https://www.graffiti.org/violent/violent_anokayerx.jpg" alt="Thumbnail: Artwork by Violent" />
+            <p>Violent</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/wany/wany_16.html">
+            <img src="https://www.graffiti.org/wany/wany_3201568042x.jpg" alt="Thumbnail: Artwork by Wany" />
+            <p>Wany</p>
+          </a>
+        </div>
+        <div class="artist-card">
+          <a href="https://www.graffiti.org/korea/korea_21.html">
+            <img src="https://www.graffiti.org/korea/barnes_gesketchax.jpg" alt="Thumbnail: Artwork by Korea 21" />
+            <p>Korea 21-23</p>
+          </a>
+        </div>
+      </div>
+      <div class="byline"><a href="https://www.graffiti.org/byline/buford_2017_03.html">Byline: Fugitive Intention</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      All the material in this site is &copy; 1994-2025 Art Crimes and the artists, all rights reserved.<br />
+      <br />
+      <a href="http://sunsite.icm.edu.pl/graffiti/">Mirror thanks to SunSITE Poland</a>
+    </div>
+  </main>
+  <script src="expand.js"></script>
+  <script src="art-crimes-dropdowns.js"></script>
+  <script src="art-crimes-menu.js"></script>
+</body>
+
+</html>
