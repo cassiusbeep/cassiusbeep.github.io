@@ -21,6 +21,8 @@ to codingnepalweb.com for the calendar template!
 - add easter eggs! (new colour at certain size?)
 - speed up playdoh: https://codeengineered.com/blog/09/12/preloading-images-jquery-and-javascript/
 - maybe get a firebase setup to expand faces functionality/upload process?
+- fix menu button position so it doesnt move around based on title length, but isn't all the way on the left on wide screens
+- maybe make menu button sticky
 
 
 ## feedback from cs1300 studio crit time
