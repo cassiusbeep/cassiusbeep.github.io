@@ -12,36 +12,12 @@
 
 <!-- 
   TODO:
-    - DONE: build dropdown menu for nav bar
-    - DONE: build menu (slide in from left?) for mobile screens navigation
-    - DONE: sort out flex layout for header
-    - DONE: sort out grid layout for body
-    - fix any kinks in responsiveness
-    - DONE: grab pictures for artists
-    - DONE: fix links to go to the actual website?
-    - DONE: style search bar and buttons
-    - DONE: implement maximise function
-    - DONE: add a featured image on top to show off maximise function?
-    - update visual design guide to include dropdown
-    - update mockup to show dropdowns, menu, featured image, move button in desktop mode to top of header
-    - add interactive visual design guide to site as an embed
-    - add explanation for all my changes and more of a narrative
-    - hook up search if i get really bored i guess
-    - fix defocus events for dropdown and mobile menu
-    - make hidden elements unfocusable
+    - WIP: fix any kinks in responsiveness
+    - DONE: add explanation for all my changes and more of a narrative
+    - DONE: fix defocus events for dropdown and mobile menu
     - https://edstem.org/us/courses/73848/discussion/6364749
-    - make the expand on hover component more efficient (div:hover bar {})
-    - get rid of visited links category
--->
-
-<!-- 
-  QUESTIONS FOR CRIT:
-  - Should I move the Artist Spotlight heading more to the middle in line with the picture?
-  - are the fonts okay?
-  - do you like the animation to show you can expand the image
-  - would you know the arrow is a menu on mobile?
-  - linking behaviour of expandable image versus linking to artist page
-  - how to stop menu text visibly wrapping as it expands/contracts?
+    - consider sticky navbar?
+    - expand image on the same page so you can just click out?
 -->
 
 <body>
@@ -76,9 +52,8 @@
       </div>
       <img class="crimes-logo" src="assets/redesign/art-crimes-logo.gif" alt="Art Crimes Graffiti logo" />
       <div class="crimes-title">
-        <h1><span class="capital">A</span>rt <span class="capital">C</span>rimes</h1>
-        <h2 class="crimes-slogan"><span class="capital">T</span>HE <span class="capital">W</span>RITING ON THE <span
-            class="capital">W</span class="capital">ALL</h2>
+        <h1>Art Crimes</h1>
+        <h2 class="crimes-slogan">THE WRITING ON THE WALL</h2>
       </div>
       <div class="nav">
         <div><a href="https://www.graffiti.org/index/story.html">About</a></div>
@@ -117,30 +92,27 @@
 
     <div class="contents">
       <div class="spotlight-heading">
-        <h2><span class="capital">A</span>RTIST <span class="capital">S</span class="capital">POTLIGHT: <a
-            href="https://www.graffiti.org/tempt/index.html"><span class="capital">T</span class="capital">EMPT <span
-              class="capital">O</span class="capital">NE, FROM LOS
+        <h2>ARTIST SPOTLIGHT: <a href="https://www.graffiti.org/tempt/index.html">TEMPT ONE, FROM LOS
             ANGELES, CALIFORNIA</a></h2>
       </div>
 
       <div class="spotlights">
         <div class="artist-spotlight">
-          <div class="expand-button">
+          <!-- <div class="expand-button">
             <div class="bar1 dark"></div>
             <div class="bar2 dark"></div>
             <div class="bar3 dark"></div>
             <div class="bar4 dark"></div>
-          </div>
+          </div> -->
           <a href="assets/redesign/tempt-one.jpg"><img src="assets/redesign/tempt-one.jpg"
               alt="Artwork by Tempt One" /></a>
         </div>
       </div>
 
       <div class="grid-heading">
-        <h2><span class="capital">A</span>RTIST <span class="capital">S</span class="capital">HOWCASE: <span
-            class="capital">M</span class="capital">ARCH <span class="capital">2017</span class="capital"></h2>
-        <a href="https://www.graffiti.org/index/new.html"><button type="button" class="crimes-button">&lt;- See previous
-            months</button></a>
+        <h2>ARTIST SHOWCASE: MARCH 2017</h2>
+        <a id="prev-months" href="https://www.graffiti.org/index/new.html">&lt;- See previous
+          months</a>
       </div>
 
       <div id="artist-grid">
@@ -292,9 +264,8 @@
         </div>
       </div>
       <div class="byline">
-        <a href="https://www.graffiti.org/byline/buford_2017_03.html"><button type="button"
-            class="crimes-button">Byline:
-            Fugitive Intention</button></a><br />
+        <a href="https://www.graffiti.org/byline/buford_2017_03.html">Byline:
+          Fugitive Intention</a>
         <!-- <a href="https://www.graffiti.org/byline/buford_2017_03.html">Byline:
           Fugitive Intention</a> -->
       </div>
@@ -306,7 +277,7 @@
       <a href="http://sunsite.icm.edu.pl/graffiti/">Mirror thanks to SunSITE Poland</a>
     </div>
   </main>
-  <script src="expand.js"></script>
+
   <script src="art-crimes-dropdowns.js"></script>
   <script src="art-crimes-menu.js"></script>
 </body>

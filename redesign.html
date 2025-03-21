@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="accessible">
 
 <head>
   <meta charset="UTF-8" />
@@ -70,24 +70,23 @@
 
     <ul class="left-list">
       <b>efficiency:</b>
-      <li>it might be inefficient for those using keyboard/screen readers as it's essentially just a really long list to
+      <li>inefficient for keyboard/screen reader users: really long list to
         tab through - no shortcuts.</li>
-      <li>having the search bar at bottom might be kind of inefficient.</li>
-      <li>the search bar is really short - it doesn't even show the whole placeholder. this is annoying for longer
-        search
-        terms.</li>
-      <br />
+      <li>search bar at bottom might be inefficient.</li>
+      <li>the search bar is too short - doesn't even show the whole placeholder. annoying for longer search terms.</li>
+    </ul>
+    <ul class="left-list">
       <b>learnability:</b>
-      <li>the navigation is quite learnable for mouse users as all options are presented equally (no nested menus, so no
-        having to
-        figure out which submenu your specific option is located under)</li>
-      <li>the large image is linked, which is not obvious. it just links to a larger version of the image which is hard
+      <li>navigation is quite learnable for mouse users: all options are presented flatly (no nested menus, so no having
+        to figure out which submenu your specific option is located under)</li>
+      <li>the main image is linked (not obviously) to a larger version of the image which is hard
         to tell without prior knowledge.</li>
-      <li>the high-level shape of the page doesn't really match our natural reading patterns (the F-shape), so
+      <li>the high-level shape of the page doesn't really match natural reading patterns (the F-shape), so
         first-time visitors might have trouble orienting themselves.</li>
       <li>it took me a second to realise the significance of the list of names on the right of the page (titled "March
-        2017"). it also wasn't clear that the "Previous months" list is connected to this list.</li>
-      <br />
+        2017"). it also wasn't clear that the "Previous months" list is connected.</li>
+    </ul>
+    <ul class="left-list">
       <b>memorability:</b>
       <li>it might be hard to remember the location of frequently used links since they're just in a long list rather
         than
@@ -101,75 +100,92 @@
       <br />
       Art Crimes aims to be a kind of hub or central navigation point for all things graffiti. This
       homepage should allow visitors to explore freely around artists and archives if they have a general interest, or
-      quickly navigate to specific resources if they know what they want to find. There's also an element of
-      - trying to showcase different artists - maybe their art should be more accessible from the list?
+      quickly navigate to specific resources if they know what they want to find. There's also an element of trying to
+      showcase different artists - maybe their art should be more accessible from the list, to encourage exploration and
+      discovery?
     </p>
 
     <ul class="left-list">
       I also used WebAIM WAVE to detect possible accessibility problems. It highlighted that:<br />
       <br />
       <li>there isn't a clear heading hierarchy, with the largest heading being H2 and no subheadings below that.</li>
-      <li>the site used some spacer images - e.g., between the body and footer - without alt text.</li>
+      <li>the site uses spacer images without alt text.</li>
       <li>their HTML file doesn't specify a language or is invalid.</li>
       <li>they include a linked image (which I mention above) without alt text, so the link is "empty".</li>
       <li>the page uses very small text in the footer for copyright information and acknowledgements.</li>
       <li>the page layout is mainly dictated by layout tables, which I feel are kind of old school and might not be best
         practice for modern layouts.</li>
       <br />
-      Separately from the WAVE toolkit, I noticed that the reason the page lacks H1 headings is because an images/logo
-      is used as the main title. I understand the appeal of this decision for an art-focused website, but for
-      accessibility and navigability it can definitely be improved.
+      I also separately noticed that the page lacks H1 headings because an images/logo is used as the main title. I
+      understand the appeal for an art-focused website, but the
+      accessibility and navigability can definitely be improved.
     </ul>
 
     <h2 id="part-2"><span>part 2: visual redesign <a href="redesign#whole-title" class="top-link">back to
           top</a></span></h2>
 
     <p>
-      Before creating high definition prototypes for my redesign across differen platforms, I put together a visual
+      Before creating high definition prototypes for my redesign across different platforms, I put together a visual
       design style guide that shows the main elements I'd be using. This includes important reusable components, my
       colour palette, and typography choices.
     </p>
 
-    <img class="ac-img" src="assets/redesign/visual_guide.png" alt="Visual style guide for my redesigned page" />
-
-    <p>
-      This guide includes the components I intend to use throughout the redesign, including variants on the components
-      for other states like hover and after click. I tried to create more responsive components like links that change
-      colour on hover and coloured buttons, to make user actions on the site more confident and predictable. <br />
-      <br />
-      I kept the colour scheme quite consistent with the existing minimal palette since a lot of colour will come from
-      the artwork itself. However, I updated the typefaces quite
-      significantly
-      to introduce faces that could provide the same stylistic energy as the image headings while still being legible by
-      the eye and screen readers.<br />
-      <br />
-      Finally, I introduced an animated component (with light and dark variants) which stretch on hover to indicate that
-      images
-      can be enlarged with a click.
+    <p class="compact">
+      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); aspect-ratio: 4/3;" width="100%"
+        src="https://embed.figma.com/proto/uuWsmJbpxsb71MWfRqzUpk/Responsive-Redesign?page-id=2%3A5&node-id=2-6&footer=false&viewport=87%2C140%2C0.43&scaling=contain&content-scaling=fixed&hide-ui=1&embed-host=share"
+        allowfullscreen></iframe>
     </p>
 
-    <img class="ac-img" src="assets/redesign/prototype-desktop.png" alt="Prototype for desktop page" />
+    <p>
+      This guide includes the components I intend to use throughout the redesign, including variants for different
+      states. I created more responsive components like links that change
+      colour on hover and coloured buttons, to make user actions on the site more confident and predictable. I collapsed
+      the menus into dropdowns to simplify navigation.<br />
+      <br />
+      I kept the colour scheme consistent with the existing minimal palette since a lot of colour will come from
+      the artwork itself. However, I updated the typefaces quite
+      significantly
+      to introduce stylised faces that are still legible by
+      the eye and screen readers (no images as titles!). After feedback from classmates, I removed the separate colour
+      for
+      "visited" links as
+      it adds confusion and doesn't offer much benefit.<br />
+      <br />
+      I also planned to media query the user's ability to hover, which indicates whether they're using a touchscreen
+      device. This lets me implement touchscreen responsiveness, which I mention in my annotations on the mobile
+      prototype.<br />
+      <br />
+      Finally, I introduced an animation for images on hover to indicate that
+      they can be enlarged with a click.
+    </p>
 
-    <img class="ac-img" src="assets/redesign/prototype-tablet.png" alt="Prototype for tablet page" />
+    <div class="ac-img-compact-box">
+      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); aspect-ratio: 2000/1345;" width="100%" class="ac-img-compact"
+        src="https://embed.figma.com/proto/uuWsmJbpxsb71MWfRqzUpk/Responsive-Redesign?page-id=0%3A1&node-id=177-87&p=f&viewport=298%2C236%2C0.26&scaling=responsive&content-scaling=fixed&footer=false&embed-host=share"
+        allowfullscreen></iframe>
+      <p class="caption">
+        Interactive Figma mock-ups for my redesigned site showcasing responsive
+        adaptation to 3 screen sizes (desktop, tablet, mobile).
+      </p>
+    </div>
 
-    <div class="ac-img-compact-inline-box"><img class="ac-img-compact-inline" src="assets/redesign/prototype-mobile.png"
-        alt="Prototype for mobile page" /></div>
+    <p>
+      The annotated versions below indicate the design choices I made and explain how I was thinking about making the
+      page responsive to different zoom and screen sizes at this stage.<br /><br />
+      Since the existing site does not scale at all in response to changing font or screen sizes, I introduced grid
+      layouts which can stack elements on narrower screens and variably sized image elements to improve
+      visibility.<br /><br />
+      Not pictured in the annotations for clarity is the overarching grid layout of the whole body of the page, which
+      would be a single column. I use this to limit the width of the centrally scrolling page contents in case of
+      ultra-wide screens.
+    </p>
 
-    <img class="ac-img" src="assets/redesign/prototype-annotated-1.png" alt="Annotated desktop prototype" />
+    <img class="ac-img" src="assets/redesign/prototype-annotated-1.jpg" alt="Annotated desktop prototype" />
 
-    <img class="ac-img" src="assets/redesign/prototype-annotated-2.png" alt="Annotated mobile page" />
-
-
-    <!-- 
-      Before you start your hi-fi prototypes, create a visual design style guide (e.g., in Figma) that displays the main
-      colors, typography, and reusable components’ different states
-      (buttons on hover, click, etc.)
-
-      Major components should be included in your style guide, but how many components this totals to will vary based on
-      your design choices. For interactive elements (e.g., elements that change on hover, on click), keep their
-      interactions consistent throughout your product to keep the user experience coherent. You may find using Figma
-      components helpful for reusing components in your hi-fi prototype.
-    -->
+    <div class="ac-img-compact-inline-box" style="width: 90vw;">
+      <img class="ac-img-compact-inline" src="assets/redesign/prototype-annotated-2.jpg" alt="Annotated mobile page" />
+      <img class="ac-img-compact-inline" src="assets/redesign/prototype-annotated-3.jpg" alt="Annotated mobile page" />
+    </div>
 
     <h2 id="part-3">
       <span>part 3: responsive redesign <a href="personas#whole-title" class="top-link">back to
@@ -178,21 +194,37 @@
 
     <p>
       Using my critiques from the earlier parts and the style guide/prototypes I built in Figma, I went on to build a <a
-        href="./art-crimes">working, responsive version</a> of my redesigned webpage for Graffiti.org.
+        href="./art-crimes">working, responsive version</a> of my redesigned webpage for Graffiti.org. The links in my
+      prototype are hooked up and will lead you to pages in the real website, so feel free to explore and see how the
+      navigation feels compared to the original homepage.
     </p>
 
     <p>
       <a href="./art-crimes" target="_blank" style="display:block;" title="Art Crimes Redesigned">
-        <img style="width:100%;" src="assets/redesign/graffitiorg.jpg"
+        <img style="width:100%;" src="assets/redesign/redesign-ss.jpg"
           alt="Screenshot linking to my Graffiti.org Redesign Prototype" />
       </a>
     </p>
-    <p class="caption">Graffiti.org Redesign Prototype Homepage</p>
+    <p class="caption">Graffiti.org Redesign: Homepage</p>
+
+    <ul class="left-list">
+      Here are some of the choices I made to improve usability and accessibility:<br />
+      <li>Implemented variable image sizes and grid configurations for different screen/font sizes</li>
+      <li>Re-organised headings and content to fit user expectations and introduce the site better</li>
+      <li>Made menu navigation more logical and streamlined</li>
+      <li>Used tab index and JS event listeners to improve keyboard navigation (try tabbing through the navbar!)</li>
+      <li>Added alt-text to images, removed spacer images, and used a consistent header hierarchy.</li>
+      <br />
+      I think my design is pretty effective at preserving the visual brand of the Art Crimes organisation while
+      improving the overall user experience and drawing people in to explore the archives.
+    </ul>
 
     <p>
-      Conclusion<br />
+      I had a fun time redesigning this webpage and thinking about how simple design choices and responsiveness testing
+      can improve the end user experience. Going through critique was also a great opportunity to identify blind spots
+      in my process. Maybe one day Graffiti.org will use some of these ideas for a redesign!<br />
       <br />
-      Line about what I learnt from the project. Thank you for reading!
+      Thank you for reading!
     </p>
 
     <div id="top-spacer"></div>

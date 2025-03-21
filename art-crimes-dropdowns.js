@@ -33,11 +33,16 @@ imgDrop.addEventListener('keypress', function (event) {
     }
 })
 
-imgSubMenu.addEventListener('blur', function () {
-    imgDrop.children[0].classList.remove("open");
-    imgSubMenu.classList.remove("open");
-    console.log("blurring!");
-})
+imgSubMenu.addEventListener("focusout", function () {
+    setTimeout(() => {
+        if (
+            !imgSubMenu.contains(document.activeElement)
+        ) {
+            imgDrop.children[0].classList.remove("open");
+            imgSubMenu.classList.remove("open");
+        }
+    }, 50);
+});
 
 newsDrop.addEventListener('keypress', function (event) {
     if ((event.key === 'Space') || (event.key === 'Enter')) {
@@ -47,8 +52,13 @@ newsDrop.addEventListener('keypress', function (event) {
     }
 })
 
-newsSubMenu.addEventListener('blur', function () {
-    newsDrop.children[0].classList.remove("open");
-    newsSubMenu.classList.remove("open");
-    console.log("blurring!");
-})
+newsSubMenu.addEventListener("focusout", function () {
+    setTimeout(() => {
+        if (
+            !newsSubMenu.contains(document.activeElement)
+        ) {
+            newsDrop.children[0].classList.remove("open");
+            newsSubMenu.classList.remove("open");
+        }
+    }, 50);
+});

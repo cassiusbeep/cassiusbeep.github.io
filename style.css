@@ -11,10 +11,27 @@
 
 html {
   overflow-x: hidden;
+  background-image: url("./assets/wacky_screenshot.webp");
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: contain;
 }
 
-#accessible-components-body {
-  backdrop-filter: brightness(80%) blur(2px);
+/* #accessible-components-body {
+  backdrop-filter: brightness(90%) blur(5px);
+} */
+
+html.accessible {
+  background-color: #1c2761;
+  background-image: url("./assets/blue_bg.png");
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  background-position: 0 0;
+  background-size: contain;
+}
+
+body {
+  height: 100 vw;
 }
 
 .circle {
@@ -31,13 +48,27 @@ html {
 }
 
 .title-bar {
-  text-align: center;
-  /* margin-top: 50px; */
+  display: flex;
+  flex-direction: row;
   backdrop-filter: blur(2px);
   backdrop-filter: brightness(0.3);
   z-index: 0;
-  min-height: max-content;
+  height: min-content;
   padding: 20px 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+#whole-title {
+  display: block;
+  text-align: center;
+  padding-left: 15px;
+}
+
+#menu-button-container {
+  display: block;
+  cursor: pointer;
+  margin-left: 20px;
 }
 
 h1 {
@@ -53,6 +84,7 @@ h1 {
 .top-link {
   font-size: x-small;
   vertical-align: text-top;
+  white-space: nowrap;
 }
 
 h2 {
@@ -149,6 +181,10 @@ p {
   padding: 25px;
   /* padding-bottom: 8px; */
   border-radius: 15px;
+}
+
+p.compact {
+  width: 50vw;
 }
 
 p.caption {
@@ -384,14 +420,6 @@ a:active {
   color: blue;
 }
 
-#menu-button-container {
-  top: 0px;
-  display: inline;
-  cursor: pointer;
-  margin-left: 20px;
-  float: left;
-}
-
 .bar1,
 .bar2,
 .bar3 {
@@ -545,16 +573,6 @@ a:active {
   cursor: grab;
   filter: drop-shadow(7px 7px 4px #000000);
   max-height: 100%;
-}
-
-html {
-  background-image: url("./assets/wacky_screenshot.webp");
-  /* background-size: cover; */
-  background-repeat: repeat-y;
-}
-
-body {
-  height: 100 vw;
 }
 
 .cal-wrapper {
@@ -821,7 +839,7 @@ header .current-date {
 
 @media only screen and (max-width: 800px) {
   #whole-title {
-    font-size: 8vw;
+    font-size: 32px;
   }
 
   #face-pic {
@@ -830,6 +848,10 @@ header .current-date {
 
   p {
     width: 90%;
+  }
+
+  p.compact {
+    width: 80%;
   }
 
   .two-col {
@@ -943,5 +965,98 @@ header .current-date {
     color: black;
     display: block;
     height: 80vh;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #menu-button-container {
+    margin-right: 20px;
+    left: 30%;
+    float: left;
+  }
+
+  #whole-title {
+    font-size: 50px;
+  }
+
+  #face-pic {
+    max-width: 900px;
+  }
+
+  p {
+    width: 900px;
+  }
+
+  p.compact {
+    width: 800px;
+  }
+
+  table {
+    width: 900px;
+  }
+
+  /* 
+  th {
+    font-size: 1.1em;
+  } */
+
+  /* td {
+    font-size: 0.9em;
+    padding: 5px;
+    line-height: 120%;
+    width: 100%;
+  } */
+
+  .ac-img {
+    width: 900px;
+  }
+
+  .ac-img-compact-box {
+    width: 650px;
+  }
+
+  .ac-img-compact-inline-box {
+    width: 650px;
+  }
+
+  .ac-img-flex-box {
+    width: 850px;
+  }
+
+  ul {
+    width: 900px;
+  }
+
+  ol {
+    width: 900px;
+  }
+
+  .quadrant-map {
+    width: 850px;
+  }
+
+  .cal-wrapper {
+    width: 900px;
+  }
+
+  #menu-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-x: visible;
+    border-radius: 5px;
+    filter: drop-shadow(7px 7px 0px #000000);
+    z-index: 99;
+  }
+
+  #menu {
+    transform: translate(-50%, -50%);
+    width: 800px;
+    /* overflow-y: hidden; */
+    /* overflow-y: scroll; */
+    z-index: 100;
+    height: 0px;
+    transition: 0.4s;
   }
 }
