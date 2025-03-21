@@ -138,35 +138,29 @@
         allowfullscreen></iframe>
     </p>
 
-    <p>
+    <ul class="left-list">
       This guide includes the components I intend to use throughout the redesign, including variants for different
-      states. I created more responsive components like links that change
-      colour on hover and coloured buttons, to make user actions on the site more confident and predictable. I collapsed
-      the menus into dropdowns to simplify navigation.<br />
+      states:
+      <li>Responsive components like hoverable links, interactive buttons - these make behaviours to user actions more
+        predictable.</li>
+      <li>Collapsed menu into dropdowns to simplify navigation.</li>
+      <li>Kept the colour scheme consistent (minimal -- there's lot of colour in the graffiti!)</li>
+      <li>Updated typefaces to make them legible but still stylistic</li>
+      <li>Removed uses of images as tites or spacers, especially without alt text.</li>
+      <li>Removed the separate style/colour for visited links (no more purple links) based on user feedback that it's
+        confusing/unhelpful</li>
+      <li>Queries the user's ability to hover to remove some buttons specifically on touchscreens</li>
+      <li>Slightly enlarge images on hover to hint at the click-to-maximise feature</li>
       <br />
-      I kept the colour scheme consistent with the existing minimal palette since a lot of colour will come from
-      the artwork itself. However, I updated the typefaces quite
-      significantly
-      to introduce stylised faces that are still legible by
-      the eye and screen readers (no images as titles!). After feedback from classmates, I removed the separate colour
-      for
-      "visited" links as
-      it adds confusion and doesn't offer much benefit.<br />
-      <br />
-      I also planned to media query the user's ability to hover, which indicates whether they're using a touchscreen
-      device. This lets me implement touchscreen responsiveness, which I mention in my annotations on the mobile
-      prototype.<br />
-      <br />
-      Finally, I introduced an animation for images on hover to indicate that
-      they can be enlarged with a click.
-    </p>
+      The interactive prototypes are below (may take time to load).
+    </ul>
 
-    <div class="ac-img-compact-box">
+    <div class="ac-img-compact-box" style="margin-top: 30px;">
       <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); aspect-ratio: 2000/1345;" width="100%" class="ac-img-compact"
         src="https://embed.figma.com/proto/uuWsmJbpxsb71MWfRqzUpk/Responsive-Redesign?page-id=0%3A1&node-id=177-87&p=f&viewport=298%2C236%2C0.26&scaling=responsive&content-scaling=fixed&footer=false&embed-host=share"
         allowfullscreen></iframe>
       <p class="caption">
-        Interactive Figma mock-ups for my redesigned site showcasing responsive
+        <b>Drag to scroll right.</b> Interactive Figma mock-ups for my redesigned site showcasing responsive
         adaptation to 3 screen sizes (desktop, tablet, mobile).
       </p>
     </div>
@@ -175,7 +169,7 @@
       The annotated versions below indicate the design choices I made and explain how I was thinking about making the
       page responsive to different zoom and screen sizes at this stage.<br /><br />
       Since the existing site does not scale at all in response to changing font or screen sizes, I introduced grid
-      layouts which can stack elements on narrower screens and variably sized image elements to improve
+      layouts (which can stack elements on narrower screens) and variably sized image elements to improve
       visibility.<br /><br />
       Not pictured in the annotations for clarity is the overarching grid layout of the whole body of the page, which
       would be a single column. I use this to limit the width of the centrally scrolling page contents in case of
@@ -197,7 +191,8 @@
     <p>
       Using my critiques from the earlier parts and the style guide/prototypes I built in Figma, I went on to build a <a
         href="./art-crimes">working, responsive version</a> of my redesigned webpage for Graffiti.org. The links in my
-      prototype are hooked up and will lead you to pages in the real website, so feel free to explore and see how the
+      prototype are hooked up and <b>will lead you to pages in the real website</b>, so feel free to explore and see how
+      the
       navigation feels compared to the original homepage.
     </p>
 
