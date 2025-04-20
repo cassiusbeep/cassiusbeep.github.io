@@ -30,6 +30,11 @@ html.accessible {
   background-size: contain;
 }
 
+html.iterative {
+  background-color: #90a3ff;
+  background-image: none;
+}
+
 body {
   height: 100 vw;
 }
@@ -43,6 +48,11 @@ body {
 }
 
 #top-spacer {
+  height: 50px;
+  display: block;
+}
+
+.spacer {
   height: 50px;
   display: block;
 }
@@ -180,6 +190,25 @@ ol {
 
 .left-list li {
   padding-left: 0.5em;
+}
+
+div.hor-scroll {
+  background-color: white;
+  width: 65vw;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding: 25px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+
+img.img-scrolling {
+  max-height: 70vh;
+  padding-right: 45px;
 }
 
 p {
@@ -860,6 +889,10 @@ header .current-date {
   }
 
   p {
+    width: 90%;
+  }
+
+  div.hor-scroll {
     width: 90%;
   }
 

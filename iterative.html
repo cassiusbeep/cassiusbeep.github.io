@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="accessible iterative">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>iterative design</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="./assets/faces/playdohportrait.webp" type="image/x-icon" />
+</head>
+
+<body>
+  <div id="menu-wrapper">
+    <div id="menu"></div>
+  </div>
+  <main id="accessible-components-body">
+    <div id="top-spacer"></div>
+    <div class="title-bar access">
+      <div class="inside-title-bar">
+        <div id="menu-button-container">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <h1>
+          <span id="whole-title" class="accessible-h1">iterative design: Ontra Mobility</span>
+        </h1>
+      </div>
+    </div>
+
+    <p id="intro">
+      <a href="https://www.ycombinator.com/companies/ontra-mobility">Ontra Mobility</a> is a startup who participated in
+      YCombinator S24. <a href="iterative#part-3">Our team</a> found Ontra through the YCombinator demo day listing and
+      were intrigued by their vision of improving public transport systems for the modern day. This case study will show
+      how we used iterative design processes to develop a prototype for Ontra's mobile app based on their mission.
+    </p>
+
+    <p class="left-list" style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+      <a href="iterative#part-1"><b>part 1</b>: sketching our ideas</a><br />
+      <a href="iterative#part-2"><b>part 2</b>: building a wireframe</a><br />
+      <a href="iterative#part-3"><b>part 3</b>: creating a prototype</a><br />
+      <a href="iterative#end"><b>end note</b>: our team</a><br />
+    </p>
+
+    <h2 id="part-1"><span>part 1: sketching our ideas <a href="redesign#whole-title" class="top-link">back to
+          top</a></span></h2>
+
+    <p>
+      The problem that Ontra seeks to address is the the need to adapt public transport systems to
+      serve wide urban/suburban areas while dealing with huge budget cuts. <br />
+      <br />
+      Ridership has dropped, but reducing frequency only makes it worse, so Ontra seeks to design high-frequency transit
+      routes and combine them with on-demand ridesharing to serve changing public needs in real time and reduce spending
+      on less-used routes.
+    </p>
+
+    <p>
+      Ontra uses data about public transit ridership to <b>optimise the system</b> in real time and suggest improvements
+      to city transport. <br />
+      <br />
+      It also acts as a navigation tool, <b>planning rider journeys</b> "with the best combination of
+      transit options available." They show a strong focus on integrating <b>on-demand ridesharing platforms</b> with
+      other modes of transport.
+    </p>
+
+    <!-- <p>
+      We explored various combinations of these two goals as we sketched different approaches to an app for Ontra.
+      <br />
+      <br />
+      The
+      goal here is not to create a polished interface, but to quickly explore a wide range of ideas from our whole team
+      and identify what we like. <br />
+      <br />
+      This first step also helped us to unify our understanding of Ontra as a company.
+    </p> -->
+
+    <div class="spacer"></div>
+    <img class="ac-img" src="assets/iterative/sketch-1.png" alt="Ontra App sketch with 6 mobile screens" />
+    <p class="caption">Ontra Sketch with different user modes for riders and organisers</p>
+
+    <ul class="left-list">
+      <li>this sketch combines Ontra's two goals of serving transit routes and providing data insights to city
+        officials.</li>
+      <li>it's not as effective at integrating on-demand services.</li>
+      <li>the user could easily find info for specific transport types</li>
+      <li>missed opportunity: allowing users to access travel stats & updates. not all of the useful data has to be
+        exclusive to admins.</li>
+      <li>the login system might be a nuisance to users in a rush.</li>
+    </ul>
+
+    <div class="spacer"></div>
+    <img class="ac-img" src="assets/iterative/sketch-2.jpg" alt="Ontra App sketch with 3 mobile screens" />
+    <p class="caption">Ontra Sketch with rideshare booking</p>
+
+    <ul class="left-list">
+      <li>this sketch effectively targets Ontra's aim to serve ridesharing requests.</li>
+      <li>it's not as effective at integrating public transport.</li>
+      <li>the bottom navigation bar is very intuitive, but it isn't clear how the home tab would differ from the
+        location pin tab at first glance.</li>
+      <li>really like the clean & simple layout and accessible home-screen map.</li>
+    </ul>
+
+    <div class="spacer"></div>
+    <img class="ac-img" src="assets/iterative/sketch-3.png" alt="Ontra App sketch with 3 mobile screens" />
+    <p class="caption">Ontra Sketch with travel delay info and route generation</p>
+
+    <ul class="left-list">
+      <li>this sketch effectively uses Ontra's data-driven approach to improve user experience with the homepage
+        congestion updates.</li>
+      <li>it also shows an integrated journey using both public transport and an on-demand service.</li>
+      <li>the review screen at the end of the journey helps to improve Ontra's data and user confidence in the app.</li>
+      <li>showing one route makes the app feel more assertive and confident as it streamlines the navigation process.
+      </li>
+      <li>the ability to "regenerate" the selected route might make it feel a bit random - maybe we could use a
+        different word or remove the feature.</li>
+    </ul>
+
+    <div class="spacer"></div>
+    <img class="ac-img" src="assets/iterative/sketch-4.png" alt="Ontra App sketch with 3 mobile screens" />
+    <p class="caption">Ontra Sketch with data collection features and suggestions for late-night transit</p>
+
+    <ul class="left-list">
+      <li>the conversational style of the navigation makes the app feel friendly.</li>
+      <li>the active tone of the travel suggestion ("you should leave in 15 mins") fits Ontra's aim to provide
+        streamlined, confident routes.</li>
+      <li>this design focuses on collecting user data and using it to improve repeated routes.</li>
+      <li>the data collection might feel intrusive to users and not relevant enough to their immediate needs (the
+        current journey)
+      </li>
+      <li>this design is less successful for users who need to travel to new destinations often.</li>
+    </ul>
+
+    <h2 id="part-2"><span>part 2: building a wireframe <a href="iterative#whole-title" class="top-link">back to
+          top</a></span></h2>
+
+    <p>
+      We used our critique of each sketch to create a wireframe incorporating our favourite features into a single
+      design.
+    </p>
+
+    <div class="hor-scroll">
+      <img class="img-scrolling" src="assets/iterative/wireframe-1.png"
+        alt="home page, navigation start page, and navigation end page">
+      <img class="img-scrolling" src="assets/iterative/wireframe-2.png"
+        alt="push notification example, bus info page, rideshare booking page, and sign-in page">
+    </div>
+    <p class="caption">Balsamiq Wireframe for Ontra Mobility App <em>(scroll right)</em></p>
+
+    <ul class="left-list">
+      what we <b>kept</b> from our sketches:<br />
+      <br />
+      <li>homepage <b>congestion info</b>, because it updates users at a glance, as well as map, for familiarity and
+        quick
+        view of nearby buses etc.</li>
+      <li>integrated <b>rideshare booking</b>, because it serves Ontra's goals</li>
+      <li>clean design and casual/conversational tone</li>
+      <li>option to <b>rate your journey</b>, to provide useful data on Ontra's algorithms</li>
+      <li>night transit mode, as a helpful feature for users out and about who need to plan their journey home</li>
+    </ul>
+
+    <ul class="left-list">
+      what we <b>changed</b> from our sketches:<br />
+      <br />
+      <li>removed obtrusive login/<b>data collection</b> prompts, as it can slow down users and feel irrelevant to their
+        task
+      </li>
+      <li>option to "regenerate"/see multiple routes: Ontra's focus is on <b>providing ONE clear path</b></li>
+      <li>added a way to change journey's start location, in case they're planning ahead</li>
+      <li>added more focus on the <b>transition between public transport & on-demand travel</b> (screen 6)&mdash;this is
+        underserved in
+        most travel apps and is a unique selling point of Ontra</li>
+      <li>removed the whole page for night transit mode and made it a push-notification reminder instead (set by the
+        user at the end of a journey)</li>
+      <li>focused more on the <b>user navigation</b> side of Ontra (not the travel optimisation), to limit our scope and
+        get more detailed.</li>
+    </ul>
+
+
+    <h2 id="part-3">
+      <span>part 3: creating a prototype <a href="iterative#whole-title" class="top-link">back to
+          top</a></span>
+    </h2>
+
+    <p>
+      Before building our high-fidelity prototype, we sought out feedback on our wireframe.
+    </p>
+
+    <ul class="left-list">
+      <b>we found that:</b> <br />
+      <br />
+      <li>our header didn't provide much info. we can remove the "Ontra" title and use the header to give <b>context to
+          the current screen</b>.</li>
+      <li>the delay info on the homepage is not that clear. the colours are memorable but a tutorial or hover tooltip
+        would make them more learnable.</li>
+      <li>we should use the <b>colour coding</b> elsewhere to be cohesive and consistent.</li>
+      <li>we need to clarify what <b>night transit mode</b> does</li>
+      <li>the buttons in the <b>bottom navbar</b> don't make much sense.</li>
+    </ul>
+
+    <p>
+      We kept all these critiques in mind as we created a prototype for the app in Figma. The aim of this prototype is
+      to demonstrate the experience of completing a typical task for an Ontra user.
+    </p>
+
+    <p>
+      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); aspect-ratio: 4/3.5;" width="100%"
+        src="https://embed.figma.com/proto/6wYABSS1rKglwD8jQQy9gV/Ontra?page-id=0%3A1&node-id=1-2&footer=false&viewport=87%2C140%2C0.43&scaling=contain&content-scaling=fixed&hide-ui=1&embed-host=share"
+        allowfullscreen></iframe>
+    </p>
+
+    <h2 id="end">
+      <span>our team <a href="iterative#whole-title" class="top-link">back to
+          top</a></span>
+    </h2>
+
+    <p>
+      thank you
+    </p>
+
+    <div class="spacer"></div>
+  </main>
+  <script src="menu.js"></script>
+</body>
+
+</html>
