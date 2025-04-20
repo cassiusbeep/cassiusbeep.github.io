@@ -242,6 +242,10 @@ p.caption {
   border-radius: 5px;
 }
 
+p.mobile-iframe {
+  width: 33vw;
+}
+
 .ac-img-compact-inline-box .caption {
   display: inline-block;
 }
@@ -898,6 +902,10 @@ header .current-date {
 
   p.compact {
     width: 80%;
+  }
+
+  p.mobile-iframe {
+    width: 90vw;
   }
 
   .two-col {
