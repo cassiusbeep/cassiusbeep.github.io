@@ -243,9 +243,9 @@ p.caption {
 }
 
 .mobile-iframe {
-  /* width: 33vw; */
   height: 90vh;
   width: min-content;
+  max-width: 95vw;
   margin: auto;
   display: block;
 }

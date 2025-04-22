@@ -211,23 +211,29 @@
       to approximate the final app and demonstrate usability for a typical task within Ontra.
     </p>
 
-    <iframe class="mobile-iframe" style="aspect-ratio: 9/16;" height="90vh"
-      src="https://embed.figma.com/proto/6wYABSS1rKglwD8jQQy9gV/Ontra?page-id=0%3A1&node-id=1-2&footer=false&viewport=87%2C140%2C0.43&scaling=contain&content-scaling=fixed&hide-ui=1&embed-host=share"
+    <iframe class="mobile-iframe" style="aspect-ratio: 9/16;"
+      src="https://embed.figma.com/proto/6wYABSS1rKglwD8jQQy9gV/Ontra?page-id=0%3A1&node-id=1-2&footer=false&viewport=87%2C140%2C0.43&scaling=contain&content-scaling=fixed&embed-host=share"
       allowfullscreen></iframe>
 
-    <p>
-      how did we incorporate our feedback?<br /><br />
+    <ul class="left-list">
+      In response to our feedback, we: <br /><br />
+      <li>
+        created more informative titles for each page
+      </li>
+      <li>
+        added similar colour coding to the homepage map as the delay information panel, and added tooltips on press-down
+        to indicate congestion levels
+      </li>
+      <li>
+        we made the decision to remove the page for night transit mode and updated the navbar to match.
+      </li>
+      <br />
 
-      justify design choices<br /><br />
-
-      did we solve the original problem?<br /><br />
-
-      mention bug with prototype which is a <a
+      one bug with our prototype is a <a
         href="https://forum.figma.com/suggest-a-feature-11/prevent-interaction-hotspots-from-triggering-below-fixed-elements-35236"
-        target="_blank">known figma issue</a>: scrollable interactable content will be triggered when
-      you click an item that's on top of it/hiding it (which means sometimes clicking the locations in the "Go anywhere"
-      dropdown takes you tp the info pages instead).
-    </p>
+        target="_blank">known figma issue</a>: sometimes clicking on suggested search results will trigger the delay
+      cards below.
+    </ul>
 
     <h2 id="part-4">
       <span>part 4: user testing <a href="iterative#whole-title" class="top-link">back to
@@ -243,24 +249,51 @@
     <ol class="left-numlist">
       The typical subtasks in this process were:<br />
       <br />
-      <li>one</li>
-      <li>two</li>
+      <li>Open the Ontra app.</li>
+      <li>Tap the search box ("Go anywhere")</li>
+      <li>Read the suggestions and tap the correct destination</li>
+      <li>Read the suggested route and tap "Let's go"</li>
+      <ol class="left-numlist">
+        <li>After this step, users diverged: some felt the objective was completed at this point and stopped the task.
+        </li>
+        <li>Others read the next screen and continued to reserve a pickup at their station.</li>
+        <li>They then reached the destination page and left a star rating.</li>
+      </ol>
     </ol>
 
     <ul class="left-list">
-      The typical user errors we observed were:<br />
+      Some user errors or misunderstandings we observed:<br />
       <br />
-      <li></li>
+      <li>When the route was originally served (before clicking "let's go"), some expected that each item on-screen was
+        an alternative transit method and attempted to select one.</li>
+      <li>Users were confused by the "reserve a pickup" option, and weren't sure where they were being picked up from or
+        driven to.</li>
+      <li>It was hard for users to tell how far through the journey they were.</li>
     </ul>
 
     <p>
-      In general, users did...
+      In general, users did well at the start of this task and it matched their expectations. Later in the task, where
+      users had to transition from public transit to ridesharing services, there was more hesitance and confusion.
     </p>
 
     <ul class="left-list">
-      Based on these results, we might consider making the following changes to our interface:<br />
+      Some other user feedback and responses to questions:<br />
       <br />
-      <li></li>
+      <li>The map view could be more immersive and descriptive.</li>
+      <li>The interface is overall simple and learnable, especially with clear iconography and calls to action.</li>
+      <li>Users appreciated the conversational tone of the app.</li>
+      <li>Users expected explicit confirmation of ridesharing bookings. </li>
+    </ul>
+
+    <ul class="left-list">
+      This was an invaluable exercise for testing our own assumptions of our design and identifying next steps for the
+      process if we were to continue developing an app for Ontra Mobility. Based on these results, we might consider
+      making the following changes to our interface:<br />
+      <br />
+      <li>Making the initial directions clearer/more descriptive, and highlighting transition points between different
+        modes of transit.</li>
+      <li>Clearly marking progress through the user's journey.</li>
+      <li>Adding more visual feedback to the booking process, and a confirmation page.</li>
     </ul>
 
     <h2 id="end">
@@ -269,7 +302,9 @@
     </h2>
 
     <p>
-      thank you
+      Our team includes: me (Cassius Hall), Akbar Shamji, Elizabeth Lokoyi, and Eric Wang. <br />
+      <br />
+      Thanks very much for reading this case study on iterative design!
     </p>
 
     <div class="spacer"></div>
