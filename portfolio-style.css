@@ -150,9 +150,8 @@ body {
 }
 
 .inside-title-bar {
+  text-align: center;
   width: 100%;
-  display: grid;
-  grid-template-columns: min-content 1fr;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -164,13 +163,12 @@ body {
 #whole-title {
   display: block;
   text-align: center;
-  padding-left: 15px;
 }
 
 #menu-button-container {
   display: block;
   cursor: pointer;
-  margin-left: 20px;
+  float: left;
 }
 
 #menu-float-container {
@@ -188,7 +186,6 @@ body {
 
 #menu-float-container:hover {
   background-color: rgba(0, 0, 0, 0.687);
-  ;
 }
 
 #menu-float-container.visible {
@@ -413,10 +410,12 @@ p.caption {
 
 #toc-float.open {
   right: 15px;
+  transform: translateX(75%);
 }
 
 #toc-float:hover {
   opacity: 100%;
+  transform: translateX(0%);
 }
 
 @media only screen and (max-width: 900px) {
@@ -1233,13 +1232,20 @@ header .current-date {
 }
 
 @media only screen and (min-width: 1000px) {
+  #study-case {
+    max-width: 800px;
+  }
+
   #menu-button-container {
-    margin-right: 20px;
     left: 30%;
     float: left;
   }
 
   #menu-float-container.visible {
+    left: 10%;
+  }
+
+  #contact-bubble {
     left: 10%;
   }
 
@@ -1315,7 +1321,9 @@ header .current-date {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    width: min-content;
+    /* border: 1.5px solid black; */
+    /* transform: translate(-50%, -50%); */
     overflow-x: visible;
     border-radius: 5px;
     filter: drop-shadow(7px 7px 0px #000000);
@@ -1335,7 +1343,6 @@ header .current-date {
 
 @media only screen and (min-width: 2400px) {
   #menu-button-container {
-    margin-right: 20px;
     left: 30%;
     float: left;
   }
@@ -1346,5 +1353,14 @@ header .current-date {
 
   #toc-float.open {
     right: 20%;
+  }
+
+  #contact-bubble {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 300px;
+    margin-top: 30px;
+    text-align: center;
   }
 }

@@ -65,6 +65,7 @@ if (menuBut && menu) {
   }).then(function (text) {
     menu.innerHTML = text;
   });
+
 } else {
   console.log("menu not working");
 }
