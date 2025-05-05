@@ -112,11 +112,12 @@ body {
   margin: auto;
   margin-top: 0;
   margin-bottom: 0;
-  border: 2px solid black;
+  border: 1.5px solid black;
   border-radius: 0;
   font-family: 'Courier New', Courier, monospace;
   padding: 5px;
   width: 150px;
+  text-align: center;
 }
 
 .case-tag-posts {
@@ -167,10 +168,31 @@ body {
 }
 
 #menu-button-container {
-  /* position: sticky; */
   display: block;
   cursor: pointer;
   margin-left: 20px;
+}
+
+#menu-float-container {
+  position: fixed;
+  top: 10%;
+  left: -500px;
+  display: block;
+  cursor: pointer;
+  transition: 0.4s;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  padding: 15px;
+}
+
+#menu-float-container:hover {
+  background-color: rgba(0, 0, 0, 0.687);
+  ;
+}
+
+#menu-float-container.visible {
+  left: 75px;
 }
 
 h1 {
@@ -209,13 +231,14 @@ ul {
   background-color: white;
   font-family: "Courier New", Courier, monospace;
   font-size: 1em;
-  width: 65vw;
+  width: 50vw;
   margin: auto;
   margin-top: 25px;
   text-align: center;
-  padding: 15px;
-  padding-bottom: 8px;
-  border-radius: 5px;
+  border: 1.5px solid black;
+  padding: 40px;
+  padding-bottom: 10px;
+  border-radius: 25px;
   list-style-type: none;
   line-height: 150%;
 }
@@ -224,13 +247,14 @@ ol {
   background-color: white;
   font-family: "Courier New", Courier, monospace;
   font-size: 1em;
-  width: 65vw;
+  width: 50vw;
   margin: auto;
   margin-top: 25px;
   text-align: center;
-  padding: 15px;
-  padding-bottom: 8px;
-  border-radius: 5px;
+  border: 1.5px solid black;
+  padding: 40px;
+  padding-bottom: 10px;
+  border-radius: 25px;
   list-style-type: none;
   line-height: 150%;
 }
@@ -238,10 +262,10 @@ ol {
 .left-list {
   text-align: left;
   list-style-type: disc;
-  padding: 25px;
+  padding: 40px;
   padding-left: 1.5em;
   line-height: 125%;
-  border-radius: 15px;
+  border-radius: 25px;
 }
 
 .left-numlist {
@@ -291,6 +315,7 @@ p {
   line-height: 140%;
   font-size: 1em;
   width: 45vw;
+  min-width: 250px;
   margin: auto;
   margin-top: 40px;
   margin-bottom: 10px;
@@ -298,6 +323,39 @@ p {
   padding: 40px;
   /* padding-bottom: 8px; */
   border-radius: 25px;
+}
+
+#contact-bubble {
+  position: fixed;
+  top: 50%;
+  left: 30px;
+  width: min-content;
+  border: 1.5px solid black;
+  background-color: white;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 140%;
+  font-size: 1em;
+  margin: auto;
+  text-align: left;
+  padding: 30px;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+@media only screen and (max-width: 900px) {
+  #menu-float-container.visible {
+    left: 5%;
+  }
+
+  #contact-bubble {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 45vw;
+    min-width: 150px;
+    margin-top: 30px;
+    text-align: center;
+  }
 }
 
 p.compact {
@@ -334,6 +392,39 @@ p.caption {
   column-gap: 20px;
 }
 
+#toc-float {
+  position: fixed;
+  top: 50%;
+  right: -500px;
+  /* width: fit-content; */
+  max-width: 20%;
+  border: 1.5px solid black;
+  background-color: white;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 140%;
+  font-size: 1em;
+  margin: auto;
+  text-align: right;
+  padding: 30px;
+  border-radius: 25px;
+  transition: 0.5s;
+  opacity: 35%;
+}
+
+#toc-float.open {
+  right: 15px;
+}
+
+#toc-float:hover {
+  opacity: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  #toc-float {
+    display: none;
+  }
+}
+
 table {
   background-color: white;
   font-family: "Courier New", Courier, monospace;
@@ -342,7 +433,8 @@ table {
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: left;
-  padding: 25px;
+  border: 1.5px solid black;
+  padding: 40px;
   /* padding-bottom: 8px; */
   border-radius: 15px;
 }
@@ -568,17 +660,19 @@ a:active {
 }
 
 #menu-wrapper {
+  width: fit-content;
   position: fixed;
-  left: 5%;
-  top: 15%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   overflow-x: visible;
   border-radius: 5px;
-  filter: drop-shadow(7px 7px 0px #000000);
   z-index: 99;
+  filter: drop-shadow(7px 7px 0px #000000);
 }
 
 #menu {
-  position: fixed;
+  position: relative;
   overflow-y: hidden;
   z-index: 100;
   max-height: 0px;
@@ -727,7 +821,7 @@ a:active {
 
 #playdoh-container img {
   cursor: grab;
-  filter: drop-shadow(7px 7px 4px #000000);
+  filter: drop-shadow(4px 4px 2px #000000);
   max-height: 100%;
 }
 
@@ -1007,7 +1101,11 @@ header .current-date {
   }
 
   p {
-    width: 90%;
+    min-width: 60%;
+  }
+
+  #toc {
+    min-width: min-content;
   }
 
   div.hor-scroll {
@@ -1089,11 +1187,11 @@ header .current-date {
   }
 
   ul {
-    width: 90%;
+    width: 80%;
   }
 
   ol {
-    width: 90%;
+    width: 80%;
   }
 
   .quadrant-map {
@@ -1103,7 +1201,9 @@ header .current-date {
   .cal-wrapper {
     width: 90%;
   }
+}
 
+@media only screen and (max-width: 550px) {
   #menu-wrapper {
     position: fixed;
     top: 50%;
@@ -1116,7 +1216,7 @@ header .current-date {
   }
 
   #menu {
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     width: 80vw;
     /* overflow-y: hidden; */
     /* overflow-y: scroll; */
@@ -1137,6 +1237,14 @@ header .current-date {
     margin-right: 20px;
     left: 30%;
     float: left;
+  }
+
+  #menu-float-container.visible {
+    left: 10%;
+  }
+
+  #toc-float.open {
+    right: 4%;
   }
 
   #whole-title {
@@ -1188,7 +1296,7 @@ header .current-date {
   }
 
   ul {
-    width: 900px;
+    width: 800px;
   }
 
   ol {
@@ -1215,12 +1323,28 @@ header .current-date {
   }
 
   #menu {
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     width: 800px;
     /* overflow-y: hidden; */
     /* overflow-y: scroll; */
     z-index: 100;
     height: 0px;
     transition: 0.4s;
+  }
+}
+
+@media only screen and (min-width: 2400px) {
+  #menu-button-container {
+    margin-right: 20px;
+    left: 30%;
+    float: left;
+  }
+
+  #menu-float-container.visible {
+    left: 30%;
+  }
+
+  #toc-float.open {
+    right: 20%;
   }
 }

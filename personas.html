@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="accessible">
+<html lang="en" class="portfolio">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>personas & storyboarding</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./portfolio-style.css" />
   <link rel="icon" href="./assets/faces/playdohportrait.webp" type="image/x-icon" />
 </head>
 
@@ -15,7 +15,7 @@
     <div id="menu"></div>
   </div>
   <main id="accessible-components-body">
-    <div id="top-spacer"></div>
+    <div class="spacer"></div>
     <div class="title-bar access">
       <div class="inside-title-bar">
         <div id="menu-button-container">
@@ -29,6 +29,12 @@
       </div>
     </div>
 
+    <div id="menu-float-container">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
     <p id="intro">
       This case study is about studying real people using real interfaces and adapting my findings into personas
       to apply when building storyboards and designing user flows. I'll learn how to illustrate user needs and
@@ -36,7 +42,17 @@
       based on interviews and observations.
     </p>
 
-    <p class="left-list" style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+    <p id="toc" class="left-list"
+      style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+      <a href="personas#part-1"><b>part 1</b>: the interface</a><br />
+      <a href="personas#part-2"><b>part 2</b>: the interaction</a><br />
+      <a href="personas#part-3"><b>part 3</b>: the personas</a><br />
+      <a href="personas#part-4"><b>part 4</b>: the storyboards</a>
+    </p>
+
+    <p id="toc-float" class="left-list"
+      style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+      <a href="personas#whole-title">intro</a><br />
       <a href="personas#part-1"><b>part 1</b>: the interface</a><br />
       <a href="personas#part-2"><b>part 2</b>: the interaction</a><br />
       <a href="personas#part-3"><b>part 3</b>: the personas</a><br />
@@ -325,16 +341,17 @@
       Overall, this project was a useful exercise for thinking about design in context. Thank you for reading!
     </p>
 
-    <div id="top-spacer"></div>
+    <div class="spacer"></div>
     <div class="ac-img-compact-inline-box">
       <img class="ac-img-compact-inline" src="assets/personas/dave-blunts-gif.gif" alt="Dave Blunts sitting jovially"
         id="blunts" />
     </div>
 
-    <div id="top-spacer"></div>
+    <div class="spacer"></div>
   </main>
-  <script src="menu.js"></script>
+  <script src="portfolio-menu.js"></script>
   <script src="blunts.js"></script>
+  <script src="table-contents.js"></script>
 </body>
 
 </html>

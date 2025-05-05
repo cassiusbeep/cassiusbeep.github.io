@@ -10,35 +10,53 @@
   <link rel="icon" href="./assets/faces/playdohportrait.webp" type="image/x-icon" />
 </head>
 
+<!-- TODO
+- shorten personas A LOT! and make it more fun
+- rewrite redesign a bit to emphasise my skillset for recruiters BLEUGH
+- read thru 
+-->
+
 <body>
-  <div id="menu-wrapper">
-    <div id="menu"></div>
-  </div>
+  <!-- <div id="menu-wrapper" tabindex="-1">
+    <div id="menu" tabindex="-1"></div>
+  </div> -->
   <main>
     <div class="spacer"></div>
     <div class="title-bar">
       <div class="inside-title-bar">
-        <div id="menu-button-container">
+        <div id="menu-button-container" tabindex="2">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
         </div>
+        <div id="menu-wrapper" tabindex="-1">
+          <div id="menu" tabindex="-1"></div>
+        </div>
         <h1 class="accessible-h1">
-          <span id="whole-title">cash is <span id="portfolio-status"
+          <span id="whole-title">cash is <span id="portfolio-status" tabindex="0"
               class="wiggle"><span>happy&nbsp;</span><span>to&nbsp;
               </span><span>see&nbsp;</span><span>you!</span></span></span>
         </h1>
       </div>
     </div>
+
+
+    <div id="menu-float-container">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
     <p>
-      hi! im cash, a programmer and designer. i like making and finding weird games, websites, & multimedia projects.
-      you can explore some of my case
-      studies and projects below in the study case. :]
+      hi! im cash, a programmer, artist, and experience designer. i make weird games, websites, & other multimedia
+      projects, and focus on sculpting projects to get the desired reaction from an audience.
+      you can explore some of my design case
+      studies below. :]
     </p>
 
     <div class="spacer"></div>
 
-    <div class="case-tag">STUDY CASE</div>
+    <div class="case-tag">MY STUDY CASE</div>
     <div class="case-tag-posts"></div>
 
     <div id="study-case">
@@ -63,22 +81,29 @@
       <div class="cubby-hole hatched">
         <div class="cubby-strings"></div>
         <div class="cubby-tag"><a href="./">iterative<br /> design</a></div>
-        <a href="./iterative"><img src="./assets/portfolio/roller.png" alt="paint roller" class="case-img"
+        <a href="./iterative"><img src="./assets/portfolio/phone.png" alt="mobile phone" class="case-img"
             style="animation-delay: 0.75s;" /></a>
       </div>
     </div>
 
+    <div id="contact-bubble">
+      <b>contact me by:</b><br />
+      <span id="email" tabindex="0">email</span>
+      <br />
+      <a target="_blank" href="https://www.linkedin.com/in/cassius-hall/">linkedin</a>
+    </div>
+
+    <div id="playdoh-container">
+      <img src="./assets/orangedoh/01.webp" alt="play-doh ball" id="playdoh1" />
+    </div>
+
     <div class="spacer"></div>
-    <!--
-      TODO: add my study case
-      - search bar case study
-      - personas case study
-      - graffiti.org case study
-      - BODY project
-    -->
+
   </main>
   <script src="portfolio-status.js"></script>
-  <script src="menu.js"></script>
+  <script src="playdoh.js"></script>
+  <script src="portfolio-menu.js"></script>
+  <script src="port-contact.js"></script>
 </body>
 
 </html>

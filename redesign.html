@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="accessible">
+<html lang="en" class="portfolio">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>responsive redesign</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./portfolio-style.css" />
   <link rel="icon" href="./assets/faces/playdohportrait.webp" type="image/x-icon" />
 </head>
 
@@ -15,7 +15,7 @@
     <div id="menu"></div>
   </div>
   <main id="accessible-components-body">
-    <div id="top-spacer"></div>
+    <div class="spacer"></div>
     <div class="title-bar access">
       <div class="inside-title-bar">
         <div id="menu-button-container">
@@ -29,28 +29,40 @@
       </div>
     </div>
 
+    <div id="menu-float-container">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
     <p id="intro">
-      This case study aims to analyse the weaknesses of an existing webpage and help me develop the
-      skills needed to create prototypes for a responsive redesign and eventually develop a working responsive website
-      that adapts to
-      different screen sizes.
+      a friend showed me a cool, weird website called graffiti.org. it looks exactly the same on mobile as it does on
+      desktop, but smaller. i aimed to redesign graffiti.org to be a bit more responsive to the modern day :]
     </p>
 
-    <p class="left-list" style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
-      <a href="redesign#part-1"><b>part 1</b>: identifying usability problems</a><br />
+    <p id="toc" class="left-list" style="width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+      <a href="redesign#part-1"><b>part 1</b>: analysis</a><br />
       <a href="redesign#part-2"><b>part 2</b>: visual redesign</a><br />
       <a href="redesign#part-3"><b>part 3</b>: responsive redesign</a><br />
     </p>
 
-    <h2 id="part-1"><span>part 1: identifying usability problems <a href="redesign#whole-title" class="top-link">back to
+    <p id="toc-float" class="left-list"
+      style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+      <a href="redesign#whole-title">intro</a><br />
+      <a href="redesign#part-1"><b>part 1</b>: analysis</a><br />
+      <a href="redesign#part-2"><b>part 2</b>: visual redesign</a><br />
+      <a href="redesign#part-3"><b>part 3</b>: responsive redesign</a><br />
+    </p>
+
+    <h2 id="part-1"><span>part 1:analysis <a href="redesign#whole-title" class="top-link">back to
           top</a></span></h2>
 
     <p>
-      The webpage I've selected is Art Crimes at <a href="https://www.graffiti.org/" target="_blank"
-        title="Art Crimes">graffiti.org</a>, an archive of
+      Art Crimes at <a href="https://www.graffiti.org/" target="_blank" title="Art Crimes">graffiti.org</a> is an
+      archive of
       graffiti and graffiti artists from around
       the world. It
-      also hosts articles and other resources relating to graffiti culture and news. This site has been going a long
+      also hosts articles and other resources relating to graffiti culture and news. this site has been going a long
       time, and has actually split off from the historic version at <a href="http://www.graffitiarchiv.org/"
         target="_blank" title="Art Crimes Archive">graffitiarchiv.org</a> &mdash; this site doesn't
       load for me but you may have better luck! The version I'm looking at is labelled the "future-facing" Art
@@ -66,7 +78,7 @@
     <p class="caption">Graffiti.org website home screen</p>
 
     <p>
-      My first task is to identify any significant choices or drawbacks in the design of this website, focusing on
+      my first task is to identify any significant choices or drawbacks in the design of this site, focusing on
       <b>efficiency, learnability,</b> and <b>memorability</b>.
     </p>
 
@@ -231,16 +243,17 @@
       Thank you for reading!
     </p>
 
-    <div id="top-spacer"></div>
+    <div class="spacer"></div>
     <div class="ac-img-compact-inline-box">
       <img class="ac-img-compact-inline" src="assets/personas/dave-blunts-gif.gif" alt="Dave Blunts sitting jovially"
         id="blunts" />
     </div>
 
-    <div id="top-spacer"></div>
+    <div class="spacer"></div>
   </main>
-  <script src="menu.js"></script>
+  <script src="portfolio-menu.js"></script>
   <script src="blunts.js"></script>
+  <script src="table-contents.js"></script>
 </body>
 
 </html>

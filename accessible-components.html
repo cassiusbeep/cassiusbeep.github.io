@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="accessible">
+<html lang="en" class="portfolio">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>accessible components</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./portfolio-style.css" />
   <link rel="icon" href="./assets/faces/playdohportrait.webp" type="image/x-icon" />
 </head>
 
@@ -15,7 +15,7 @@
     <div id="menu"></div>
   </div>
   <main id="accessible-components-body">
-    <div id="top-spacer"></div>
+    <div class="spacer"></div>
     <div class="title-bar access">
       <div class="inside-title-bar">
         <div id="menu-button-container">
@@ -29,100 +29,97 @@
       </div>
     </div>
 
+    <div id="menu-float-container">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
     <p id="intro">
-      In this small case study I'm looking at different implementations of a common
-      component &mdash; the search box and in some cases the attached suggestion list &mdash; and evaluating them
-      for accessibility, discoverability, efficiency, & learnability. This small component is likely something you use
-      one way or another every day, and is probably more complicated than you realise!<br />
-      <br />
-      To explore search bars in more depth, I'll be looking at different input methods, the ways different components
-      provide output to the user, how the component moves through different states as you use it, and finally how the
-      redesign process interfaces with accessibility and usability principles.
-      I'll use my findings from this investigation to
-      practise my own design skills and exercise accessible interaction design for a simple redesign proposal for the
-      Firefox browser search bar.
+      search bars are everywhere, and before this study i thought they were pretty much the <em>same</em> everywhere. in
+      this study i consider the design of this component across different platforms and use what i find to design a new
+      version of the firefox search bar.
     </p>
 
-    <p class="left-list" style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
-      <a href="accessible-components#part-1"><b>part 1</b>: input</a><br />
-      <a href="accessible-components#part-2"><b>part 2</b>: output</a><br />
-      <a href="accessible-components#part-3"><b>part 3</b>: state models + component redesign</a><br />
-      <a href="accessible-components#part-4"><b>part 4</b>: reflection</a>
+    <p id="toc" class="left-list"
+      style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+      <a href="accessible-components#part-1"><b>part 1</b>: research</a><br />
+      <a href="accessible-components#part-2"><b>part 2</b>: redesign</a><br />
     </p>
 
-    <h2 id="part-1"><span>part 1: input <a href="accessible-components#whole-title" class="top-link">back to
+    <p id="toc-float" class="left-list"
+      style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+      <a href="accessible-components#whole-title">intro</a><br />
+      <a href="accessible-components#part-1"><b>part 1</b>: research</a><br />
+      <a href="accessible-components#part-2"><b>part 2</b>: redesign</a><br />
+    </p>
+
+    <h2 id="part-1"><span>part 1: research <a href="accessible-components#whole-title" class="top-link">back to
           top</a></span></h2>
     <p>
-      Since a search box's main goal is to take input from a user and provide results or feedback, it's important that a
-      well designed component can work well with different input methods. In this part I take a look at the different
-      states each component can go through, and then dive deeper into how it behaves when I provide input in various
-      ways.
+      a search bar's main job is to take user input. let's take a look at how different bars change in response to our
+      actions.
       <br /><br />
-      The first application I'm examining is Mozilla Firefox, my everyday web browser. The search bar of the app is
-      located at the top of the window, and allows users to input URLs or search terms which can be directed to
-      different search engines. The screencaps below show the component in various states: inactive, automatically
-      focused (which happens when you open a new tab), focused on a click, and active (while text is being input).
+      firefox's search bar moves through 4 different states in response to user input:
     </p>
 
     <img class="ac-img" src="assets/accessible-components/AC-firefox-initial.jpg"
       alt="Firefox search bar in initial state" />
-    <p class="caption">Firefox search bar: Initial state</p>
+    <p class="caption">initial,</p>
     <img class="ac-img" src="assets/accessible-components/AC-firefox-focus.jpg" alt="Auto-focused Firefox search bar" />
-    <p class="caption">Firefox search bar: Auto-focused</p>
+    <p class="caption">auto-focus,</p>
     <div class="ac-img-compact-inline-box">
       <img class="ac-img-compact-inline" src="assets/accessible-components/AC-firefox-focus-1.jpg"
         alt="Focused Firefox search bar with suggested searches" />
-      <p class="caption">Firefox search bar: Focused</p>
+      <p class="caption">focused,</p>
       <img class="ac-img-compact-inline" src="assets/accessible-components/AC-firefox-active.jpg"
         alt="Active Firefox search bar with text 'ab' and suggestions" />
-      <p class="caption">Firefox search bar: Active</p>
+      <p class="caption">... and active</p>
     </div>
 
     <p>
-      The next application is <a href="https://citymapper.com/?lang=en" target="_blank">Citymapper</a>, a mobile and web
-      navigation app. Citymapper's home page presents two fields for the start and end of a journey, inviting users to
-      search for directions. Each one acts as a search box for locations looked up from Google Maps. I took screencaps
-      of the top ("Start") field in inactive, focused, and active states.
+      <a href="https://citymapper.com/?lang=en" target="_blank">citymapper</a>, a mobile and web
+      navigation app, has a search bar for the start location and the destination. each has 3 states:
     </p>
     <div class="ac-img-compact-box">
       <img class="ac-img-compact" src="assets/accessible-components/AC-citymapper-initial.jpg"
         alt="Citymapper search bar in initial state" />
-      <p class="caption">Citymapper search bar: Initial</p>
+      <p class="caption">initial,</p>
       <img class="ac-img-compact" src="assets/accessible-components/AC-citymapper-focus.jpg"
         alt="Focused Citymapper search bar" />
-      <p class="caption">Citymapper search bar: Focused</p>
+      <p class="caption">focused,</p>
       <img class="ac-img-compact" src="assets/accessible-components/AC-citymapper-active.jpg"
         alt="Active Citymapper search bar with text 'ab' and suggestions" />
-      <p class="caption">Citymapper search bar: Active</p>
+      <p class="caption">... and active.</p>
     </div>
 
     <p>
-      Finally, I'm considering the Windows 11 File Explorer search bar, which allows users to search their local files.
-      This component has different states for being inactive, hovered over, focused on a click, and active typing.
+      windows 11's file explorer has 4 states:
     </p>
     <div class="ac-img-compact-box">
       <img class="ac-img-compact" src="assets/accessible-components/AC-explorer-initial.jpg"
         alt="File Explorer search bar in initial state" />
-      <p class="caption">Explorer search bar: Initial</p>
+      <p class="caption">initial,</p>
       <img class="ac-img-compact" src="assets/accessible-components/AC-explorer-hover.jpg"
         alt="File Explorer search bar being hovered over" />
-      <p class="caption">Explorer search bar: Hover</p>
+      <p class="caption">hover,</p>
       <img class="ac-img-compact" src="assets/accessible-components/AC-explorer-focus.jpg"
         alt="Focused File Explorer search bar" />
-      <p class="caption">Explorer search bar: Focused</p>
+      <p class="caption">focused,</p>
       <img class="ac-img-compact" src="assets/accessible-components/AC-explorer-active.jpg"
         alt="Active File Explorer search bar with text 'ab'" />
-      <p class="caption">Explorer search bar: Active</p>
+      <p class="caption">... and active.</p>
     </div>
-    <ul class="left-list">
-      Below is my reflection on interacting with each of these components with different input methods &mdash;
-      mouse/touchpad, keyboard, and touchscreen. I'm asking the following questions:<br /><br />
-      <li>What's the interaction like? What distinguishes it from the other components?</li>
-      <li>What functions does it have or not have?</li>
-      <li>What functionalities are learnable, memorable, or efficient?</li>
-      <li>How does each component compare in terms of accessibility?</li>
-    </ul>
 
+    <div class="spacer"></div>
+    <p>
+      i wanted to know how these different implementations stack up in terms of interaction, functionality, and
+      accessibility. i found that some components were designed better than others when it came to discoverability and
+      learnability.
+      for example:
+      <!-- accessibility. below is a table with all my thoughts. -->
+    </p>
+    <!-- 
     <table>
       <tr>
         <th class="label">&nbsp;</th>
@@ -134,136 +131,99 @@
         <th class="vertical">Mouse/Touchpad</th>
         <td class="ff">
           <span class="mobile-label"><b>Firefox</b><br /></span>
-          &gt; Click to focus on search bar; opens suggestion list. <br />
-          &gt; List elements can each be hovered over and clicked. Clicking them populates the search bar with the
-          item.<br />
-          &gt; Clicking outside closes list, but if you click close enough to its edge, the search field remains
-          focused. <br />
-          Hovering over suggestions reveals a button which lets you remove the item. <br />
-          &gt; Typing changes the suggestions in the list (autocomplete) and an arrow button appears at the right to
-          submit the input. On focus change, text remains there but the arrow disappears. <br />
-          <!-- &gt; Typing also causes a preview of autocomplete (highlighted text) to appear in the field itself. Clicking
-          anywhere on autocompleted text confirms the autocomplete (so the text is in the field but not
-          submitted).<br /> -->
-          &gt; You can select a word with double click or the whole line with triple click. <br />
-          &gt; The right-click context menu allows clipboard actions.<br />
-          &gt; You can drag selected text over the "new tab" button above and create a new tab that automatically
-          searches the text or opens it if it's a URL.<br />
-          &gt; The placeholder text is entirely non-interactable with the mouse.
+          &gt; click in to focus, click away to hide<br />
+          &gt; each element can be hovered and clicked<br />
+          &gt; hovering reveals more interaction options<br />
+          &gt; typing informs suggestions in list. clicking away doesn't delete your input<br />
+          &gt; select a word with double click or the whole line with triple click. <br />
+          &gt; typing triggers an arrow button which submits input
         </td>
         <td>
           <span class="mobile-label"><b>Citymapper</b><br /></span>
-          &gt; On click, the field becomes focused (opening suggestion list). <br />
-          &gt; Suggestions can each be hovered over and clicked.<br />
-          &gt; The "Start" and "End" labels which disappear when the field is focused are both able to be highlighted
-          but not dragged.<br />
-          &gt; Clicking outside closes the list. <br />
-          &gt; If you start typing, the suggestions change to include the text and a cross button appears at the right
-          which on click clears the current text box. On focus change, the cross button remains.
+          &gt; click to show suggestions<br />
+          &gt; clicking outside closes the list<br />
+          &gt; after 1 character, a cross button appears which clears the input on click
         </td>
         <td>
           <span class="mobile-label"><b>File Explorer</b><br /></span>
-          &gt; On click, the field becomes focused.<br />
-          &gt; When you start typing, a cross appears on the right which can be clicked to clear the text field.<br />
-          &gt; The magnifying glass icon on the right is static through all states and non-interactable.<br />
-          &gt; Highlighting works for user input in the field, but drag-and-drop is not available on the highlighted
-          text. The placeholder text is entirely non-interactable.
+          &gt; click to focus<br />
+          &gt; typing triggers a cross button to clear input<br />
+          &gt; magnifying glass icon on the right is non-interactable
         </td>
       </tr>
       <tr>
         <th class="vertical">Keyboard only</th>
         <td>
           <span class="mobile-label"><b>Firefox</b><br /></span>
-          &gt; Tabbing onto the search box puts it in the "auto-focused" state I identified above, without opening the
-          suggestion list.<br />
-          &gt; Pressing an up or down arrow key, PgUp, PgDown, or typing any character reveals the list.<br />
-          &gt; Typing causes autocomplete: Enter submits the current previewed autocomplete; Backspace deletes the
-          previewed autocomplete; Left or Right accepts the previewed autocomplete but does not submit the search.<br />
-          &gt; Once the list is open, it can be navigated using the up and down arrow key or Tab/Shift+Tab (after the
-          initial keypress, otherwise Tab will move off of the component), and Enter confirms/submits.<br />
-          &gt; Pressing Ctrl, Shift, or Alt changes the behaviour of the "Switch to tab" feature (Firefox opens a
-          duplicate tab instead of switching to it). I only discovered this in the keyboard section but it also works in
-          combination with hovering with the cursor.<br />
-          &gt; The discoverable-on-hover button from before is now visible when an item is selected with keys, and can
-          be focused on with Tab (but not the arrow keys).
+          &gt; tabbing into the field focuses but doesn't open list<br />
+          &gt; typing/up+down keys open the list<br />
+          &gt; typing changes the suggestions in the list<br />
+          &gt; enter submits the current suggestion<br />
+          &gt; backspace deletes the autocomplete preview<br />
+          &gt; left/right accepts the autocomplete preview<br />
+          &gt; navigate list with arrow keys/tab - but if list isn't focused, tab leaves the search bar<br />
+          &gt; ctrl/shift/alt toggles "Switch to tab" feature (opening a
+          duplicate tab instead of switching to it)<br />
+          &gt; discoverable-on-hover button from before is focusable with tab
         </td>
         <td>
           <span class="mobile-label"><b>Citymapper</b><br /></span>
-          &gt; Tabbing into the search box puts it in the "active" state, with the same list that appears when
-          clicking.<br />
-          &gt; The arrow keys/Tab keys do not let you navigate the suggestion list until at least one character has been
-          typed (meaning the "Pick from Map" and "Use Current Location" options are inaccessible).<br />
-          &gt; The cross button that appears upon typing also cannot be accessed with the arrow or Tab keys.
+          &gt; tab focus triggers active state, opens list<br />
+          &gt; arrow keys/tab keys do not navigate suggestion list unless you have typed something - so the "Pick from
+          Map" and "Use Current Location" options are inaccessible<br />
+          &gt; the cross button that appears upon typing also cannot be accessed with the arrow or tab keys
         </td>
         <td>
           <span class="mobile-label"><b>File Explorer</b><br /></span>
-          &gt; Tabbing into the search box puts it in the focused state, the same as a mouse click.<br />
-          &gt; The cross/delete button is not accessible via arrow/the Tab key.<br />
+          &gt; tabbing into the search box puts it in the focused state, the same as a mouse click<br />
+          &gt; the cross/delete button is not accessible via arrow/the tab key<br />
         </td>
       </tr>
       <tr>
         <th class="vertical">Touchscreen</th>
         <td>
           <span class="mobile-label"><b>Firefox</b><br /></span>
-          &gt; On the mobile Firefox app (the closest I could get to the same context with a touchscreen device), the
-          search bar is automatically focused which brings up the system keyboard. It contains a button for speech input
-          and an icon of a QR code.<br />
-          &gt; When you start to type, a cross icon appears which you can tap to clear your input. This replaces the
-          symbol for a QR code scanner, while the other icon in the bar (a microphone for voice search) remains in
-          place.<br />
-          &gt; Typing also brings up the list of suggested searches. The system keyboard stays at the bottom of the
+          &gt; search bar is automatically focused - brings up the system keyboard<br />
+          &gt; typing triggers a cross icon which clears your input<br />
+          &gt; typing also brings up the list of suggested searches. the system keyboard stays at the bottom of the
           screen (partially blocking the suggestions) until you start to scroll, which hides it.
         </td>
         <td>
           <span class="mobile-label"><b>Citymapper</b><br /></span>
-          &gt; Tapping the search bar puts it in the focused status. The system keyboard pops up, and a short suggestion
+          &gt; tapping the search bar triggers focused state. the system keyboard pops up, plus a short suggestion
           list.<br />
-          &gt; Upon typing, a cross appears on the right which can be tapped to clear the search. <br />
-          &gt; The list is scrollable but touching it does not hide the system keyboard.
+          &gt; typing triggers a cross on the right which clears the input<br />
+          &gt; the list is scrollable but touching it does not hide the system keyboard.
         </td>
         <td>
           <span class="mobile-label"><b>File Explorer</b><br /></span>
           &gt; I was not able to interact with this specific application with a touchscreen device.
         </td>
       </tr>
-    </table>
+    </table> -->
 
-    <p>
-      I found that some components were designed better than others when it came to discoverability and learnability.
-      For example:
-    </p>
     <ul class="left-list two-col">
-      <li>I liked how Firefox implemented the option to delete a specific search suggestion as a button that appeared on
-        hover, because it feels intuitive and easy to learn that moving your cursor to an object might reveal ways to
-        interact with it. It was well designed because it appears no matter where on the element you hover.</li>
-      <li>The option to toggle between two modes, one of which switches to an open tab and the other creates a duplicate
-        of the tab, is not very discoverable. It's not hinted at anywhere that holding down Ctrl/Shift/Alt will toggle
-        the duplicate tab mode. In fact, before I found this, I assumed that the "Switch to Tab" label on the list
-        element was clickable and was the only button that would lead to switching tabs, while clicking elsewhere on the
-        element would create a duplicate tab (which I assumed was the default behaviour). Instead, the only way to
-        create a new tab is to hold one of these function keys. </li>
-      <li>On the other hand, once the user knows this, it's quite easily memorable and efficient: the search bar makes
-        it obvious when the Switch to tab mode is activated because the same label appears in the top text field where
-        the current destination is normally set. Allowing any of the 3 keys lets people use whatever they remember.</li>
-      <li>Both Citymapper and Explorer use a clear/delete button which appears only when the user starts to type. I
-        think this successfully balances minimalism/avoiding clutter with discoverability, because the delete function
-        is never needed until typing starts and then it appears immediately. The X symbol is pretty universal in
-        deleting or closing something, so learnability is high here.</li>
-      <li>The interactivity of symbols appearing inside the search bar is inconsistent across different contexts and not
-        always easy to guess. The magnifying glass icon was not clickable in any of these examples, but I wondered
-        whether I could click it to submit (performing the "search" action) &mdash; especially in File Explorer, where
-        it's in the same place as Firefox's Arrow button.</li>
+      <li>LIKE: firefox has a button to delete search suggestions, which appears on hover. it's intuitive and learnable
+        because of the wide area that triggers it.</li>
+      <li>DISLIKE: firefox's system of toggling between switch to tab/create new tab modes. it's not discoverable at
+        all! I assumed clicking the "switch to tab" label would switch, while clicking elsewhere would create a new tab.
+        instead, clicking anywhere will switch, and you have to hold specific keys to create a new tab.</li>
+      <li>LIKE: both Citymapper and Explorer use a delete button which appears only when the user starts to type. this
+        balances minimalism with discoverability</li>
+      <li>DISLIKE: the interactivity of symbols inside the search bar is inconsistent across each app. every time, i
+        hope i can click the magnifying glass to submit.</li>
     </ul>
 
-    <h2 id="part-2"><span>part 2: output <a href="accessible-components#whole-title" class="top-link">back to
-          top</a></span></h2>
+    <div class="spacer"></div>
     <p>
-      My next goal is to see how each component provides output or feedback to the user's input. This output will take
-      different forms for different users, for example based on whether they can perceive visual output, colour, or use
-      audio i.e. with a screen reader.
+      my next goal is to look at the output of components. how are they experienced by the user - and how does this
+      change based on their unique perception? for example, if they perceive visual
+      output, colour, or use
+      audio i.e. with a screen reader. to link the input and output of components, i created state models describing how
+      the firefox search bar changes as you use it.
     </p>
 
-    <table>
+    <!-- <table>
       <tr>
         <th class="label">&nbsp;</th>
         <th class="label">Firefox</th>
@@ -284,10 +244,6 @@
           phrase. <br />
           &gt; Icons like the search engines at the bottom of the suggestion list have no label, but hovering reveals a
           tool tip with information about each option.<br />
-          <!-- &gt; The field provides a highlighted preview of the autocomplete prediction/search suggestion: if the user
-          rejects it by pressing Backspace it disappears. If the user keeps typing, the preview changes to fit the new
-          input. If the user presses an Arrow key the text stops being highlighted and looks the same as the user input
-          to signal that it is part of the actual search term/URL now, and editable. -->
         </td>
         <td>
           <span class="mobile-label"><b>Citymapper</b><br /></span>
@@ -361,56 +317,20 @@
           &gt; There's only one thing to focus on: the box itself.
         </td>
       </tr>
-    </table>
-
-    <h2 id="part-3"><span>part 3: state models + component redesign <a href="accessible-components#whole-title"
-          class="top-link">back to top</a></span></h2>
-    <p>
-      I'm most interested by the interaction flow of using Firefox's search bar implementation: I feel like it's the
-      most feature-rich and complex, and also used so frequently as the primary interface to navigate the internet.
-      <br />
-      <br />
-      To learn more about the design of this component and get ready to create my own version, I studied the different
-      states that the Firefox search bar can be in and how users move between each one when using either mouse or
-      keyboard inputs. This displays the different ways the component will change visually or behaviourally depending on
-      the sequence of actions a user takes.
-    </p>
+    </table> -->
 
     <p>
-      First was the state model diagram for mouse users. The diagram below shows how users move from the default state
-      of the search box to focused, active input, and scrolling suggestions through hover and click actions. The dotted
-      red line indicates a jump in states that can only occur using a keyboard: inputting your own search term or URL.
-      Apart from this, the diagram captures the ways in which users can navigate suggested searches and buttons in the
-      search bar component. Also note the label indicating the missing interaction for toggling "switch to tab" mode
-      that I mentioned above: the only way to duplicate a tab instead of switching to it is via keyboard
-      shortcuts.
+      the diagram below shows how mouse users interact with the search bar's different states. the dotted
+      red line indicates a jump in states that's missing without a keyboard: inputting your own search term or URL.
     </p>
 
     <img class="ac-img" src="assets/accessible-components/status-model-mouse.png"
       alt="Status model for Firefox search bar with mouse" />
 
     <p>
-      As an exercise in experience design and meaningful tradeoffs, I tried to come up with a design change for this
-      state model that would provide some benefit to mouse users but a deliberate downside (in memorability,
-      learnability, accessibility, or efficiency) for keyboard users. This redesign separates the "Switch to Tab"
-      element from the main element in the suggestion list, creating a separate hoverable button so that two different
-      functions are separate targets instead of a toggleable mode. This means that the default behaviour of clicking a
-      suggested item in the list will create a new tab with that content, and only the "Switch to Tab" button itself
-      will perform the tab switching behaviour.<br />
-      <br />
-      This redesign is a tradeoff in efficiency for keyboard users, as this separate focusable element provides friction
-      when Tabbing through the list. A screen reader would have to read "Switch to Tab" between each individual search
-      suggestion, which slows down navigation. However, it increases learnability and memorability for mouse users, as
-      there is no longer an opaque keyboard shortcut for switching between the two tab navigation modes, but a clear
-      button.
-    </p>
-    <img class="ac-img" src="assets/accessible-components/status-model-mouse-redesign.png"
-      alt="Redesigned Status model for Firefox search bar with mouse" />
-
-    <p>
-      Next I created a state model diagram for keyboard users. This one captures more of the mechanics for typing and
-      autocomplete, as well as the experience of tabbing through different parts of the component and how
-      focusability/focus order affects the user flow.<br />
+      i did the same exercise for keyboard users. this captures typing and
+      autocomplete, as well as the experience of tabbing through the component and how focus order affects the user
+      flow.<br />
       <br />
       The cyclical "Typing" arrow from and to the "focused with list"
       state
@@ -421,19 +341,37 @@
     <img class="ac-img" src="assets/accessible-components/status-model-keyboard.png"
       alt="Status model for Firefox search bar with keyboard" />
 
+    <h2 id="part-2"><span>part 2: redesign <a href="accessible-components#whole-title" class="top-link">back to
+          top</a></span></h2>
+
     <p>
-      My redesign for the keyboard user experience removes the auto-focused state of the search bar which gives the
-      field a blue border and allows text input but does not show the suggestion list. This means that when a new tab is
-      opened or the search bar is Tab key-ed into, the list automatically pops up with suggestions for keyboard users to
+      as an exercise in experience design and meaningful tradeoffs, I tried to come up with a design change for the
+      mouse user state model that would provide some benefit to mouse users but a deliberate downside (in memorability,
+      learnability, accessibility, or efficiency) for keyboard users. <br /><br />
+
+      I separated the "Switch to Tab"
+      element from the main element in the suggestion list, creating a separate button so that two different
+      functions are separate targets instead of a toggleable mode. this means that the default behaviour of clicking a
+      suggested item in the list will create a new tab with that content, and only the "Switch to Tab" button itself
+      will perform the tab switching behaviour.<br />
+      <br />
+      now keyboard users have double the elements to tab through when navigating the list, but mouse users have more
+      clarity in what their click will do.
+    </p>
+    <img class="ac-img" src="assets/accessible-components/status-model-mouse-redesign.png"
+      alt="Redesigned Status model for Firefox search bar with mouse" />
+
+    <p>
+      my redesign for the keyboard user experience removes the auto-focused state of the search bar. this means that
+      when a new tab is
+      opened or the search bar is tabbed into, the list automatically pops up with suggestions for keyboard users to
       browse. <br />
       <br />
-      This redesign is a tradeoff in accessibility and efficiency for mouse/trackpad users, because the list will hide
-      content on the new tab page that the user may intend to click on. To
-      mitigate this, the browser could close the list as soon as the user moves focus from the browser header (when the
-      cursor moves down to the page).
-      Regardless, it is less of a concern for keyboard users &mdash; especially those using screen readers &mdash;
-      because
-      they would need to Tab down to the main page to interact with that content anyway.<br />
+      this auto-focus would likely annoy mouse users, as it gets in the way of the page they're trying to click on. but
+      it makes navigation faster for keyboard users.<br /><br />
+      to mitigate the downside, the browser could close the list as soon as the user moves focus from the browser header
+      (when the
+      cursor moves down to the page).<br />
       <br />
       The diagram also reflects the changes to the focus order made by my mouse state model redesign, and sacrifices the
       redundancy between the arrow and tab keys to create a quick/efficient way for keyboard users to exit the
@@ -443,100 +381,48 @@
       alt="Status model for Firefox search bar with keyboard" />
 
     <p>
-      With these changes in mind, I created a few sketches of a possible redesign for the Firefox search bar component
-      that incorporate my critiques above. The first shows the initial state of the component upon opening a new tab,
-      and the second is the state of the component when a keyboard user tabs onto the "Switch to tab" button on a list
-      element. The annotations in the diagram explain more of my thoughts behind the redesign process.
+      with these changes in mind, I sketched a possible redesign for the Firefox search bar component
+      that incorporate my critiques above. the first shows the initial state upon opening a new tab,
+      and the second is the state when a keyboard user tabs onto the "Switch to tab" button on a list
+      element. the annotations in the diagram explain more of my thoughts behind the redesign process.
     </p>
 
     <img class="ac-img" src="assets/accessible-components/firefox-redesign-initial.png"
       alt="Initial state of redesigned Firefox search bar" />
-    <p class="caption">Redesigned Firefox search bar: Default state on new tab</p>
+    <p class="caption">redesigned firefox search bar: default state on new tab</p>
 
     <img class="ac-img" src="assets/accessible-components/firefox-redesign-switch-to-tab.png"
       alt="Switch to tab mode of redesigned Firefox search bar" />
-    <p class="caption">Redesigned Firefox search bar: Switch to tab mode selected by Down Arrow-ing onto button</p>
+    <p class="caption">redesigned firefox search bar: Switch to tab mode selected by down arrow-ing onto button</p>
 
     <p>
-      Since it could be considered pretty arbitrary to change, I think I should justify my decision to make tab
+      i decided to make tab
       duplication rather than tab
-      switching the "default" behaviour (i.e., the one that happens without pressing a dedicated button). I think that
+      switching the "default" behaviour. I think that
       the majority of web browser users have a low number of webpages open, and tend to navigate purely by
       Tabbing/clicking between the visual handles at the top of the page.<br />
       <br />
-      Most people will therefore not use the search bar workflow here to find an existing tab. Instead, I
-      think if they perform the exact same action as they did to open the first tab, the same behaviour should occur. It
-      makes more sense for those expecting a different result to learn one more step (clicking or tabbing to the button)
+      therefore, most people won't use the existing search bar workflow to find an existing tab. I
+      think if they perform the exact same action as they did to open the first tab, the same behaviour should occur.
+      <br />
+      <br />
+      It makes more sense for those expecting a different result to learn one more step (clicking or tabbing to the
+      button)
       than changing their behaviour to achieve the same result (opening a new tab).
     </p>
 
-    <h2 id="part-4"><span>part 4: reflection <a href="accessible-components#whole-title" class="top-link">back to
-          top</a></span>
-    </h2>
-    <ul class="left-list">
-      After watching <a href="https://www.youtube.com/watch?v=-iccWRhKZa8">Kat Holmes' talk on inclusive design</a> and
-      thinking about her concept of "mismatch" in design,
-      I've written down some thoughts about this study, my
-      search component redesign, and how what I've learnt impacts accessibility in design. <br />
-      <br />
-      For the most part, the search components did well to create learnable and consistent behaviours that users can
-      have high confidence in. For example, clearly telegraphing which item is focused
-      is useful for all users, and in general the focus order was logical enough to be usable with
-      a screen reader or a sole keyboard. Features like the clear field button, or
-      filling in the field on hover/Tab, also make text input more accessible for users who may be fatigued by typing
-      or eye strain.<br />
-      <br />
-      I tried to apply these features to my own design by emphasising the features I thought improved accessibility,
-      keeping clear
-      focus cues, autocomplete, and clear focus order.<br />
-      <br />
-      I did also find that some access needs weren't considered in all implementations. Some of the text
-      in the Firefox search bar is quite low contrast which makes it less usable for those with visual impairments, so I
-      used darker text in those places.
-      There was a specific lack of consideration for screenreader users in the Citymapper implementation, where the
-      focus order of the site didn't reflect the visual hierarchy at all and the search bar component did not provide
-      any audio hints for its purpose or behaviour. This could be confusing for users who cannot read the separate label
-      adjacent to the search bar and prevent them from using the navigation tool, so I used clear placeholder text to
-      label the input field in my design. <br />
-      <br />
-      My design change addresses a mismatch between the existing Firefox design and the needs of users with decreased
-      mobility or reach. Currently, the flow for toggling between the "switch tab" and "create new tab" modes require
-      the user to hold down a key and press another key or click with the mouse (as well as being difficult to
-      discover). By introducing a simpler one-click button for this behaviour, my design makes this
-      action - which was likely intended to be effortless - more straightforward for a wider range of users. <br />
-      <br />
-      Opening the suggestion list as a default focused state increases usability for users who struggle to type,
-      because their shortcuts and recent tabs are immediately available. <br />
-      <br />
-      The
-      interactive magnifying glass button also allows mouse users to submit a URL or search without using the Enter
-      key which may benefit those without access to a keyboard.<br />
-      <br />
-      I believe that able-bodied users who interact with a mouse and keyboard are the most prioritised and
-      catered-to demographic when people create components. In my opinion, this neither represents the variety of people
-      who will use these tools (keyboard users, screen reader users, eye tracker users, and more), nor does it account
-      for the huge push toward touchscreen users in today's mobile-forward age. This can increase the friction in
-      accessing a platform to the point or discouragement or complete inaccessibility (e.g. not being able to fill out
-      and submit forms, navigate a site, or read important text). This exclusion can act upon anything from e-commerce
-      to government resources, and further
-      disadvantaging systemically deprioritised/marginalised people. <br />
-      <br />
-      Despite the simplicity of a search bar, it can act as a doorway to everything on the internet. Completing this
-      study gave me a bit of insight into the importance of accessibility when designing these components and tools
-      which mediate our online experiences.<br />
-      <br />
-      <b>Thank you for reading!</b><br />
-      <br /><a href="accessible-components#whole-title">Go back to
-        top</a>
-    </ul>
-    <div id="top-spacer"></div>
+    <p>overall, this case study gave me an excuse to dive deeper in one of the most widely used components we have, and
+      think more deliberately about how i can implement it in future.</p>
+
+    <div class="spacer"></div>
     <div class="ac-img-compact-inline-box">
       <img class="ac-img-compact-inline" src="assets/accessible-components/thank-you-emoji.gif"
         alt="emoji saying thank you! with a big thumbs up" />
     </div>
-    <div id="top-spacer"></div>
+    <div class="spacer"></div>
   </main>
-  <script src="menu.js"></script>
+  <script src="portfolio-menu.js"></script>
+  <script src="table-contents.js"></script>
 </body>
 
 </html>

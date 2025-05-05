@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="accessible iterative">
+<html lang="en" class="portfolio">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>iterative design</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./portfolio-style.css" />
   <link rel="icon" href="./assets/faces/playdohportrait.webp" type="image/x-icon" />
 </head>
 
@@ -15,7 +15,7 @@
     <div id="menu"></div>
   </div>
   <main id="accessible-components-body">
-    <div id="top-spacer"></div>
+    <div class="spacer"></div>
     <div class="title-bar access">
       <div class="inside-title-bar">
         <div id="menu-button-container">
@@ -29,9 +29,15 @@
       </div>
     </div>
 
+    <div id="menu-float-container">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
     <p id="intro">
       <a href="https://www.ycombinator.com/companies/ontra-mobility">Ontra Mobility</a> is a startup who participated in
-      YCombinator S24. <a href="iterative#part-3">Our team</a> found Ontra through the YCombinator demo day listing and
+      YCombinator S24. <a href="iterative#end">Our team</a> found Ontra through the YCombinator demo day listing and
       were intrigued by their vision of improving public transport systems for the modern day. This is a cause that is
       close to all our hearts and we hoped to bring our own perspectives as transit users and future tech workers!<br />
       <br />
@@ -39,7 +45,17 @@
       how we used iterative design processes to develop a prototype for Ontra's mobile app based on their mission.
     </p>
 
-    <p class="left-list" style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+    <p id="toc" class="left-list"
+      style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+      <a href="iterative#part-1"><b>part 1</b>: sketching our ideas</a><br />
+      <a href="iterative#part-2"><b>part 2</b>: building a wireframe</a><br />
+      <a href="iterative#part-3"><b>part 3</b>: creating a prototype</a><br />
+      <a href="iterative#end"><b>end note</b>: our team</a><br />
+    </p>
+
+    <p id="toc-float" class="left-list"
+      style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
+      <a href="iterative#whole-title">intro</a><br />
       <a href="iterative#part-1"><b>part 1</b>: sketching our ideas</a><br />
       <a href="iterative#part-2"><b>part 2</b>: building a wireframe</a><br />
       <a href="iterative#part-3"><b>part 3</b>: creating a prototype</a><br />
@@ -309,7 +325,8 @@
 
     <div class="spacer"></div>
   </main>
-  <script src="menu.js"></script>
+  <script src="portfolio-menu.js"></script>
+  <script src="table-contents.js"></script>
 </body>
 
 </html>
