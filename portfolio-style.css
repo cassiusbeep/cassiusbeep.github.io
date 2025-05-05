@@ -401,7 +401,7 @@ p.caption {
   line-height: 140%;
   font-size: 1em;
   margin: auto;
-  text-align: right;
+  text-align: left;
   padding: 30px;
   border-radius: 25px;
   transition: 0.5s;
