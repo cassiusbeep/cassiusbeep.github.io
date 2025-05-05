@@ -169,6 +169,7 @@ body {
   display: block;
   cursor: pointer;
   float: left;
+  padding-left: 20px;
 }
 
 #menu-float-container {
