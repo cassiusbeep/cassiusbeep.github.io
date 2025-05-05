@@ -30,9 +30,11 @@ if (menuBut && menu) {
       menuBut.classList.remove("open");
       menu.classList.remove("open");
       menuFloat.classList.add("visible");
+      // menuFloat.tabIndex = 1;
     } else {
       if (menuFloat) {
         menuFloat.classList.remove("visible");
+        // menuFloat.tabIndex = -1;
       }
     }
   })
@@ -64,6 +66,14 @@ if (menuBut && menu) {
     throw response;
   }).then(function (text) {
     menu.innerHTML = text;
+  }).then(function () {
+    menu.addEventListener("focusout", function (e) {
+      if (!menu.contains(e.relatedTarget)) {
+        menuToggle(menuBut, menu);
+        menuFloat.classList.remove("open");
+      }
+
+    })
   });
 
 } else {

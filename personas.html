@@ -16,7 +16,7 @@
     <div class="spacer"></div>
     <div class="title-bar access">
       <div class="inside-title-bar">
-        <div id="menu-button-container">
+        <div id="menu-button-container" tabindex="2">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
@@ -27,11 +27,11 @@
       </div>
     </div>
 
-    <div id="menu-wrapper">
-      <div id="menu"></div>
+    <div id="menu-wrapper" tabindex="-1">
+      <div id="menu" tabindex="-1"></div>
     </div>
 
-    <div id="menu-float-container">
+    <div id="menu-float-container" tabindex="-1">
       <div class="bar1"></div>
       <div class="bar2"></div>
       <div class="bar3"></div>
@@ -50,7 +50,7 @@
       <a href="personas#part-4"><b>part 4</b>: the storyboards</a>
     </p>
 
-    <p id="toc-float" class="left-list"
+    <p id="toc-float" tabindex="-1" class="left-list"
       style="max-width:fit-content; text-indent: 5% hanging each-line; padding-right: 25px;">
       <a href="personas#whole-title">intro</a><br />
       <a href="personas#part-1"><b>part 1</b>: the interface</a><br />
