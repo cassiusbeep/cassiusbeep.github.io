@@ -17,24 +17,6 @@ html {
   background-size: contain;
 }
 
-/* #accessible-components-body {
-  backdrop-filter: brightness(90%) blur(5px);
-} */
-
-html.accessible {
-  background-color: #1c2761;
-  background-image: url("./assets/blue_bg.png");
-  background-repeat: no-repeat;
-  overflow-x: hidden;
-  background-position: 0 0;
-  background-size: contain;
-}
-
-html.iterative {
-  background-color: #90a3ff;
-  background-image: none;
-}
-
 html.portfolio {
   background-image: linear-gradient(rgb(124, 124, 231), rgb(186, 241, 186));
   background-position: 0 0;
@@ -47,17 +29,106 @@ body {
   height: 100 vw;
 }
 
-.circle {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: red;
-  z-index: 3;
+#study-case {
+  background-color: #ffffff;
+  border: 2px solid black;
+  border-radius: 0;
+  aspect-ratio: 1/1;
+  /* width: 50vw; */
+  max-width: 80%;
+  max-height: 100vh;
+  display: grid;
+  margin: auto;
+  margin-top: 0;
+  grid: auto / auto auto;
+  padding: 20px;
+  row-gap: 20px;
+  column-gap: 20px;
 }
 
-#top-spacer {
-  height: 50px;
+.cubby-hole {
+  background-color: #ffffff;
+  border: 2px solid black;
+  border-radius: 0;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.hatched {
+  color: white;
+  background: repeating-linear-gradient(135deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5) 1px,
+      white 1px,
+      white 5px);
+}
+
+.cubby-strings {
+  border-left: 5px double black;
+  border-right: 5px double black;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 20px;
+  min-height: 5%;
+  width: 50px;
+}
+
+.cubby-tag {
+  position: absolute;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 0;
+  top: min(5%, 20px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Courier New', Courier, monospace;
+  padding: 5px;
+  min-width: max-content;
+  font-size: 1em;
+}
+
+
+.case-img {
+  animation: img-glow 1s infinite alternate;
+  cursor: pointer;
+  width: 50%;
+  position: absolute;
+  bottom: 7.5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  transition: 0.4s;
+}
+
+.case-img:hover {
+  width: 55%;
+}
+
+.case-tag {
   display: block;
+  float: none;
+  background-color: #ffffff;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 2px solid black;
+  border-radius: 0;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 5px;
+  width: 150px;
+}
+
+.case-tag-posts {
+  display: block;
+  float: none;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-left: 5px double black;
+  border-right: 5px double black;
+  height: 10px;
+  width: 50px;
 }
 
 .spacer {
@@ -119,16 +190,12 @@ h1 {
 }
 
 h2 {
-  /* background-color: white; */
   font-family: "Courier New", Courier, monospace;
   font-size: 1.75em;
-  /* width: 60vw; */
   margin: auto;
   margin-top: 55px;
   text-align: center;
   z-index: 1;
-  /* padding: 10px; */
-  /* border-radius: 5px; */
 }
 
 h2 span {
@@ -149,7 +216,6 @@ ul {
   padding: 15px;
   padding-bottom: 8px;
   border-radius: 5px;
-  /* filter: drop-shadow(10px 10px 0px #000000); */
   list-style-type: none;
   line-height: 150%;
 }
@@ -165,7 +231,6 @@ ol {
   padding: 15px;
   padding-bottom: 8px;
   border-radius: 5px;
-  /* filter: drop-shadow(10px 10px 0px #000000); */
   list-style-type: none;
   line-height: 150%;
 }
@@ -220,6 +285,7 @@ img.img-scrolling {
 }
 
 p {
+  border: 1.5px solid black;
   background-color: white;
   font-family: "Courier New", Courier, monospace;
   line-height: 140%;
@@ -528,6 +594,18 @@ a:active {
   max-height: 500px;
 }
 
+@keyframes img-glow {
+  from {
+    filter: drop-shadow(0px 0px 6px #5aff5d);
+    transform: translate(-50%, 10px);
+  }
+
+  to {
+    filter: drop-shadow(0px 0px 2px #5aff5d);
+    transform: translate(-50%, 0px);
+  }
+}
+
 @keyframes glow {
   from {
     text-shadow: 0px 0px 6px #aef4af;
@@ -572,7 +650,7 @@ a:active {
 }
 
 #portfolio-status {
-  cursor: help;
+  cursor: pointer;
   animation: glow-harder 1.5s infinite alternate;
 }
 
@@ -915,13 +993,17 @@ header .current-date {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   #whole-title {
     font-size: 32px;
   }
 
   #face-pic {
     max-width: 90%;
+  }
+
+  #study-case {
+    max-width: 75%;
   }
 
   p {
