@@ -1,0 +1,39 @@
+#crank-area {
+    width: 30vw;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+img {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#crank-sprite {
+    width: 100%;
+    position: absolute;
+    mix-blend-mode: exclusion;
+    cursor: pointer;
+}
+
+#sharp-front,
+#sharp-back {
+    width: 90%;
+    position: absolute;
+    top: 25%;
+    left: 18%;
+}
+
+#sharp-back {
+    mix-blend-mode: difference;
+}
+
+#sharp-front {
+    z-index: 10;
+}
