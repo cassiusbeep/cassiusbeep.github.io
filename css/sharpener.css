@@ -1,7 +1,152 @@
+html,
+body {
+    cursor: none;
+    background-color: black;
+}
+
+#game {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    transform-origin: top left;
+    background-image: url("../assets/sharpener/desk-bg.png");
+    background-size: cover;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+}
+
+/* #side-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 450px;
+    transform: translateX(-75%);
+    transition: transform 250ms steps(7, end);
+    border: 6px double black;
+    background-color: brown;
+}
+
+#side-panel:hover {
+    transform: translateX(0);
+} */
+
+/* may need to add something here for the easter egg so it doesnt close during! */
+
+/* #workspace {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+} */
+
+#notebook {
+    position: absolute;
+    top: 217px;
+    left: 50%;
+    /* border: 1px solid red; */
+    transform:
+        translateX(-50%) perspective(1300px) rotateX(63deg);
+    transform-origin: top center;
+}
+
+#notebook-canvas {
+    display: block;
+    width: 223px;
+    height: 410px;
+    z-index: 5;
+    background-color: white;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+}
+
+#custom-cursor {
+    width: 100px;
+    height: 100px;
+    background-image: url("../assets/sharpener/left-hand.png");
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    /* allows clicks to pass through the element */
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+#custom-cursor.cursor-grabbing {
+    background-image: url("../assets/sharpener/left-grab.png");
+}
+
+#custom-cursor.right-hand {
+    transform: scaleX(-1) translate(25%, -50%);
+}
+
+#custom-cursor.right-hand.cursor-pointing {
+    transform: scaleX(-1) translate(0, -50%);
+    background-image: url("../assets/sharpener/left-point.png");
+}
+
+#custom-cursor.right-hand.cursor-bloody {
+    background-image: url("../assets/sharpener/left-hand-bloody.png");
+}
+
+#custom-cursor.right-hand.cursor-pointing.cursor-bloody {
+    background-image: url("../assets/sharpener/left-point-bloody.png");
+}
+
+/* crank area inside side panel */
+/* #crank-area {
+    width: 175px;
+    aspect-ratio: 1/1;
+    top: 50px;
+    position: relative;
+    isolation: isolate;
+} */
+
+#sharpener-content {
+    position: absolute;
+    top: 70px;
+    left: 50px;
+    z-index: 100;
+}
+
 #crank-area {
-    width: 30vw;
+    width: 175px;
     aspect-ratio: 1/1;
     position: relative;
+    isolation: isolate;
+}
+
+#sharp-hole {
+    position: absolute;
+    width: 50px;
+    height: 90px;
+    top: 90px;
+    left: 152px;
+    border-radius: 15px;
+    z-index: 500;
+}
+
+#secret {
+    position: absolute;
+    width: 0px;
+    height: 128px;
+    top: 105px;
+    left: 160px;
+    z-index: 1;
+    background-size: cover;
+}
+
+#secret.showing {
+    background-image: url("../assets/sharpener/right-point.png");
+    width: 128px;
 }
 
 img {
@@ -16,18 +161,17 @@ img {
 }
 
 #crank-sprite {
-    width: 100%;
+    width: 192px;
     position: absolute;
     mix-blend-mode: exclusion;
-    cursor: pointer;
 }
 
 #sharp-front,
 #sharp-back {
-    width: 90%;
+    width: 192px;
     position: absolute;
-    top: 25%;
-    left: 18%;
+    top: 50px;
+    left: 20px;
 }
 
 #sharp-back {
@@ -36,4 +180,26 @@ img {
 
 #sharp-front {
     z-index: 10;
+}
+
+#instructions {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+@keyframes jiggleOnce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(4px);
+    }
+}
+
+.jiggling {
+    animation: jiggleOnce 0.1s step-end;
 }

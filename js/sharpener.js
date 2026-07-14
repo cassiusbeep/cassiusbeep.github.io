@@ -1,241 +1,260 @@
-const crankArea = document.getElementById("crank-area");
-const crankSprite = document.getElementById("crank-sprite");
-const pencilButton = document.getElementById("add-pencil");
+import { wrapAngle, wrapDelta } from "./util.js";
+export default class Sharpener {
+    constructor(game, elements) {
+        this.game = game;
+        this.crankArea = elements.area;
+        this.crankSprite = elements.crankSprite;
+        this.hole = elements.hole;
+        this.crankSprites = [
+            "../assets/sharpener/crank-0.PNG",
+            "../assets/sharpener/crank-1.PNG",
+            "../assets/sharpener/crank-2.PNG",
+            "../assets/sharpener/crank-3.PNG",
+            "../assets/sharpener/crank-4.PNG",
+            "../assets/sharpener/crank-5.PNG",
+            "../assets/sharpener/crank-6.PNG",
+            "../assets/sharpener/crank-7.PNG",
+            "../assets/sharpener/crank-8.PNG",
+            "../assets/sharpener/crank-9.PNG",
+            "../assets/sharpener/crank-10.PNG",
+            "../assets/sharpener/crank-11.PNG",
+            "../assets/sharpener/crank-12.PNG",
+            "../assets/sharpener/crank-13.PNG",
+            "../assets/sharpener/crank-14.PNG",
+            "../assets/sharpener/crank-15.PNG",
+            "../assets/sharpener/crank-16.PNG",
+            "../assets/sharpener/crank-17.PNG",
+            "../assets/sharpener/crank-18.PNG",
+            "../assets/sharpener/crank-19.PNG",
+            "../assets/sharpener/crank-20.PNG",
+            "../assets/sharpener/crank-21.PNG",
+            "../assets/sharpener/crank-22.PNG",
+            "../assets/sharpener/crank-23.PNG",
+            "../assets/sharpener/crank-24.PNG",
+            "../assets/sharpener/crank-25.PNG",
+            "../assets/sharpener/crank-26.PNG",
+            "../assets/sharpener/crank-27.PNG",
+            "../assets/sharpener/crank-28.PNG",
+            "../assets/sharpener/crank-29.PNG",
+            "../assets/sharpener/crank-30.PNG",
+            "../assets/sharpener/crank-31.PNG"
+        ];
+        this.lightClicks = Array.from(
+            { length: 16 },
+            () => {
+                const audio = new Audio("../assets/sharpener/light-click.mp3");
+                audio.preload = "auto";
+                audio.load();
+                return audio;
+            }
+        );
+        this.heavyClicks = Array.from(
+            { length: 16 },
+            () => {
+                const audio = new Audio("../assets/sharpener/wood-scrape.mp3");
+                audio.preload = "auto";
+                audio.load();
+                return audio;
+            }
+        );
+        this.nextLightClick = 0;
+        this.nextHeavyClick = 0;
 
-const crankSprites = [
-    "../assets/sharpener/crank-0.PNG",
-    "../assets/sharpener/crank-1.PNG",
-    "../assets/sharpener/crank-2.PNG",
-    "../assets/sharpener/crank-3.PNG",
-    "../assets/sharpener/crank-4.PNG",
-    "../assets/sharpener/crank-5.PNG",
-    "../assets/sharpener/crank-6.PNG",
-    "../assets/sharpener/crank-7.PNG",
-    "../assets/sharpener/crank-8.PNG",
-    "../assets/sharpener/crank-9.PNG",
-    "../assets/sharpener/crank-10.PNG",
-    "../assets/sharpener/crank-11.PNG",
-    "../assets/sharpener/crank-12.PNG",
-    "../assets/sharpener/crank-13.PNG",
-    "../assets/sharpener/crank-14.PNG",
-    "../assets/sharpener/crank-15.PNG",
-    "../assets/sharpener/crank-16.PNG",
-    "../assets/sharpener/crank-17.PNG",
-    "../assets/sharpener/crank-18.PNG",
-    "../assets/sharpener/crank-19.PNG",
-    "../assets/sharpener/crank-20.PNG",
-    "../assets/sharpener/crank-21.PNG",
-    "../assets/sharpener/crank-22.PNG",
-    "../assets/sharpener/crank-23.PNG",
-    "../assets/sharpener/crank-24.PNG",
-    "../assets/sharpener/crank-25.PNG",
-    "../assets/sharpener/crank-26.PNG",
-    "../assets/sharpener/crank-27.PNG",
-    "../assets/sharpener/crank-28.PNG",
-    "../assets/sharpener/crank-29.PNG",
-    "../assets/sharpener/crank-30.PNG",
-    "../assets/sharpener/crank-31.PNG"
-];
-const NUM_FRAMES = crankSprites.length;
-const ROTATION_PER_FRAME = 360 / NUM_FRAMES;
-const HANDLE_RADIUS = 80;
-const GRAB_RADIUS = 20;
+        this.numFrames = this.crankSprites.length;
+        this.rotationPerFrame = 360 / this.numFrames;
+        this.handleRadius = 80;
+        this.grabRadius = 20;
 
-let crankX;
-let crankY;
+        this.centerX = 0;
+        this.centerY = 0;
 
-// Get the bounding rectangle edges
-let crankRect = crankArea.getBoundingClientRect();
-// Calculate the center relative to the browser viewport
-let centerX = crankRect.left + crankRect.width / 2;
-let centerY = crankRect.top + crankRect.height / 2;
+        this.currentAngle = 0;
+        this.previousMouseAngle = 0;
+        this.totalRotation = 0;
+        this.rotationOnTool = 0;
+        this.currentFrame = 0;
+        this.clickAccumulator = 0;
 
-let currentAngle = 0;
-let previousMouseAngle = 0;
-let totalRotation = 0;
-let currentFrame = 0;
-let clickAccumulator = 0;
-let isGrabbed = false;
-let sharpenerFull = false;
+        this.isGrabbed = false;
+        this.insertedTool = null;
 
-// helpers to wrap angles into appropriate range
-function wrapAngle(angle) {
-    // convert angle to 0-360
-    angle %= 360;
-
-    if (angle < 0) {
-        angle += 360;
+        this.handleCranking = this.handleCranking.bind(this);
+        this.stopCranking = this.stopCranking.bind(this);
+        this.handleHoleClick = this.handleHoleClick.bind(this);
     }
 
-    return angle;
-}
-
-function wrapDelta(delta) {
-    // convert angle DIFFERENCE into -180 to 180
-    while (delta > 180) {
-        delta -= 360;
+    init() {
+        this.crankSprite.src = this.crankSprites[this.currentFrame];
+        this.crankSprites.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+        this.crankArea.addEventListener('mousedown', (event) => {
+            this.attemptGrab(event);
+        });
+        this.hole.addEventListener('click', this.handleHoleClick);
     }
 
-    while (delta <= -180) {
-        delta += 360;
-    }
+    handleHoleClick() {
+        if (this.game.cursor.isRightHand()) {
+            switch (this.game.cursor.state) {
+                case "normal":
+                    this.game.cursor.setState("pointing");
+                    this.hole.addEventListener('mouseout',
+                        () => this.game.cursor.setState("normal"),
+                        { once: true }
+                    );
+                    break;
+                case "pointing":
+                    this.insertTool("finger");
+                    // display finger in hole, pick left hand, disallow switching
+                    this.game.startFingerSharpen();
+                    break;
+                // TODO wait for like 3 full rotations of the crank and then release the right hand
+                // TODO: figure out how best to switch back to the right hand. user should have to remove it from the sharpener to see what it looks like, but i cant snap the user's cursor back to the hand for them...
+                // TODO: re-allow hand switching
+                // TODO: now enable user to draw directly on page without holding a tool (blood ink!)
+            }
 
-    return delta;
-}
-
-const lightClicks = Array.from(
-    { length: 16 },
-    () => {
-        const audio = new Audio("../assets/sharpener/light-click.mp3");
-        audio.preload = "auto";
-        audio.load();
-        return audio;
-    }
-);
-let nextLightClick = 0;
-
-const heavyClicks = Array.from(
-    { length: 16 },
-    () => {
-        const audio = new Audio("../assets/sharpener/wood-scrape.mp3");
-        audio.preload = "auto";
-        audio.load();
-        return audio;
-    }
-);
-let nextHeavyClick = 0;
-
-pencilButton.addEventListener("click", () => {
-    if (sharpenerFull) {
-        sharpenerFull = false;
-        pencilButton.textContent = "add pencil";
-    } else {
-        sharpenerFull = true;
-        pencilButton.textContent = "remove pencil";
-    }
-})
-
-function playClick() {
-    let sound;
-
-    if (sharpenerFull) {
-        sound = heavyClicks[nextHeavyClick];
-        nextHeavyClick = (nextHeavyClick + 1) % heavyClicks.length;
-    } else {
-        sound = lightClicks[nextLightClick];
-        nextLightClick = (nextLightClick + 1) % lightClicks.length;
-    }
-
-    sound.currentTime = 0;
-
-    sound.play().catch(() => { });
-}
-
-// calculate angle of mouse from crank center
-function getMouseAngle(event) {
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-
-    let xDiff = centerX - mouseX;
-    let yDiff = centerY - mouseY;
-    let angleRads = Math.atan2(yDiff, xDiff);
-    let angleDegs = angleRads * (180 / Math.PI);
-    return wrapAngle(angleDegs);
-}
-
-// double check position of sprites
-function updateCrankPos() {
-    crankRect = crankArea.getBoundingClientRect();
-    centerX = crankRect.left + crankRect.width / 2;
-    centerY = crankRect.top + crankRect.height / 2;
-}
-
-// TODO: possibly later add rotationSinceLastTick so we can add sound effects or something
-
-// cache DOM elements, preload all sprites, set initial frame, add mouse listener to crankArea
-function initCrank() {
-    crankSprite.src = crankSprites[currentFrame];
-    crankSprites.forEach(url => {
-        const img = new Image();
-        img.src = url;
-    });
-    crankArea.addEventListener('mousedown', (event) => {
-        // Optional: Track the very first position right as the click happens
-        attemptGrab(event);
-    });
-}
-
-// update crank center, calculate current knob position based on currentAngle
-function attemptGrab(event) {
-    // check if mouse is within certain distance range of crankArea center, and in the right range of angles
-    updateCrankPos();
-    const curMouseAngle = getMouseAngle(event);
-    // console.log(`mouse angle = ${curMouseAngle}`);
-    // console.log(`crank angle = ${currentAngle}`);
-
-    if (Math.abs(wrapDelta(curMouseAngle - currentAngle)) < 15) {
-        isGrabbed = true;
-        previousMouseAngle = curMouseAngle;
-
-        // add window listeners for movement and letting go
-        window.addEventListener('mousemove', handleCranking);
-        window.addEventListener('mouseup', stopCranking);
-    }
-}
-
-function handleCranking(event) {
-    // if not grabbed, just ignore? hopefully this shouldnt come up.
-    if (!isGrabbed) {
-        return;
-    }
-
-    // get mouse angle and compare to previous
-    let curMouseAngle = getMouseAngle(event);
-    let delta = curMouseAngle - previousMouseAngle;
-
-    // wrap the change into -180 to 180
-    delta = wrapDelta(delta);
-
-    // update previous mouse angle
-    previousMouseAngle = curMouseAngle;
-    currentAngle += delta;
-    currentAngle = wrapAngle(currentAngle);
-
-    // check if movement is clockwise
-    if (delta > 0) {
-        totalRotation += delta;
-        clickAccumulator += delta;
-
-        if (clickAccumulator >= ROTATION_PER_FRAME) {
-            playClick();
-            clickAccumulator -= ROTATION_PER_FRAME;
         }
-        // TODO: check progress for sharpening and other gamestate stuff
     }
-    updateSprite();
 
-}
+    insertTool(tool) {
+        this.insertedTool = tool;
+        this.rotationOnTool = 0;
+    }
 
-function updateSprite() {
-    if (currentFrame != Math.floor(currentAngle / ROTATION_PER_FRAME)) {
-        currentFrame = Math.floor(currentAngle / ROTATION_PER_FRAME);
-        crankSprite.src = crankSprites[currentFrame];
+    removeTool() {
+        this.insertedTool = null;
+    }
+
+    hasTool() {
+        return this.insertedTool !== null;
+    }
+
+    playClick() {
+        let sound;
+        if (this.insertedTool) {
+            sound = this.heavyClicks[this.nextHeavyClick];
+            this.nextHeavyClick = (this.nextHeavyClick + 1) % this.heavyClicks.length;
+        } else {
+            sound = this.lightClicks[this.nextLightClick];
+            this.nextLightClick = (this.nextLightClick + 1) % this.lightClicks.length;
+        }
+        sound.currentTime = 0;
+        sound.play().catch(() => { });
+    }
+
+    // TODO: might need to add a way to get the tool ID
+
+    getMouseAngle(mouse) {
+        const xDiff = this.centerX - mouse.x;
+        const yDiff = this.centerY - mouse.y;
+
+        const angleRads = Math.atan2(yDiff, xDiff);
+        const angleDegs = angleRads * (180 / Math.PI);
+
+        return wrapAngle(angleDegs);
+    }
+
+    updateBounds() {
+        const rect = this.game.screenToGameRect(this.crankArea);
+
+        this.centerX = rect.x + rect.width / 2;
+        this.centerY = rect.y + rect.height / 2;
+    }
+
+    attemptGrab(event) {
+        // event is a mouse click.
+        this.updateBounds();
+
+        // convert browser mouse pos to game coords
+        const mouse = this.game.getGameCoords(event);
+        // check angle relative to crank center
+        const curMouseAngle = this.getMouseAngle(mouse);
+
+        // is cursor near handle?
+        if (Math.abs(wrapDelta(curMouseAngle - this.currentAngle)) < 25) {
+            // only left hand can crank
+            if (!this.game.cursor.isRightHand()) {
+                this.isGrabbed = true;
+                this.previousMouseAngle = curMouseAngle;
+
+                this.game.cursor.setState("grabbing");
+
+                // add window listeners for movement and letting go
+                window.addEventListener('mousemove', this.handleCranking);
+                window.addEventListener('mouseup', this.stopCranking);
+            }
+        }
+    }
+
+    handleCranking(event) {
+        // ignore if we're not grabber
+        if (!this.isGrabbed) {
+            return;
+        }
+
+        // get mouse angle and compare to previous
+        const mouse = this.game.getGameCoords(event);
+        const curMouseAngle = this.getMouseAngle(mouse);
+        let delta = curMouseAngle - this.previousMouseAngle;
+        delta = wrapDelta(delta);
+
+        // store mouse angle
+        this.previousMouseAngle = curMouseAngle;
+
+        // update visual rotation
+        this.currentAngle += delta;
+        this.currentAngle = wrapAngle(this.currentAngle);
+
+        // check if movement is clockwise
+        if (delta > 0) {
+            this.totalRotation += delta;
+            this.rotationOnTool += delta;
+            this.clickAccumulator += delta;
+
+            if (this.clickAccumulator >= this.rotationPerFrame) {
+                this.playClick();
+                this.clickAccumulator -= this.rotationPerFrame;
+                if (this.insertedTool) {
+                    this.game.jiggleTool();
+                }
+            }
+            if (this.insertedTool === "finger" && this.rotationOnTool >= 1080) {
+                this.game.endFingerSharpen();
+            }
+            // TODO: check progress for sharpening and other gamestate stuff
+        }
+        this.updateSprite();
+    }
+
+    updateSprite() {
+        const newFrame = Math.floor(this.currentAngle / this.rotationPerFrame);
+        if (this.currentFrame != newFrame) {
+            this.currentFrame = newFrame;
+            this.crankSprite.src = this.crankSprites[this.currentFrame];
+        }
+    }
+
+    stopCranking() {
+        this.isGrabbed = false;
+        this.game.cursor.setState("normal");
+        // remove mousemove and mouseup listeners
+        window.removeEventListener('mousemove', this.handleCranking);
+        window.removeEventListener('mouseup', this.stopCranking);
     }
 }
 
-function stopCranking() {
-    isGrabbed = false;
-    // remove mousemove and mouseup listeners
-    window.removeEventListener('mousemove', handleCranking);
-    window.removeEventListener('mouseup', stopCranking);
-    // console.log(totalRotation);
-}
+// pencilImg.addEventListener('click', (e) => {
+//     if (cursor.classList.contains("right-hand")) {
+//         cursor.classList.toggle("cursor-pointing");
+//     }
+// })
 
-// when mouse is within crank area and mouse is down, track rotation to move the handle
-// do i care if the handle aligns with the mouse? maybe not, im not sure.
-// for now ill just try and get it to register movement and mouse placement.
-
-initCrank();
+// TODO: bandage to stop bleeding
+// TODO: window view?
+// TODO: 
 
 /*
 gameplay flow:
